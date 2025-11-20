@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import StarRating from './StarRating';
+import StarRating from '../../shared/StarRating.jsx';
 import Swal from 'sweetalert2';
 import Q2Image from './assets/feedBack.png';
-import './feedBack.css';
+import '../../shared/feedBack.css';
 
 function FeedBack() {
 

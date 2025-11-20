@@ -1,12 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightLong } from '@fortawesome/free-solid-svg-icons';
-
-import './StoryPage.css';
+import { useParams, useNavigate } from 'react-router-dom';
+import '../../shared/StoryPage.css';
+import ValidationAlert from '../../shared/ValidationAlert';
 
 import video1 from "./assets/1.mp4";
 import video2 from "./assets/2.mp4";
@@ -32,7 +28,7 @@ export const StoryPage = () => {
   const [showBubble, setShowBubble] = useState(true);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
-
+  const { unitId, lessonId } = useParams();
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const fullscreenContainerRef = useRef(null);
@@ -313,21 +309,13 @@ export const StoryPage = () => {
   // --- دوال التحكم بالوسائط ---
   const handleNext = useCallback(() => {
     if (currentItemIndex === mediaItems.length - 1) {
-      Swal.fire({
-        title: "Good Job!",
-        html: "You finished the story. Go to the quiz?",
-        imageUrl: questionGif,
-        imageWidth: 200,
-        imageHeight: 200,
-        confirmButtonText: '<i class="fa-solid fa-right-long"></i>',
-        customClass: { popup: "my-popup", image: "my-image", title: "my-title", content: "my-content", confirmButton: "my-button" },
-      }).then((result) => {
-        if (result.isConfirmed) navigate('/quiz');
+      ValidationAlert.storyEnd(() => {
+        navigate(`/unit/${unitId}/lesson/${lessonId}/quiz`);
       });
     } else {
       setCurrentItemIndex(prev => prev + 1);
     }
-  }, [currentItemIndex, mediaItems.length, navigate]);
+  }, [currentItemIndex, mediaItems.length, navigate, unitId, lessonId]);
 
   const handlePrevious = () => {
     setCurrentItemIndex(prev => (prev > 0 ? prev - 1 : mediaItems.length - 1));

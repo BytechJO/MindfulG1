@@ -10,7 +10,6 @@ import video3 from "./assets/3.mp4";
 import video4 from "./assets/4.mp4";
 import video5 from "./assets/5.mp4";
 
-import questionGif from './assets/question.gif';
 
 export const StoryPage = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -269,16 +268,6 @@ export const StoryPage = () => {
     }
   ];
 
-
-  // const cloudPositions = [
-  //   { bottom: '34.375rem', left: '32%', transform: 'translateX(-50%)' },
-  //   { top: '1%', left: '45%', transform: 'translateY(0)' },
-  //   { top: '10%', right: '65%', transform: 'translateX(0)', left: 'auto' },
-  //   { bottom: '85%', left: '30%', transform: 'translateX(-50%)' },
-  //   { top: '10%', left: '50%', transform: 'translateX(0)', isFlipped: true },
-  // ];
-
-
   const cloudPositions = {
 
     0: [{ bottom: '35rem', left: '50%', transform: 'translateX(-50%)', isFlipped: true }],
@@ -354,7 +343,6 @@ export const StoryPage = () => {
     };
   }, [currentVideo]);
 
-  // Preload next video
   useEffect(() => {
     const nextVideoIndex = currentVideo + 1;
     if (nextVideoIndex < videos.length) {

@@ -1,12 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import './StoryPage.css';
-import { Maximize2, Minimize2 } from "lucide-react";
-import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightLong } from '@fortawesome/free-solid-svg-icons';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import '../../shared/StoryPage.css';
+import ValidationAlert from '../../shared/ValidationAlert';
 
 import video1 from "./assets/1.mp4";
 import video2 from "./assets/2.mp4";
@@ -14,10 +10,6 @@ import video3 from "./assets/3.mp4";
 import video4 from "./assets/4.mp4";
 import video5 from "./assets/5.mp4";
 import img1 from "./assets/nex.png";
-// import video6 from "./assets/6.mp4";
-// import video7 from "./assets/5.mp4";
-
-import questionGif from './assets/question.gif';
 
 export const StoryPage = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -27,6 +19,7 @@ export const StoryPage = () => {
   const [duration, setDuration] = useState(0);
   const videoRef = useRef(null);
   const [selectedWords, setSelectedWords] = useState([]);
+  const { unitId, lessonId } = useParams();
   const navigate = useNavigate();
   const [showFeedback, setShowFeedback] = useState(false);
   const [showBubble, setShowBubble] = useState(true);
@@ -315,16 +308,6 @@ export const StoryPage = () => {
 
   ];
 
-
-  // const cloudPositions = [
-  //   { bottom: '34.375rem', left: '32%', transform: 'translateX(-50%)' },
-  //   { top: '1%', left: '45%', transform: 'translateY(0)' },
-  //   { top: '10%', right: '65%', transform: 'translateX(0)', left: 'auto' },
-  //   { bottom: '85%', left: '30%', transform: 'translateX(-50%)' },
-  //   { top: '10%', left: '50%', transform: 'translateX(0)', isFlipped: true },
-  // ];
-
-
   const cloudPositions = {
     0: [],
 
@@ -438,8 +421,6 @@ export const StoryPage = () => {
     if (currentVideo === 4 && isPlaying) {
       if (duration > 0 && currentTime >= duration - 0.3) {
         video.pause();
-        // video.currentTime = 5.0;
-        // setCurrentTime(5.0);
         setShowBanner(true);
       }
     }
@@ -478,69 +459,28 @@ export const StoryPage = () => {
 
   const handleEnded = useCallback(() => {
     if (currentVideo === videos.length - 1) {
-      Swal.fire({
-        title: "Good Job!",
-        html: "You finished the story. Go to the quiz?",
-        imageUrl: questionGif,
-        imageWidth: 200,
-        imageHeight: 200,
-        imageAlt: "Question GIF",
-        background: "#dfeaf6",
-        confirmButtonText: '<i class="fa-solid fa-right-long"></i>',
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        buttonsStyling: false,
-        customClass: {
-          popup: "my-popup",
-          image: "my-image",
-          title: "my-title",
-          content: "my-content",
-          confirmButton: "my-button",
-        },
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate('/quiz');
-        }
+      ValidationAlert.storyEnd(() => {
+        navigate(`/unit/${unitId}/lesson/${lessonId}/quiz`);
       });
-    } else if (currentVideo !== 5) {
+    } else if (currentVideo !== 3) {
       setShowBanner(false);
       setCurrentVideo(prev => prev + 1);
     }
-  }, [currentVideo, videos.length, navigate]);
-useEffect(() => {
-  // تحقق إذا كانت الصورة آخر عنصر
-  if (currentVideo === videos.length - 1 && !currentVideoData.url.endsWith(".mp4")) {
-    // تأخير صغير حتى تظهر الصورة قبل الـ Swal
-    const timer = setTimeout(() => {
-      Swal.fire({
-        title: "Good Job!",
-        html: "You finished the story. Go to the quiz?",
-        imageUrl: questionGif,
-        imageWidth: 200,
-        imageHeight: 200,
-        imageAlt: "Question GIF",
-        background: "#dfeaf6",
-        confirmButtonText: '<i class="fa-solid fa-right-long"></i>',
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        buttonsStyling: false,
-        customClass: {
-          popup: "my-popup",
-          image: "my-image",
-          title: "my-title",
-          content: "my-content",
-          confirmButton: "my-button",
-        },
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate('/quiz');
-        }
-      });
-    }, 500); // نصف ثانية لتأكد من ظهور الصورة
+  }, [currentVideo, videos.length, navigate, unitId, lessonId]);
 
-    return () => clearTimeout(timer);
-  }
-}, [currentVideo, currentVideoData, navigate]);
+  useEffect(() => {
+    // تحقق إذا كانت الصورة آخر عنصر
+    if (currentVideo === videos.length - 1 && !currentVideoData.url.endsWith(".mp4")) {
+      // تأخير صغير حتى تظهر الصورة قبل الـ Swal
+      const timer = setTimeout(() => {
+        ValidationAlert.storyEnd(() => {
+          navigate(`/unit/${unitId}/lesson/${lessonId}/quiz`);
+        });
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentVideo, currentVideoData, navigate]);
 
 
   const toggleWordSelection = (wordText) => {
