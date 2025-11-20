@@ -476,10 +476,7 @@ export const StoryPage = () => {
     setIsMuted(newVolume === 0);
   };
 
-  // --- START: التعديلات المطلوبة ---
-  // 2. تعديل الدالة لتستهدف الحاوية الصحيحة
   const toggleFullscreen = () => {
-    // تم تغيير containerRef إلى fullscreenContainerRef ليكون الاسم أوضح
     const container = fullscreenContainerRef.current;
     if (!container) return;
 

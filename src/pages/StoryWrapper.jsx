@@ -38,7 +38,7 @@ export default function StoryWrapper() {
     return (
       <StoryLayout>
         <div style={{ padding: 30, textAlign: 'center' }}>
-          <p>جاري التحميل...</p>
+          <p>Loading...</p>
         </div>
       </StoryLayout>
     );
@@ -48,7 +48,7 @@ export default function StoryWrapper() {
     return (
       <StoryLayout>
         <div style={{ padding: 30, textAlign: 'center', color: 'red' }}>
-          <p>حدث خطأ في تحميل الدرس: {error}</p>
+          <p>somthing happend: {error}</p>
         </div>
       </StoryLayout>
     );

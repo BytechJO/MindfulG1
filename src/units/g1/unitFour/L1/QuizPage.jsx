@@ -1,11 +1,13 @@
 import Q1Image from './assets/Q1.png';
 import React, { useState } from 'react';
-import Swal from 'sweetalert2';
-import './Quiz.css';
-import { useNavigate } from 'react-router-dom';
-import './StoryPage.css';
+import '../../shared/Quiz.css';
+import { useParams, useNavigate } from 'react-router-dom';
+import '../../shared/StoryPage.css';
+import ValidationAlert from '../../shared/ValidationAlert';
+
 
 export const QuizPage = () => {
+  const { unitId, lessonId } = useParams();
   const navigate = useNavigate();
   const [answers, setAnswers] = useState({ q1: null, q2: null, q3: null });
 
@@ -16,7 +18,7 @@ export const QuizPage = () => {
 
   const handleSubmit = () => {
     if (!answers.q1 || !answers.q2 || !answers.q3) {
-      Swal.fire({ icon: 'warning', title: 'Incomplete', text: 'Please answer all questions before submitting!' });
+      ValidationAlert.info("Incomplete", "Please answer all questions before submitting!");
       return;
     }
     const correctAnswers = { q1: "1", q2: "0", q3: "2" };
@@ -27,6 +29,7 @@ export const QuizPage = () => {
     };
     const score = Object.values(results).filter(isCorrect => isCorrect).length;
     const totalQuestions = Object.keys(results).length;
+    const scoreString = `${score}/${totalQuestions}`;
     const resultsHtml = `
       Q1: ${results.q1 ? '✅ Correct' : '❌ Wrong'}  <br>
 
@@ -37,11 +40,12 @@ export const QuizPage = () => {
       <p><strong>Score:</strong> ${score}/${totalQuestions}</p>
     `;
     if (score === totalQuestions) {
-      Swal.fire({ title: 'Excellent! All Correct!', html: resultsHtml, icon: 'success', confirmButtonText: 'Continue', confirmButtonColor: '#3085d6' })
-        .then(() => { navigate('/feedBack'); });
+      ValidationAlert.success("Good Job!", "", scoreString)
+        .then(() => {
+          navigate(`/unit/${unitId}/lesson/${lessonId}/feedBack`);
+        });
     } else {
-      Swal.fire({ title: 'Results', html: resultsHtml, icon: 'info', showCancelButton: true, confirmButtonText: 'Continue', cancelButtonText: 'Try Again', confirmButtonColor: '#3085d6', cancelButtonColor: '#b23131ff', reverseButtons: true })
-        .then((result) => { if (result.isConfirmed) { navigate('/feedBack'); } });
+      ValidationAlert.error("Try again", "", scoreString)  
     }
   };
 

@@ -28,6 +28,7 @@ export const QuizPage = () => {
     };
     const score = Object.values(results).filter(isCorrect => isCorrect).length;
     const totalQuestions = Object.keys(results).length;
+    const scoreString = `${score}/${totalQuestions}`;
     const resultsHtml = `
       Q1: ${results.q1 ? '✅ Correct' : '❌ Wrong'}  <br>
 
