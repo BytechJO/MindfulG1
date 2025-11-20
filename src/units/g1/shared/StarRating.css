@@ -1,0 +1,16 @@
+.star {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.star img {
+  width: clamp(25px, 3vw, 40px);
+  height: clamp(25px, 3vw, 40px);
+  transition: transform 0.2s ease-in-out;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.star:hover img {
+  transform: scale(1.15);
+}
