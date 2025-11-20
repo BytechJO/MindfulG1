@@ -4,7 +4,6 @@ body {
 }
 
 #p3 {
-  /* position: absolute; */
   position: relative;
   border-radius: 1.5rem;
   overflow: hidden;
@@ -16,15 +15,6 @@ body {
   margin-top: 60px;
 }
 
-/* #p3 .bg-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: clamp(2px, 0.5vw, 4px) solid rgb(10, 10, 10);
-  border-radius: clamp(10px, 2vw, 20px);
-  box-shadow: clamp(5px, 1vw, 10px) clamp(5px, 1vw, 10px) clamp(5px, 1vw, 10px) black;
-} */
-
 #p3 .content {
   position: absolute;
   top: clamp(-1.8%, 10%, 8%);
@@ -33,10 +23,6 @@ body {
   height: 100%;
   margin-top: clamp(80px, 10vw, 160px);
   font-size: 18px;
-}
-
-@media screen {
-  
 }
 
 #p3 ul {
@@ -88,8 +74,6 @@ body {
   color: white;
   transition: transform 0.3s, background-color 0.3s;
   position: absolute;
-  /* bottom: 17%;
-  right: 5%; */
   left: 25%;
   top: 58%;
 }
@@ -100,11 +84,105 @@ body {
 }
 
 .story-pages-container {
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: clamp(1rem, 2vw, 2rem); */
 }
 
 
+/* للشاشات المتوسطة */
+@media (max-width: 1024px) {
+  #p3 .content {
+    left: 10%;
+    margin-top: clamp(60px, 8vw, 120px);
+    font-size: 16px;
+  }
+
+  #p3 ul {
+    left: 10%;
+  }
+
+  #p3 span {
+    left: 10%;
+  }
+
+  #p3 li input[type="radio"] {
+    left: 30%;
+    width: clamp(10px, 3vw, 16px);
+    height: clamp(10px, 3vw, 16px);
+  }
+
+  #submitBtn {
+    left: 20%;
+    top: 60%;
+    width: clamp(80px, 25vw, 130px);
+    height: clamp(30px, 6vw, 35px);
+  }
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+  #p3 .content {
+    left: 5%;
+    margin-top: clamp(50px, 12vw, 100px);
+    font-size: 14px;
+  }
+
+  #p3 ul {
+    left: 5%;
+  }
+
+  #p3 span {
+    left: 5%;
+  }
+
+  #p3 li input[type="radio"] {
+    left: 25%;
+    width: clamp(8px, 4vw, 14px);
+    height: clamp(8px, 4vw, 14px);
+  }
+
+  #submitBtn {
+    left: 15%;
+    top: 62%;
+    width: clamp(70px, 30vw, 120px);
+    height: clamp(25px, 6vw, 30px);
+    font-size: 0.9rem;
+  }
+
+  .story-pages-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* للشاشات الصغيرة جدًا */
+@media (max-width: 480px) {
+  #p3 .content {
+    left: 3%;
+    margin-top: clamp(40px, 15vw, 80px);
+    font-size: 12px;
+  }
+
+  #p3 ul {
+    left: 3%;
+  }
+
+  #p3 span {
+    left: 3%;
+  }
+
+  #p3 li input[type="radio"] {
+    left: 20%;
+    width: clamp(6px, 5vw, 12px);
+    height: clamp(6px, 5vw, 12px);
+  }
+
+  #submitBtn {
+    left: 10%;
+    top: 65%;
+    width: clamp(60px, 35vw, 100px);
+    height: clamp(20px, 5vw, 25px);
+    font-size: 0.8rem;
+  }
+}

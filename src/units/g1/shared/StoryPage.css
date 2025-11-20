@@ -81,6 +81,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .bubble-cloud .close:hover {
   background: #cbd5e1;
 }
@@ -96,7 +97,7 @@
 }
 
 .selected-word {
-  background-color: #fef08a; 
+  background-color: #fef08a;
   border-radius: 0.25rem;
   padding: 0.125rem 0.25rem;
   margin: 0 -0.25rem;
@@ -127,10 +128,12 @@
     transform: translateX(-50%) scale(0);
     opacity: 0;
   }
+
   50% {
     transform: translateX(-50%) scale(1.2);
     opacity: 1;
   }
+
   100% {
     transform: translateX(-50%) scale(1);
     opacity: 1;
@@ -158,9 +161,9 @@
   border-bottom-right-radius: 0; */
 }
 
-.instruction-banner p{
-margin-left: clamp(1px, 1vw, 25px);
-padding-left: 30px;
+.instruction-banner p {
+  margin-left: clamp(1px, 1vw, 25px);
+  padding-left: 30px;
 
 }
 
@@ -262,12 +265,12 @@ padding-left: 30px;
 .controls-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem; 
+  gap: 1.5rem;
 }
 
 .controls-center {
-  flex-grow: 1; 
-  margin: 0 2rem; 
+  flex-grow: 1;
+  margin: 0 2rem;
 }
 
 .control-button {
@@ -308,7 +311,7 @@ padding-left: 30px;
 }
 
 
-.control-button-NB{
+.control-button-NB {
   background-color: #581c87;
   position: relative;
   bottom: 50%;
@@ -316,7 +319,7 @@ padding-left: 30px;
   width: 5.5rem;
   height: 4.5rem;
   justify-items: center;
- 
+
 }
 
 
@@ -336,7 +339,7 @@ padding-left: 30px;
 }
 
 .video-wrapper:hover .controls-container {
-  opacity: 1; 
+  opacity: 1;
 }
 
 
@@ -345,7 +348,7 @@ padding-left: 30px;
   position: absolute;
   top: -450%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   border-radius: 50%;
   padding: 1rem;
@@ -411,7 +414,8 @@ padding-left: 30px;
 
 /* Root responsive font-size */
 html {
-  font-size: clamp(12px, 1.5vw, 16px); /* يتغير بين 12px و 16px حسب عرض الشاشة */
+  font-size: clamp(12px, 1.5vw, 16px);
+  /* يتغير بين 12px و 16px حسب عرض الشاشة */
 }
 
 .story-page-container {
@@ -734,15 +738,16 @@ html {
 /* حاوية شريط تمرير الصوت (التي تظهر للأعلى) */
 .volume-slider-container {
   position: absolute;
-  bottom: 100%; /* يظهر فوق الزر */
+  bottom: 100%;
+  /* يظهر فوق الزر */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.6);
   padding: 12px 8px;
   border-radius: 8px;
-  margin-bottom: 3px;  
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) ;
-  transition: opacity 0.2s ease-in-out, visibility 0s linear 0.3s; 
+  margin-bottom: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s ease-in-out, visibility 0s linear 0.3s;
   opacity: 0;
   visibility: hidden;
 }
@@ -755,7 +760,7 @@ html {
 }
 
 .volume-slider {
-  -webkit-appearance: slider-vertical; 
+  -webkit-appearance: slider-vertical;
   width: 6px;
   height: 80px;
   background: rgba(255, 255, 255, 0.3);
@@ -791,35 +796,35 @@ html {
   .controls-wrapper-new {
     padding: 10px;
   }
-  
+
   .control-label {
     display: none;
   }
-  
+
   .controls-row {
     gap: 8px;
   }
-  
+
   .controls-group-left,
   .controls-group-right {
     gap: 4px;
   }
-  
+
   .play-btn {
     width: 50px;
     height: 50px;
   }
-  
+
   /* .nav-btn {
     width: 38px;
     height: 38px;
   } */
-  
+
   .time-display {
     font-size: 12px;
     min-width: 40px;
   }
-  
+
   .transcript-panel {
     left: 10px;
     right: 10px;
@@ -827,7 +832,7 @@ html {
     bottom: 100px;
     max-height: 250px;
   }
-  
+
   .transcript-content {
     max-height: 190px;
   }
@@ -855,6 +860,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -940,7 +946,8 @@ html {
 
 
 .speed-control-container {
-  position: relative; /* ضروري لتحديد موقع القائمة المنسدلة */
+  position: relative;
+  /* ضروري لتحديد موقع القائمة المنسدلة */
   display: flex;
   align-items: center;
 }
@@ -948,17 +955,21 @@ html {
 /* القائمة المنسدلة للسرعات */
 .speed-dropdown-list {
   position: absolute;
-  bottom: 100%; /* تظهر فوق الزر */
+  bottom: 100%;
+  /* تظهر فوق الزر */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(20, 20, 20, 0.85);
   border-radius: 8px;
   list-style: none;
   padding: 8px 0;
-  margin: 0 0 10px 0; /* مسافة صغيرة بين القائمة والزر */
-  width: 80px; /* عرض القائمة */
+  margin: 0 0 10px 0;
+  /* مسافة صغيرة بين القائمة والزر */
+  width: 80px;
+  /* عرض القائمة */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 100; /* للتأكد من أنها فوق العناصر الأخرى */
+  z-index: 100;
+  /* للتأكد من أنها فوق العناصر الأخرى */
 }
 
 /* عناصر القائمة */
@@ -978,7 +989,8 @@ html {
 
 /* تنسيق السرعة النشطة (الحالية) */
 .speed-dropdown-list li.active-speed {
-  background-color: #3a86ff; /* يمكنك اختيار أي لون */
+  background-color: #3a86ff;
+  /* يمكنك اختيار أي لون */
   font-weight: bold;
 }
 
@@ -992,38 +1004,30 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 
 .left-nav-btn,
 .right-nav-btn {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   transform: translateY(-50%) scale(0.9);
-  
-  /* استخدم هذا اللون بدلاً من اللون الحالي */
-background-color: rgba(0, 0, 0, 0.25); 
-
-  backdrop-filter: blur(8px); 
-  -webkit-backdrop-filter: blur(8px); 
-  
-  border: 1px solid rgba(255, 255, 255, 0.3); 
-  border-radius: 50%; 
-  
-  width: 56px;  
-  height: 56px; 
-  
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  color: white; 
+  color: white;
   cursor: pointer;
-  
   opacity: 0;
-  transition: all 0.3s ease; 
-  pointer-events: auto; 
+  transition: all 0.3s ease;
+  pointer-events: auto;
 }
 
 
@@ -1032,7 +1036,7 @@ background-color: rgba(0, 0, 0, 0.25);
 }
 
 .right-nav-btn {
-  right: 24px; 
+  right: 24px;
 }
 
 .video-wrapper:hover .left-nav-btn,
@@ -1042,16 +1046,32 @@ background-color: rgba(0, 0, 0, 0.25);
   top: -220%;
 }
 
+@media (max-width: 768px) {
+  .video-wrapper:hover .left-nav-btn,
+  .video-wrapper:hover .right-nav-btn {
+    top: -50%;
+    transform: translateY(-50%) scale(0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .video-wrapper:hover .left-nav-btn,
+  .video-wrapper:hover .right-nav-btn {
+    top: -120%;
+    transform: translateY(-50%) scale(0.7);
+  }
+}
+
 .left-nav-btn:hover,
 .right-nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3); 
-  transform: translateY(-50%) scale(1.1); 
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .left-nav-btn:active,
 .right-nav-btn:active {
-  transform: translateY(-50%) scale(1); 
-  transition-duration: 0.1s; 
+  transform: translateY(-50%) scale(1);
+  transition-duration: 0.1s;
 }
 
 /* في ملف StoryPage.css */
@@ -1066,7 +1086,7 @@ background-color: rgba(0, 0, 0, 0.25);
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1083,6 +1103,7 @@ background-color: rgba(0, 0, 0, 0.25);
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
-

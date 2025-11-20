@@ -1,17 +1,17 @@
-.allpa{
- background-image: url('../assets/page2.jpeg'); /* تأكد من المسار */
+.allpa {
+  background-image: url('../assets/page2.jpeg');
   background-position: center;
-  background-size: 100% 100%; /* تغطي العرض والارتفاع بالكامل */
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  height:100vh;
+  height: 100vh;
   width: 100vw;
 }
 
 .allpa1 {
-background-image: url('../assets/Bacground.png');
+  background-image: url('../assets/Bacground.png');
 
   background-position: center;
-  background-size: 100% 100%; 
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
@@ -20,26 +20,27 @@ background-image: url('../assets/Bacground.png');
 
 
 .play-icon {
-  width: 50%;   /* حجم أيقونة SVG */
+  width: 50%;
   height: 50%;
 }
+
 .unite-icon {
-  width: 50%;   /* حجم أيقونة SVG */
-  height: 50%;
+  width: 70%;
+  height: 70%;
 }
 
 
 .units-container {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   display: grid;
-  grid-template-columns: repeat(2, auto); /* عمودين */
-  grid-template-rows: repeat(2, auto);     /* صفين */
-  gap: 50px; /* مسافة بين الوحدات */
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 50px;
 }
+
 .units-container1 {
   position: absolute;
   top: 40%;
@@ -50,55 +51,60 @@ background-image: url('../assets/Bacground.png');
 }
 
 
-/* شكل الوحدات */
 .unit {
-  width: 100%;     /* يمكنك تغييره */
-  height: 100%;    /* يمكنك تغييره */
- 
-margin:20% ;
+  width: 100%;
+  height: 100%;
 
-  
- 
+  margin: 20%;
+
+
+
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
+
 .unit:hover {
-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
 }
+
 @keyframes heartbeat {
   from {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: center center;
-            transform-origin: center center;
+    transform-origin: center center;
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   10% {
     -webkit-transform: scale(0.91);
-            transform: scale(0.91);
+    transform: scale(0.91);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
+
   17% {
     -webkit-transform: scale(0.98);
-            transform: scale(0.98);
+    transform: scale(0.98);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
+
   33% {
     -webkit-transform: scale(0.87);
-            transform: scale(0.87);
+    transform: scale(0.87);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
+
   45% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
 }
 
@@ -110,88 +116,73 @@ animation: heartbeat 1.5s ease-in-out infinite both;
 
 }
 
-/* إيقاف الأنيميشن عند الهوفر */
 .unit1:hover {
   animation-play-state: paused;
 }
 
 
 
-.play-button  {
-  
- background: transparent;
-cursor: pointer;
-border:none;
+.play-button {
+
+  background: transparent;
+  cursor: pointer;
+  border: none;
 
 }
-.play-button1  {
-  
- background: transparent;
-cursor: pointer;
-border:none;
+
+.play-button1 {
+
+  background: transparent;
+  cursor: pointer;
+  border: none;
 
 }
 
 
 @media (max-width: 1024px) {
   .unit {
-    
-    
-  width: 200%;     /* يمكنك تغييره */
-  height: 200%;    /* يمكنك تغييره */
- 
- padding-top:10% ;
-  padding-left: 30%;
-   margin:5% ;
+    width: 200%;
+    height: 200%;
+    padding-top: 10%;
+    padding-left: 30%;
+    margin: 5%;
   }
-
   .units-container {
-  position: absolute;
-  top: 50%;
-  left: 42%;
-  transform: translate(-50%, -50%);}
-
-  
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 
 
 @media (max-width: 1124px) {
   .unit1 {
-    
-    
-  width: 150%;     /* يمكنك تغييره */
-  height: 150%;    /* يمكنك تغييره */
- 
-
- 
+    width: 150%;
+    height: 150%;
   }
-  .units-container1 {
-  position: absolute;
-  top: 60%;
-  right: 5%;
-  transform: translate(-50%, -50%);}
 
-  
+  .units-container1 {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media (min-width: 1124px) {
   .play-button1 {
-    
-    
-  width: 200%;     /* يمكنك تغييره */
-  height: 200%;    /* يمكنك تغييره */
- 
-
- 
+    width: 200%;
+    height: 200%;
   }
-  .units-container1 {
-  position: absolute;
-  top: 60%;
-  right: 5%;
-  transform: translate(-50%, -50%);}
 
-  
+  .units-container1 {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 
@@ -199,22 +190,17 @@ border:none;
 
 
 
-/* الهواتف الصغيرة */
 @media (max-width: 480px) {
   .units-container1 {
-    top: 40%; /* أو أي قيمة مناسبة */
+    top: 40%;
     right: -40%;
-    
   }
-  
-
 }
 
-/* الهواتف الكبيرة / تابلت صغير */
-/* الهواتف الكبيرة / التابلت الصغير */
 @media (min-width: 600px) and (max-width: 1000px) {
 
-  html, body {
+  html,
+  body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -222,11 +208,11 @@ border:none;
     overflow: hidden;
   }
 
- 
+
 
   .units-container1 {
     position: absolute;
-    top: 40%; 
+    top: 40%;
     right: -20%;
   }
 
@@ -236,9 +222,10 @@ border:none;
   }
 }
 
-@media (max-width: 500px)  {
+@media (max-width: 500px) {
 
-  html, body {
+  html,
+  body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -246,11 +233,11 @@ border:none;
     overflow: hidden;
   }
 
- 
+
 
   .units-container1 {
     position: absolute;
-    top: 60%; 
+    top: 60%;
     right: -10%;
   }
 
@@ -261,41 +248,45 @@ border:none;
 }
 
 @keyframes shake-horizontal {
+
   0%,
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
+
   10%,
   30%,
   50%,
   70% {
     -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    transform: translateX(-10px);
   }
+
   20%,
   40%,
   60% {
     -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    transform: translateX(10px);
   }
+
   80% {
     -webkit-transform: translateX(8px);
-            transform: translateX(8px);
+    transform: translateX(8px);
   }
+
   90% {
     -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
+    transform: translateX(-8px);
   }
 }
 
 
-/* عندما يكون عرض الشاشة 1024px أو أقل */
 @media (max-width: 1103px) {
   .allpa1 {
     background-image: url('../assets/page1.jpeg');
     background-position: center;
     background-size: cover;
- 
+
   }
 }
