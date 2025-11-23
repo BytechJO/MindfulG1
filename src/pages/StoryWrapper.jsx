@@ -56,7 +56,7 @@ export default function StoryWrapper() {
     return (
       <StoryLayout>
         <div style={{ padding: 30, textAlign: 'center' }}>
-          <p>لم يتم العثور على محتوى الدرس</p>
+          <p>Not Found</p>
         </div>
       </StoryLayout>
     );

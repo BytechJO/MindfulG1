@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Suspense, lazy, useEffect, useState } from "react";
+import StoryLayout from "./StoryLayout.jsx";
 
 const pages = {
   "One-1": lazy(() => import("../units/g1/unitOne/L1/feedBack.jsx")),
@@ -29,7 +30,9 @@ const FeedbackWrapper = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Component />
+      <StoryLayout>
+        <Component />
+      </StoryLayout>
     </Suspense>
   );
 };
