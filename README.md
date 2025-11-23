@@ -1,7 +1,7 @@
-# Mindfill G1
+# Mindful G1
 
 ## Project Description
-Mindfill G1 is a web application built using **React** with **Vite**.  
+Mindful G1 is a web application built using **React** with **Vite**.  
 It provides an interactive and responsive user interface using modern frontend development tools.
 
 ## Features
@@ -19,7 +19,7 @@ Before running the project, make sure you have:
 1. Open the terminal.
 2. Navigate to the project folder:
 ```bash
-cd MindfillG1
+cd MindfulG1
 ###Make sure you are in the folder that contains the src files.
 
 
