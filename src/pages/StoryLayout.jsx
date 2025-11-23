@@ -31,7 +31,6 @@ export default function StoryLayout({ children }) {
   ];
 
   const handleLessonClick = (lessonNumber) => {
-    // Use current unitId if available, otherwise default to "One"
     const currentUnit = unitId || "One";
     navigate(`/unit/${currentUnit}/lesson/${lessonNumber}`);
   };

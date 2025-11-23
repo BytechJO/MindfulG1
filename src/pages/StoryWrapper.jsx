@@ -10,13 +10,11 @@ export default function StoryWrapper() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Load the StoryPage component whenever unitId or lessonId changes
   useEffect(() => {
     setIsLoading(true);
     setError(null);
     setLessonData(`Unit: ${unitId}, Lesson: ${lessonId}`);
     
-    // Dynamically import the StoryPage component
     const loadStoryPage = async () => {
       try {
         const module = await import(
@@ -32,7 +30,7 @@ export default function StoryWrapper() {
     };
 
     loadStoryPage();
-  }, [unitId, lessonId]); // This dependency array ensures the effect runs when route changes
+  }, [unitId, lessonId]); 
 
   if (isLoading) {
     return (

@@ -1,15 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // استيراد useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import U1 from "../assets/play-btn.svg";
 
 import "./pagetow.css";
 
 
 const Welcome = () => {
-  const navigate = useNavigate(); // تهيئة التنقل
+  const navigate = useNavigate(); 
 
   const goToPtow = () => {
-    navigate('/home'); // الانتقال إلى صفحة /ptow
+    navigate('/home'); 
   };
 
   return (
