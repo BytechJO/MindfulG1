@@ -23,7 +23,6 @@
 }
 
 
-/* للشاشات المتوسطة */
 @media (max-width: 1024px) {
   .paper-feedback {
     width: 85%;
