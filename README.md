@@ -1,16 +1,35 @@
-# React + Vite
+# Mindful G1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
+Mindful G1 is a web application built using **React** with **Vite**.  
+It provides an interactive and responsive user interface using modern frontend development tools.
 
-Currently, two official plugins are available:
+## Features
+- Interactive and fast user interface
+- State management and UI interactions using React
+- Quick setup with Vite and Hot Module Replacement (HMR)
+- Easily expandable for adding new features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
+Before running the project, make sure you have:
+- [Node.js](https://nodejs.org/) installed
+- npm or yarn (usually comes with Node.js)
 
-## React Compiler
+## Opening the Project
+1. Open the terminal.
+2. Navigate to the project folder:
+```bash
+cd MindfulG1
+###Make sure you are in the folder that contains the src files.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## How to Run the Project:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Install Dependencies
+npm install
+
+### Run the Project:
+npm run dev
+
+###Open this link in your browser to see the application.
+
