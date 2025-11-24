@@ -44,12 +44,6 @@ export const StoryPage = () => {
       title: "Section 1",
       subtitles: [
         {
-          // start: 0, end: 3.12,
-          // words: [
-          //   { text: "Kate's", start: 0.5, end: 1.2 },
-          //   { text: "Big", start: 1.2, end: 1.7 },
-          //   { text: "Feelings", start: 1.7, end: 2.5 },
-          // ]
         },
       ]
     },
@@ -66,7 +60,7 @@ export const StoryPage = () => {
             { text: "little", start: 0.9, end: 1.3 },
             { text: "sister", start: 1.3, end: 1.8 },
             { text: "named", start: 1.8, end: 2.2 },
-            { text: "May.", start: 2.2, end: 2.6 },
+            { text: "May", start: 2.2, end: 2.6 },
             { text: "Mum", start: 2.8, end: 3.1 },
             { text: "helps", start: 3.1, end: 3.5 },
             { text: "May", start: 3.5, end: 3.8 },
@@ -130,7 +124,7 @@ export const StoryPage = () => {
             { text: "her", start: 5.0, end: 5.4 },
             { text: "mum", start: 5.4, end: 5.9 },
             { text: "how", start: 5.9, end: 5.9 },
-            { text: "she.", start: 5.9, end: 6.4 },
+            { text: "she", start: 5.9, end: 6.4 },
             { text: "feels.", start: 6.4, end: 7.0 },
           ]
         },
@@ -265,20 +259,6 @@ export const StoryPage = () => {
         },
       ]
     },
-    // {
-    //   url: video10,
-    //   title: "Section 10",
-    //   subtitles: [
-    //     {
-    //       // start: 0, end: 3.12,
-    //       // words: [
-    //       //   { text: "Kate's", start: 0.5, end: 1.2 },
-    //       //   { text: "Big", start: 1.2, end: 1.7 },
-    //       //   { text: "Feelings", start: 1.7, end: 2.5 },
-    //       // ]
-    //     },
-    //   ]
-    // },
   ];
 
   const cloudPositions = [

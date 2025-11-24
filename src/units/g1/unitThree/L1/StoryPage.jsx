@@ -199,7 +199,7 @@ export const StoryPage = () => {
             { text: "the", start: 3.1, end: 3.3 },
             { text: "other", start: 3.3, end: 3.6 },
             { text: "children", start: 3.6, end: 4.1 },
-            { text: "to.", start: 4.1, end: 4.3 },
+            { text: "to", start: 4.1, end: 4.3 },
             { text: "play", start: 4.3, end: 4.6 },
             { text: "with", start: 4.6, end: 4.9 },
             { text: "them.", start: 4.9, end: 5.2 }
@@ -212,7 +212,7 @@ export const StoryPage = () => {
             { text: "starts", start: 6.4, end: 6.8 },
             { text: "counting", start: 6.8, end: 7.3 },
             { text: "and", start: 7.3, end: 7.7 },
-            { text: "the.", start: 7.7, end: 8.2 },
+            { text: "the", start: 7.7, end: 8.2 },
             { text: "children", start: 8.2, end: 8.8 },
             { text: "hide.", start: 8.8, end: 10.1 }
           ]

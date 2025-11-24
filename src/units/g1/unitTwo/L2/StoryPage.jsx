@@ -83,7 +83,7 @@ export const StoryPage = () => {
             { text: "Paul", start: 6.0, end: 6.4 },
             { text: "is next", start: 6.4, end: 6.8 },
             { text: "to", start: 6.8, end: 7.0 },
-            { text: "her.", start: 7.0, end: 7.3 },
+            { text: "her", start: 7.0, end: 7.3 },
             { text: "He", start: 8.0, end: 8.3 },
             { text: "thinks", start: 8.3, end: 8.6 },
             { text: "drawing", start: 8.6, end: 8.9 },
@@ -462,7 +462,7 @@ export const StoryPage = () => {
       ValidationAlert.storyEnd(() => {
         navigate(`/unit/${unitId}/lesson/${lessonId}/quiz`);
       });
-    } else if (currentVideo !== 3) {
+    } else if (currentVideo !== 4) {
       setShowBanner(false);
       setCurrentVideo(prev => prev + 1);
     }
