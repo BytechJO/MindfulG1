@@ -4,9 +4,14 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from "react-router-dom";
 import "animate.css/animate.min.css";
+import { ScormProvider } from '@code-by-dwayne/react-scorm-provider';
 
 createRoot(document.getElementById('root')).render(
+  <StrictMode>
   <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+    <ScormProvider>
+      <App />
+    </ScormProvider>
+  </BrowserRouter>
+  </StrictMode>
 )
