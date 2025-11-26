@@ -13,6 +13,7 @@ import video5 from "./assets/5.mp4";
 import questionGif from './assets/question.gif';
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -55,21 +56,21 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 0, end: 4.5,
-          words: [
-            { text: "It", start: 0.1, end: 0.4 },
-            { text: "is", start: 0.4, end: 0.7 },
-            { text: "Joe’s", start: 0.7, end: 1.0 },
-            { text: "first", start: 1.0, end: 1.3 },
-            { text: "day", start: 1.3, end: 1.6 },
-            { text: "at", start: 1.6, end: 1.9 },
-            { text: "school.", start: 1.9, end: 2.2 },
-            { text: "He", start: 3.0, end: 3.3 },
-            { text: "feels", start: 3.3, end: 3.6 },
-            { text: "scared.", start: 3.6, end: 3.9 },
-          ]
-        },
+        // {
+        //   start: 0, end: 4.5,
+        //   words: [
+        //      { text: "It", start: 0.1, end: 0.4 },
+        //     { text: "is", start: 0.4, end: 0.7 },
+        //     { text: "Joe’s", start: 0.7, end: 1.0 },
+        //     { text: "first", start: 1.0, end: 1.3 },
+        //     { text: "day", start: 1.3, end: 1.6 },
+        //     { text: "at", start: 1.6, end: 1.9 },
+        //     { text: "school.", start: 1.9, end: 2.2 },
+        //     { text: "He", start: 3.0, end: 3.3 },
+        //     { text: "feels", start: 3.3, end: 3.6 },
+        //     { text: "scared.", start: 3.6, end: 3.9 },
+        //   ]
+        // },
         {
           start: 4.6, end: 8,
           words: [
@@ -87,48 +88,48 @@ export const StoryPage = () => {
       url: video3,
       title: "Section 3",
       subtitles: [
-        {
-          start: 0, end: 6.5,
-          words: [
-            { text: "The", start: 0.0, end: 0.3 },
-            { text: "children", start: 0.3, end: 0.6 },
-            { text: "go", start: 0.6, end: 0.9 },
-            { text: "outside", start: 0.9, end: 1.2 },
-            { text: "to", start: 1.2, end: 1.5 },
-            { text: "play.", start: 1.5, end: 1.8 },
-            { text: "They", start: 3.0, end: 3.3 },
-            { text: "play", start: 3.3, end: 3.6 },
-            { text: "a", start: 3.6, end: 3.9 },
-            { text: "racing", start: 3.9, end: 4.2 },
-            { text: "game,", start: 4.2, end: 4.5 },
-            { text: "but", start: 4.5, end: 4.8 },
-            { text: "Joe", start: 4.8, end: 5.1 },
-            { text: "isn’t", start: 5.1, end: 5.4 },
-            { text: "playing.", start: 5.4, end: 5.7 }
-          ]
-        },
+        // {
+        //   start: 0, end: 6.5,
+        //   words: [
+        //     { text: "The", start: 0.0, end: 0.3 },
+        //     { text: "children", start: 0.3, end: 0.6 },
+        //     { text: "go", start: 0.6, end: 0.9 },
+        //     { text: "outside", start: 0.9, end: 1.2 },
+        //     { text: "to", start: 1.2, end: 1.5 },
+        //     { text: "play.", start: 1.5, end: 1.8 },
+        //     { text: "They", start: 3.0, end: 3.3 },
+        //     { text: "play", start: 3.3, end: 3.6 },
+        //     { text: "a", start: 3.6, end: 3.9 },
+        //     { text: "racing", start: 3.9, end: 4.2 },
+        //     { text: "game,", start: 4.2, end: 4.5 },
+        //     { text: "but", start: 4.5, end: 4.8 },
+        //     { text: "Joe", start: 4.8, end: 5.1 },
+        //     { text: "isn’t", start: 5.1, end: 5.4 },
+        //     { text: "playing.", start: 5.4, end: 5.7 }
+        //   ]
+        // },
       ]
     },
     {
       url: video4,
       title: "Section 4",
       subtitles: [
-        {
-          start: 1, end: 5.6,
-          words: [
-            { text: "James", start: 1.1, end: 1.5 },
-            { text: "stops", start: 1.5, end: 1.9 },
-            { text: "and", start: 1.9, end: 2.3 },
-            { text: "sees", start: 2.3, end: 2.7 },
-            { text: "that", start: 2.7, end: 3.1 },
-            { text: "Joe", start: 3.1, end: 3.5 },
-            { text: "is", start: 3.5, end: 3.9 },
-            { text: "alone", start: 3.9, end: 4.3 },
-            { text: "and", start: 4.3, end: 4.7 },
-            { text: "looks", start: 4.7, end: 5.1 },
-            { text: "upset.", start: 5.1, end: 5.5 }
-          ]
-        },
+        // {
+        //   start: 1, end: 5.6,
+        //   // words: [
+        //   //   { text: "James", start: 1.1, end: 1.5 },
+        //   //   { text: "stops", start: 1.5, end: 1.9 },
+        //   //   { text: "and", start: 1.9, end: 2.3 },
+        //   //   { text: "sees", start: 2.3, end: 2.7 },
+        //   //   { text: "that", start: 2.7, end: 3.1 },
+        //   //   { text: "Joe", start: 3.1, end: 3.5 },
+        //   //   { text: "is", start: 3.5, end: 3.9 },
+        //   //   { text: "alone", start: 3.9, end: 4.3 },
+        //   //   { text: "and", start: 4.3, end: 4.7 },
+        //   //   { text: "looks", start: 4.7, end: 5.1 },
+        //   //   { text: "upset.", start: 5.1, end: 5.5 }
+        //   // ]
+        // },
         {
           start: 5.7, end: 6.6,
           words: [
@@ -148,209 +149,82 @@ export const StoryPage = () => {
             { text: "race.", start: 8.4, end: 8.8 },
           ]
         },
-        {
-          start: 9, end: 13,
-          words: [
-            { text: "James", start: 9.6, end: 10.0 },
-            { text: "remembers", start: 10.0, end: 10.4 },
-            { text: "his", start: 10.4, end: 10.8 },
-            { text: "promise", start: 10.8, end: 11.2 },
-            { text: "to", start: 11.2, end: 11.6 },
-            { text: "the", start: 11.6, end: 12.0 },
-            { text: "teacher.", start: 12.0, end: 12.4 }
-          ]
-        },
-        {
-          start: 13, end: 14,
-          words: [
-            { text: "What", start: 13.1, end: 13.3 },
-            { text: "should", start: 13.3, end: 13.5 },
-            { text: "he", start: 13.5, end: 13.7 },
-            { text: "do?", start: 13.7, end: 13.9 }
-          ]
-        },
-        {
-          start: 14, end: 15,
-          words: [
-            { text: "Why", start: 5.7, end: 5.9 },
-            { text: "are", start: 5.9, end: 6.1 },
-            { text: "you", start: 6.1, end: 6.3 },
-            { text: "sad", start: 6.3, end: 6.5 },
-          ]
-        },
+        // {
+        //   start: 9, end: 13,
+        //   words: [
+        //     { text: "James", start: 9.6, end: 10.0 },
+        //     { text: "remembers", start: 10.0, end: 10.4 },
+        //     { text: "his", start: 10.4, end: 10.8 },
+        //     { text: "promise", start: 10.8, end: 11.2 },
+        //     { text: "to", start: 11.2, end: 11.6 },
+        //     { text: "the", start: 11.6, end: 12.0 },
+        //     { text: "teacher.", start: 12.0, end: 12.4 }
+        //   ]
+        // },
+        // {
+        //   start: 13, end: 14,
+        //   words: [
+        //     { text: "What", start: 13.1, end: 13.3 },
+        //     { text: "should", start: 13.3, end: 13.5 },
+        //     { text: "he", start: 13.5, end: 13.7 },
+        //     { text: "do?", start: 13.7, end: 13.9 }
+        //   ]
+        // },
+       
       ]
     },
     {
       url: video5,
       title: "Section 5",
       subtitles: [
-        {
-          start: 0, end: 5,
-          words: [
-            { text: "James", start: 0, end: 0.4 },
-            { text: "and", start: 0.4, end: 0.7 },
-            { text: "Joe", start: 0.7, end: 1.0 },
-            { text: "play", start: 1.0, end: 1.3 },
-            { text: "hide", start: 1.3, end: 1.6 },
-            { text: "and", start: 1.6, end: 1.9 },
-            { text: "seek.", start: 1.9, end: 2.3 },
-            { text: "James", start: 2.3, end: 2.6 },
-            { text: "invites", start: 2.6, end: 3.1 },
-            { text: "the", start: 3.1, end: 3.3 },
-            { text: "other", start: 3.3, end: 3.6 },
-            { text: "children", start: 3.6, end: 4.1 },
-            { text: "to", start: 4.1, end: 4.3 },
-            { text: "play", start: 4.3, end: 4.6 },
-            { text: "with", start: 4.6, end: 4.9 },
-            { text: "them.", start: 4.9, end: 5.2 }
-          ]
-        },
-        {
-          start: 6, end: 10.1,
-          words: [
-            { text: "He", start: 6.0, end: 6.4 },
-            { text: "starts", start: 6.4, end: 6.8 },
-            { text: "counting", start: 6.8, end: 7.3 },
-            { text: "and", start: 7.3, end: 7.7 },
-            { text: "the", start: 7.7, end: 8.2 },
-            { text: "children", start: 8.2, end: 8.8 },
-            { text: "hide.", start: 8.8, end: 10.1 }
-          ]
-        },
-        {
-          start: 10.2, end: 12,
-          words: [
-            { text: "Joe", start: 10.2, end: 10.6 },
-            { text: "feels", start: 10.6, end: 11.0 },
-            { text: "happy", start: 11.0, end: 11.3 },
-            { text: "now.", start: 11.3, end: 11.7 }
-          ]
-        },
+        // {
+        //   start: 0, end: 5,
+        //   words: [
+        //     { text: "James", start: 0, end: 0.4 },
+        //     { text: "and", start: 0.4, end: 0.7 },
+        //     { text: "Joe", start: 0.7, end: 1.0 },
+        //     { text: "play", start: 1.0, end: 1.3 },
+        //     { text: "hide", start: 1.3, end: 1.6 },
+        //     { text: "and", start: 1.6, end: 1.9 },
+        //     { text: "seek.", start: 1.9, end: 2.3 },
+        //     { text: "James", start: 2.3, end: 2.6 },
+        //     { text: "invites", start: 2.6, end: 3.1 },
+        //     { text: "the", start: 3.1, end: 3.3 },
+        //     { text: "other", start: 3.3, end: 3.6 },
+        //     { text: "children", start: 3.6, end: 4.1 },
+        //     { text: "to", start: 4.1, end: 4.3 },
+        //     { text: "play", start: 4.3, end: 4.6 },
+        //     { text: "with", start: 4.6, end: 4.9 },
+        //     { text: "them.", start: 4.9, end: 5.2 }
+        //   ]
+        // },
+        // {
+        //   start: 6, end: 10.1,
+        //   words: [
+        //     { text: "He", start: 6.0, end: 6.4 },
+        //     { text: "starts", start: 6.4, end: 6.8 },
+        //     { text: "counting", start: 6.8, end: 7.3 },
+        //     { text: "and", start: 7.3, end: 7.7 },
+        //     { text: "the", start: 7.7, end: 8.2 },
+        //     { text: "children", start: 8.2, end: 8.8 },
+        //     { text: "hide.", start: 8.8, end: 10.1 }
+        //   ]
+        // },
+        // {
+        //   start: 10.2, end: 12,
+        //   words: [
+        //     { text: "Joe", start: 10.2, end: 10.6 },
+        //     { text: "feels", start: 10.6, end: 11.0 },
+        //     { text: "happy", start: 11.0, end: 11.3 },
+        //     { text: "now.", start: 11.3, end: 11.7 }
+        //   ]
+        // },
       ]
     },
-    // {
-    //   url: video7,
-    //   title: "Section 7",
-    //   subtitles: [
-    //     {
-    //       start: 0, end: 2.5,
-    //       words: [
-    //         { text: "You", start: 0, end: 0.4 },
-    //         { text: "are,", start: 0.4, end: 0.7 },
-    //         { text: "a", start: 0.7, end: 0.8 },
-    //         { text: "big,", start: 0.8, end: 1.2 },
-    //         { text: "girl.", start: 1.2, end: 1.5 },
-    //         { text: "now,", start: 1.5, end: 1.8 },
-    //         { text: "Kate.", start: 1.8, end: 2.0 },
-    //       ]
-    //     },
-    //     {
-    //       start: 2.5, end: 8,
-    //       words: [
-    //         { text: "You", start: 2.5, end: 2.8 },
-    //         { text: "do", start: 2.8, end: 3.0 },
-    //         { text: "not", start: 3.0, end: 3.3 },
-    //         { text: "need", start: 3.3, end: 3.6 },
-    //         { text: "as", start: 3.6, end: 3.7 },
-    //         { text: "much", start: 3.7, end: 4.0 },
-    //         { text: "help", start: 4.5, end: 4.8 },
-    //         { text: "as", start: 4.8, end: 5.1 },
-    //         { text: "your", start: 5.1, end: 5.4 },
-    //         { text: "little", start: 5.4, end: 5.7 },
-    //         { text: "sister.", start: 5.7, end: 6.0 },
-    //       ]
-    //     },
-    //   ]
-    // },
-    // {
-    //   url: video8,
-    //   title: "Section 8",
-    //   subtitles: [
-    //     {
-    //       start: 0, end: 4,
-    //       words: [
-    //         { text: "Can", start: 0, end: 0.3 },
-    //         { text: "you", start: 0.3, end: 0.6 },
-    //         { text: "help", start: 0.6, end: 0.9 },
-    //         { text: "me", start: 0.9, end: 1.2 },
-    //         { text: "bake", start: 1.2, end: 1.5 },
-    //         { text: "a", start: 1.5, end: 1.6 },
-    //         { text: "cake?", start: 1.6, end: 2.1 },
-    //       ]
-    //     },
-    //   ]
-    // },
-    // {
-    //   url: video9,
-    //   title: "Section 9",
-    //   subtitles: [
-    //     {
-    //       start: 0, end: 2,
-    //       words: [
-    //         { text: "Kate", start: 0, end: 0.3 },
-    //         { text: "and", start: 0.3, end: 0.5 },
-    //         { text: "Mum", start: 0.5, end: 0.8 },
-    //         { text: "bake", start: 0.8, end: 1.2 },
-    //         { text: "a chocolate.", start: 1.2, end: 1.6 },
-    //         { text: "cake.", start: 1.6, end: 1.9 },
-    //       ]
-    //     },
-    //     {
-    //       start: 2, end: 6.6,
-    //       words: [
-    //         { text: "I", start: 3.0, end: 3.3 },
-    //         { text: "can", start: 3.3, end: 3.6 },
-    //         { text: "help", start: 3.6, end: 3.9 },
-    //         { text: "you", start: 3.9, end: 4.2 },
-    //         { text: "and", start: 4.2, end: 4.5 },
-    //         { text: "May", start: 4.5, end: 4.8 },
-    //         { text: "with", start: 4.8, end: 5.1 },
-    //         { text: "different", start: 5.1, end: 5.4 },
-    //         { text: "things", start: 5.4, end: 5.7 },
-    //         { text: "at", start: 5.7, end: 6.0 },
-    //         { text: "different", start: 6.0, end: 6.3 },
-    //         { text: "times,", start: 6.3, end: 6.6 },
-    //       ]
-    //     },
-    //     {
-    //       start: 9, end: 12,
-    //       words: [
-    //         { text: "Kate", start: 9.1, end: 9.4 },
-    //         { text: "understands", start: 9.4, end: 9.7 },
-    //         { text: "and", start: 9.7, end: 10.0 },
-    //         { text: "gives", start: 10.0, end: 10.3 },
-    //         { text: "her", start: 10.3, end: 10.6 },
-    //         { text: "mum", start: 10.6, end: 10.9 },
-    //         { text: "a", start: 10.9, end: 11.0 },
-    //         { text: "hug.", start: 11.1, end: 11.5 },
-    //       ]
-    //     },
-    //   ]
-    // },
-    // {
-    //   url: video10,
-    //   title: "Section 10",
-    //   subtitles: [
-    //     {
-    //       // start: 0, end: 3.12,
-    //       // words: [
-    //       //   { text: "Kate's", start: 0.5, end: 1.2 },
-    //       //   { text: "Big", start: 1.2, end: 1.7 },
-    //       //   { text: "Feelings", start: 1.7, end: 2.5 },
-    //       // ]
-    //     },
-    //   ]
-    // },
+
   ];
 
 
-  // const cloudPositions = [
-  //   { bottom: '34.375rem', left: '32%', transform: 'translateX(-50%)' },
-  //   { top: '1%', left: '45%', transform: 'translateY(0)' },
-  //   { top: '10%', right: '65%', transform: 'translateX(0)', left: 'auto' },
-  //   { bottom: '85%', left: '30%', transform: 'translateX(-50%)' },
-  //   { top: '10%', left: '50%', transform: 'translateX(0)', isFlipped: true },
-  // ];
 
 
   const cloudPositions = {
@@ -397,6 +271,131 @@ export const StoryPage = () => {
     //   { top: '10%', left: '50%', isFlipped: true },
     // ],
   };
+
+  const extraBubblesData = [
+    {
+      videoIndex: 1,
+      start: 0, end: 4.5,
+      words: [
+        { text: "It", start: 0.1, end: 0.4 },
+            { text: "is", start: 0.4, end: 0.7 },
+            { text: "Joe’s", start: 0.7, end: 1.0 },
+            { text: "first", start: 1.0, end: 1.3 },
+            { text: "day", start: 1.3, end: 1.6 },
+            { text: "at", start: 1.6, end: 1.9 },
+            { text: "school.", start: 1.9, end: 2.2 },
+            { text: "He", start: 3.0, end: 3.3 },
+            { text: "feels", start: 3.3, end: 3.6 },
+            { text: "scared.", start: 3.6, end: 3.9 },
+      ]
+    },
+    {
+      videoIndex:2 ,
+      start:0, end: 6.0,
+      words: [
+      { text: "The", start: 0.0, end: 0.3 },
+            { text: "children", start: 0.3, end: 0.6 },
+            { text: "go", start: 0.6, end: 0.9 },
+            { text: "outside", start: 0.9, end: 1.2 },
+            { text: "to", start: 1.2, end: 1.5 },
+            { text: "play.", start: 1.5, end: 1.8 },
+            { text: "They", start: 3.0, end: 3.3 },
+            { text: "play", start: 3.3, end: 3.6 },
+            { text: "a", start: 3.6, end: 3.9 },
+            { text: "racing", start: 3.9, end: 4.2 },
+            { text: "game,", start: 4.2, end: 4.5 },
+            { text: "but", start: 4.5, end: 4.8 },
+            { text: "Joe", start: 4.8, end: 5.1 },
+            { text: "isn’t", start: 5.1, end: 5.4 },
+            { text: "playing.", start: 5.4, end: 5.7 }
+      ]
+    },{
+      videoIndex:3 ,
+      start:0, end: 6.0,
+      words: [
+             { text: "James", start: 1.1, end: 1.5 },
+            { text: "stops", start: 1.5, end: 1.9 },
+            { text: "and", start: 1.9, end: 2.3 },
+            { text: "sees", start: 2.3, end: 2.7 },
+            { text: "that", start: 2.7, end: 3.1 },
+            { text: "Joe", start: 3.1, end: 3.5 },
+            { text: "is", start: 3.5, end: 3.9 },
+            { text: "alone", start: 3.9, end: 4.3 },
+            { text: "and", start: 4.3, end: 4.7 },
+            { text: "looks", start: 4.7, end: 5.1 },
+            { text: "upset.", start: 5.1, end: 5.5 }
+      ]
+    },{
+      videoIndex:3 ,
+        start: 9, end: 13,
+          words: [
+                { text: "James", start: 9.6, end: 10.0 },
+            { text: "remembers", start: 10.0, end: 10.4 },
+            { text: "his", start: 10.4, end: 10.8 },
+            { text: "promise", start: 10.8, end: 11.2 },
+            { text: "to", start: 11.2, end: 11.6 },
+            { text: "the", start: 11.6, end: 12.0 },
+            { text: "teacher.", start: 12.0, end: 12.4 }
+      ]
+    },
+    {
+      videoIndex:3 ,
+         start: 13, end: 14,
+          words: [
+            { text: "What", start: 13.1, end: 13.3 },
+            { text: "should", start: 13.3, end: 13.5 },
+            { text: "he", start: 13.5, end: 13.7 },
+            { text: "do?", start: 13.7, end: 13.9 }
+      ]
+    },
+    {
+      videoIndex:4,
+        start: 0, end: 5,
+          words: [
+            { text: "James", start: 0, end: 0.4 },
+            { text: "and", start: 0.4, end: 0.7 },
+            { text: "Joe", start: 0.7, end: 1.0 },
+            { text: "play", start: 1.0, end: 1.3 },
+            { text: "hide", start: 1.3, end: 1.6 },
+            { text: "and", start: 1.6, end: 1.9 },
+            { text: "seek.", start: 1.9, end: 2.3 },
+            { text: "James", start: 2.3, end: 2.6 },
+            { text: "invites", start: 2.6, end: 3.1 },
+            { text: "the", start: 3.1, end: 3.3 },
+            { text: "other", start: 3.3, end: 3.6 },
+            { text: "children", start: 3.6, end: 4.1 },
+            { text: "to", start: 4.1, end: 4.3 },
+            { text: "play", start: 4.3, end: 4.6 },
+            { text: "with", start: 4.6, end: 4.9 },
+            { text: "them.", start: 4.9, end: 5.2 }
+      ]
+    },
+     {
+      videoIndex:4,
+        start: 6, end: 10.1,
+          words: [
+              { text: "He", start: 6.0, end: 6.4 },
+            { text: "starts", start: 6.4, end: 6.8 },
+            { text: "counting", start: 6.8, end: 7.3 },
+            { text: "and", start: 7.3, end: 7.7 },
+            { text: "the", start: 7.7, end: 8.2 },
+            { text: "children", start: 8.2, end: 8.8 },
+            { text: "hide.", start: 8.8, end: 10.1 }
+      ]
+    },
+    {
+      videoIndex:4,
+      start: 10.2, end: 12,
+          words: [
+            { text: "Joe", start: 10.2, end: 10.6 },
+            { text: "feels", start: 10.6, end: 11.0 },
+            { text: "happy", start: 11.0, end: 11.3 },
+            { text: "now.", start: 11.3, end: 11.7 }
+      ]
+    }
+  ];
+       
+
 
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
@@ -513,6 +512,16 @@ export const StoryPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+      const bubbleToShow = extraBubblesData.find(bubble =>
+        bubble.videoIndex === currentVideo &&
+        currentTime >= bubble.start &&
+        currentTime < bubble.end
+      );
+  
+      setExtraBubble(bubbleToShow || null);
+  
+    }, [currentVideo, currentTime]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -675,6 +684,25 @@ export const StoryPage = () => {
               </div>
             </div>
           )}
+
+          {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              {/* 1️⃣ استخدمنا نفس الكلاس لترث التصميم */}
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
+
 
           <div className="video-overlay" />
           <div className="controls-container">

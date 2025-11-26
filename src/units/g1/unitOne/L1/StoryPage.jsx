@@ -14,7 +14,9 @@ import video8 from "./assets/1-8.mp4";
 import video9 from "./assets/1-9S.mp4";
 
 export const StoryPage = () => {
+  // 1
   const [extraBubble, setExtraBubble] = useState(null);
+  // e
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -257,23 +259,22 @@ export const StoryPage = () => {
     { bottom: '75%', left: '30%', transform: 'translateX(-50%)' },
   ];
 
+  // 2
   const extraBubblesData = [
     {
       videoIndex: 1,
       start: 0, end: 4.5,
       words: [
-        { text: "Kate", start: 0, end: 0.5 },
-        { text: "has", start: 0.6, end: 0.69 },
-        { text: "a", start: 0.69, end: 0.9 },
-        { text: "little", start: 0.9, end: 1.3 },
-        { text: "sister", start: 1.3, end: 1.8 },
-        { text: "named", start: 1.8, end: 2.2 },
-        { text: "May", start: 2.2, end: 2.6 },
-        { text: "Mum", start: 2.8, end: 3.1 },
-        { text: "helps", start: 3.1, end: 3.5 },
-        { text: "May", start: 3.5, end: 3.8 },
-        { text: "with", start: 3.8, end: 4.0 },
-        { text: "everything.", start: 4.0, end: 4.5 },
+        { text: "It", start: 0.1, end: 0.4 },
+            { text: "is", start: 0.4, end: 0.7 },
+            { text: "Joe’s", start: 0.7, end: 1.0 },
+            { text: "first", start: 1.0, end: 1.3 },
+            { text: "day", start: 1.3, end: 1.6 },
+            { text: "at", start: 1.6, end: 1.9 },
+            { text: "school.", start: 1.9, end: 2.2 },
+            { text: "He", start: 3.0, end: 3.3 },
+            { text: "feels", start: 3.3, end: 3.6 },
+            { text: "scared.", start: 3.6, end: 3.9 },
       ]
     },
     {
@@ -295,6 +296,7 @@ export const StoryPage = () => {
     sub => currentTime >= sub.start && currentTime < sub.end
   );
 
+  // 3
   useEffect(() => {
     const bubbleToShow = extraBubblesData.find(bubble =>
       bubble.videoIndex === currentVideo &&
@@ -549,6 +551,7 @@ export const StoryPage = () => {
             </div>
           )}
 
+          {/* 4 */}
           {extraBubble && extraBubble.words && (
             <div
               className="subtitle-container"

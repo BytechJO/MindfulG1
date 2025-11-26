@@ -12,6 +12,7 @@ import video5 from "./assets/5.mp4";
 
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -54,30 +55,8 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 0, end: 2.5,
-          words: [
-            { text: "Mum", start: 0.5, end: 0.8 },
-            { text: "is", start: 0.8, end: 1.0 },
-            { text: "busy", start: 1.0, end: 1.4 },
-            { text: "in", start: 1.4, end: 1.6 },
-            { text: "the", start: 1.6, end: 1.8 },
-            { text: "kitchen.", start: 1.8, end: 2.2 }
-          ]
-        },
-        {
-          start: 2.6, end: 5.4,
-          words: [
-            { text: "Amy", start: 2.7, end: 3.0 },
-            { text: "gives", start: 3.0, end: 3.4 },
-            { text: "her", start: 3.4, end: 3.7 },
-            { text: "a", start: 3.7, end: 3.9 },
-            { text: "glass", start: 3.9, end: 4.3 },
-            { text: "of", start: 4.3, end: 4.5 },
-            { text: "cold", start: 4.5, end: 4.8 },
-            { text: "water.", start: 4.8, end: 5.2 }
-          ]
-        },
+      
+     
         {
           start: 5.5, end: 6.4,
           words: [
@@ -97,49 +76,15 @@ export const StoryPage = () => {
             { text: "Mum?", start: 8.3, end: 8.6 }
           ]
         },
-        {
-          start: 8.9, end: 15.0,
-          words: [
-            { text: "Mum", start: 9.0, end: 9.3 },
-            { text: "explains", start: 9.3, end: 9.7 },
-            { text: "that", start: 9.7, end: 10.0 },
-            { text: "saying", start: 10.0, end: 10.3 },
-            { text: "‘thank you’", start: 10.3, end: 10.9 },
-            { text: "shows", start: 11.5, end: 11.8 },
-            { text: "that", start: 11.8, end: 12.1 },
-            { text: "you", start: 12.1, end: 12.4 },
-            { text: "care.", start: 12.4, end: 12.7 }
-          ]
-        },
+     
       ]
     },
     {
       url: video3,
       title: "Section 3",
       subtitles: [
-        {
-          start: 0, end: 2.5,
-          words: [
-            { text: "Thank", start: 0.0, end: 0.4 },
-            { text: "you", start: 0.4, end: 0.8 },
-            { text: "for", start: 0.5, end: 0.75 },
-            { text: "taking", start: 0.75, end: 1.0 },
-            { text: "care", start: 1.0, end: 1.25 },
-            { text: "of", start: 1.25, end: 1.5 },
-            { text: "the", start: 1.5, end: 1.75 },
-            { text: "house,", start: 1.75, end: 2.0 },
-            { text: "Mum,", start: 2.0, end: 2.25 }
-          ]
-        },
-        {
-          start: 2.6, end: 4.4,
-          words: [
-            { text: "Amy’s", start: 2.7, end: 3.1 },
-            { text: "mum", start: 3.1, end: 3.5 },
-            { text: "hugs", start: 3.5, end: 3.9 },
-            { text: "her", start: 3.9, end: 4.3 }
-          ]
-        },
+    
+     
         {
           start: 4.5, end: 11.0,
           words: [
@@ -158,16 +103,7 @@ export const StoryPage = () => {
       url: video4,
       title: "Section 4",
       subtitles: [
-        {
-          start: 0, end: 2.1,
-          words: [
-            { text: "Dad", start: 0.0, end: 0.4 },
-            { text: "comes", start: 0.4, end: 0.8 },
-            { text: "home", start: 0.8, end: 1.2 },
-            { text: "from", start: 1.2, end: 1.6 },
-            { text: "work.", start: 1.6, end: 2.0 }
-          ]
-        },
+      
         {
           start: 2.2, end: 5.1,
           words: [
@@ -262,6 +198,97 @@ export const StoryPage = () => {
     //   { top: '10%', left: '50%', isFlipped: true },
     // ],
   };
+const extraBubblesData = [
+    {
+      videoIndex: 1,
+  start: 0, end: 2.5,
+          words: [
+            { text: "Mum", start: 0.5, end: 0.8 },
+            { text: "is", start: 0.8, end: 1.0 },
+            { text: "busy", start: 1.0, end: 1.4 },
+            { text: "in", start: 1.4, end: 1.6 },
+            { text: "the", start: 1.6, end: 1.8 },
+            { text: "kitchen.", start: 1.8, end: 2.2 }
+      ]
+    },
+     {
+      videoIndex: 1,
+     start: 2.6, end: 5.4,
+          words: [
+            { text: "Amy", start: 2.7, end: 3.0 },
+            { text: "gives", start: 3.0, end: 3.4 },
+            { text: "her", start: 3.4, end: 3.7 },
+            { text: "a", start: 3.7, end: 3.9 },
+            { text: "glass", start: 3.9, end: 4.3 },
+            { text: "of", start: 4.3, end: 4.5 },
+            { text: "cold", start: 4.5, end: 4.8 },
+            { text: "water.", start: 4.8, end: 5.2 }
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 8.9, end: 15.0,
+          words: [
+            { text: "Mum", start: 9.0, end: 9.3 },
+            { text: "explains", start: 9.3, end: 9.7 },
+            { text: "that", start: 9.7, end: 10.0 },
+            { text: "saying", start: 10.0, end: 10.3 },
+            { text: "‘thank you’", start: 10.3, end: 10.9 },
+            { text: "shows", start: 11.5, end: 11.8 },
+            { text: "that", start: 11.8, end: 12.1 },
+            { text: "you", start: 12.1, end: 12.4 },
+            { text: "care.", start: 12.4, end: 12.7 }
+      ]
+    },
+     {
+      videoIndex: 2,
+        start: 0, end: 2.5,
+          words: [
+            { text: "Thank", start: 0.0, end: 0.4 },
+            { text: "you", start: 0.4, end: 0.8 },
+            { text: "for", start: 0.5, end: 0.75 },
+            { text: "taking", start: 0.75, end: 1.0 },
+            { text: "care", start: 1.0, end: 1.25 },
+            { text: "of", start: 1.25, end: 1.5 },
+            { text: "the", start: 1.5, end: 1.75 },
+            { text: "house,", start: 1.75, end: 2.0 },
+            { text: "Mum,", start: 2.0, end: 2.25 }
+      ]
+    },
+    {
+      videoIndex: 2,
+          start: 2.6, end: 4.4,
+          words: [
+            { text: "Amy’s", start: 2.7, end: 3.1 },
+            { text: "mum", start: 3.1, end: 3.5 },
+            { text: "hugs", start: 3.5, end: 3.9 },
+            { text: "her", start: 3.9, end: 4.3 }
+      ]
+    },
+       {
+      videoIndex: 3,
+         start: 0, end: 2.1,
+          words: [
+            { text: "Dad", start: 0.0, end: 0.4 },
+            { text: "comes", start: 0.4, end: 0.8 },
+            { text: "home", start: 0.8, end: 1.2 },
+            { text: "from", start: 1.2, end: 1.6 },
+            { text: "work.", start: 1.6, end: 2.0 }
+      ]
+    }
+  ];
+
+    useEffect(() => {
+      const bubbleToShow = extraBubblesData.find(bubble =>
+        bubble.videoIndex === currentVideo &&
+        currentTime >= bubble.start &&
+        currentTime < bubble.end
+      );
+  
+      setExtraBubble(bubbleToShow || null);
+  
+    }, [currentVideo, currentTime]);
+
 
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
@@ -540,7 +567,23 @@ export const StoryPage = () => {
               </div>
             </div>
           )}
-
+ {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              {/* 1️⃣ استخدمنا نفس الكلاس لترث التصميم */}
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
           <div className="video-overlay" />
           <div className="controls-container">
             <div className="controlbbtn">
