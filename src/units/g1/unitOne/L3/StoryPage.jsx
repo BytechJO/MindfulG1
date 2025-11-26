@@ -15,6 +15,7 @@ import video7 from "./assets/3-7.mp4";
 import questionGif from './assets/question.gif';
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -22,7 +23,7 @@ export const StoryPage = () => {
   const [duration, setDuration] = useState(0);
   const videoRef = useRef(null);
   const [selectedWords, setSelectedWords] = useState([]);
-  const {unitId, lessonId}= useParams();
+  const { unitId, lessonId } = useParams();
   const navigate = useNavigate();
   const [showFeedback, setShowFeedback] = useState(false);
   const [showBubble, setShowBubble] = useState(true);
@@ -44,16 +45,6 @@ export const StoryPage = () => {
       title: "Section 1",
       subtitles: [
         {
-          // start: 0, end: 3.5, 
-          // words: [
-          //   { text: "A", start: 0.2, end: 0.7 },
-          //   { text: "Clean", start: 0.7, end: 1.3 },
-          //   { text: "Place", start: 1.3, end: 2.0 },
-          //   { text: "is", start: 2.1, end: 2.3 },
-          //   { text: "a", start: 2.3, end: 2.5 },
-          //   { text: "Safe", start: 2.5, end: 2.9 }, // تعديل طفيف
-          //   { text: "Place.", start: 2.9, end: 3.3 }, // تعديل طفيف
-          // ]
         },
       ]
     },
@@ -61,45 +52,7 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 0, end: 2.7,
-          words: [
-            { text: "Noura", start: 0.0, end: 0.4 },
-            { text: "and", start: 0.4, end: 0.7 },
-            { text: "Ben", start: 0.7, end: 1.2 },
-            { text: "are", start: 1.2, end: 1.5 },
-            { text: "at", start: 1.5, end: 2.0 },
-            { text: "the", start: 2.0, end: 2.2 },
-            { text: "fair.", start: 2.2, end: 2.5 },
-          ]
-        },
-        {
-          start: 2.8, end: 5.0, // تعديل وقت البداية والنهاية
-          words: [
-            { text: "They", start: 2.9, end: 3.2 },
-            { text: "eat", start: 3.2, end: 3.5 },
-            { text: "chips", start: 3.5, end: 3.8 },
-            { text: "and", start: 3.8, end: 4.1 },
-            { text: "cotton", start: 4.1, end: 4.4 },
-            { text: "candy.", start: 4.4, end: 4.8 },
-          ]
-        },
-        {
-          start: 5.3, end: 11.8, 
-          words: [
-            { text: "Ben", start: 5.3, end: 5.6 },
-            { text: "finishes", start: 5.6, end: 5.9 },
-            { text: "his", start: 5.9, end: 6.2 },
-            { text: "chips", start: 6.2, end: 6.5 },
-            { text: "and", start: 6.5, end: 6.8 },
-            { text: "throws", start: 6.8, end: 7.1 },
-            { text: "the", start: 7.1, end: 7.4 },
-            { text: "wrapper", start: 7.4, end: 7.7 },
-            { text: "on", start: 7.7, end: 8.0 },
-            { text: "the", start: 8.0, end: 8.3 },
-            { text: "ground.", start: 8.3, end: 8.6 }, 
-          ]
-        },
+
       ]
     },
     {
@@ -150,7 +103,7 @@ export const StoryPage = () => {
           ]
         },
         {
-          start: 3, end: 8.7, 
+          start: 3, end: 8.7,
           words: [
             { text: "At", start: 3.0, end: 3.2 },
             { text: "school,", start: 3.2, end: 3.5 },
@@ -208,7 +161,7 @@ export const StoryPage = () => {
             { text: "in", start: 8.2, end: 8.4 },
             { text: "the", start: 8.4, end: 8.7 },
             { text: "bin.", start: 8.7, end: 9.0 },
-            ]
+          ]
         },
       ]
     },
@@ -216,86 +169,14 @@ export const StoryPage = () => {
       url: video6,
       title: "Section 6",
       subtitles: [
-        {
-          start: 0, end: 2.5,
-          words: [
-            { text: "The", start: 0, end: 0.3 },
-            { text: "next", start: 0.3, end: 0.6 },
-            { text: "day,", start: 0.6, end: 0.9 },
-            { text: "Ben", start: 0.9, end: 1.2 },
-            { text: "is", start: 1.2, end: 1.5 },
-            { text: "at", start: 1.5, end: 1.8 },
-            { text: "the", start: 1.8, end: 2.1 },
-            { text: "park.", start: 2.1, end: 2.4 },
-          ]
-        },
-        {
-          start: 3.5, end: 5.8,
-          words: [
-            { text: "He", start: 3.6, end: 3.9 },
-            { text: "is", start: 3.9, end: 4.1 },
-            { text: "thirsty", start: 4.1, end: 4.4 },
-            { text: "and", start: 4.4, end: 4.7 },
-            { text: "drinks", start: 4.7, end: 5.0 },
-            { text: "some", start: 5.0, end: 5.3 },
-            { text: "juice.", start: 5.3, end: 5.6 },
-          ]
-        },
-        {
-          start: 6.0, end: 9.5, // تعديل
-          words: [
-            { text: "Ben", start: 6.0, end: 6.3 },
-            { text: "wants", start: 6.3, end: 6.6 },
-            { text: "to", start: 6.6, end: 6.9 },
-            { text: "throw", start: 6.9, end: 7.2 },
-            { text: "his", start: 7.2, end: 7.5 },
-            { text: "empty", start: 7.5, end: 7.8 },
-            { text: "juice", start: 7.8, end: 8.1 },
-            { text: "box", start: 8.1, end: 8.4 },
-            { text: "on", start: 8.4, end: 8.7 },
-            { text: "the", start: 8.7, end: 9.0 },
-            { text: "ground,", start: 9.0, end: 9.3 },
-          ]
-        },
-        {
-          start: 10.0, end: 15.0,
-          words: [
-            { text: "but", start: 10.1, end: 10.4 },
-            { text: "then", start: 10.4, end: 10.7 },
-            { text: "he", start: 10.7, end: 10.9 },
-            { text: "remembers", start: 10.9, end: 11.5 },
-            { text: "that", start: 11.5, end: 11.8 },
-            { text: "he", start: 11.8, end: 12.2 },
-            { text: "should", start: 12.2, end: 12.5 },
-            { text: "keep", start: 12.5, end: 12.9 },
-            { text: "public", start: 12.9, end: 13.3 },
-            { text: "places", start: 13.3, end: 13.7 },
-            { text: "clean", start: 13.7, end: 14.1 },
-            { text: "and", start: 14.1, end: 14.4 },
-            { text: "safe.", start: 14.4, end: 14.9 },
-          ]
-        },
+
       ]
     },
     {
       url: video7,
       title: "Section 7",
       subtitles: [
-        {
-          start: 0, end: 3.0,
-          words: [
-            { text: "Ben", start: 0.1, end: 0.4 },
-            { text: "decides", start: 0.4, end: 0.7 },
-            { text: "to", start: 0.7, end: 1.0 },
-            { text: "throw", start: 1.0, end: 1.3 },
-            { text: "his", start: 1.3, end: 1.6 },
-            { text: "rubbish", start: 1.6, end: 1.9 },
-            { text: "in", start: 1.9, end: 2.2 },
-            { text: "the", start: 2.2, end: 2.5 },
-            { text: "bin.", start: 2.5, end: 2.8 },
 
-          ]
-        },
         {
           start: 3.5, end: 5.0,
           words: [
@@ -317,67 +198,186 @@ export const StoryPage = () => {
       ]
     },
   ];
-
-
-  // const cloudPositions = [
-  //   { bottom: '34.375rem', left: '32%', transform: 'translateX(-50%)' },
-  //   { top: '1%', left: '45%', transform: 'translateY(0)' },
-  //   { top: '10%', right: '65%', transform: 'translateX(0)', left: 'auto' },
-  //   { bottom: '85%', left: '30%', transform: 'translateX(-50%)' },
-  //   { top: '10%', left: '50%', transform: 'translateX(0)', isFlipped: true },
-  // ];
-
-
-  const cloudPositions = {
-    
-  0: [{ bottom: '35rem', left: '50%', transform: 'translateX(-50%)', isFlipped:true }],
   
-  1: [
-    { top: '15%', left: '10%' },
-    { top: '15%', left: '15%' }, 
-    { top: '15%', left: '15%'} 
-  ],
+  const cloudPositions = {
 
-  2: [
-    { top: '10%', right: '5%', isFlipped:true },
-    { top: '1%', left: '45%', isFlipped: true }  
-  ],
+    0: [{ bottom: '35rem', left: '50%', transform: 'translateX(-50%)', isFlipped: true }],
 
-  3: [
-    { bottom: '80%', left: '28%', isFlipped:true }, 
-    { top: '10%', left: '45%' },
-  ],
+    1: [
+      { top: '15%', left: '10%' },
+      { top: '15%', left: '15%' },
+      { top: '15%', left: '15%' }
+    ],
 
-  4: [
-    { top: '10%', left: '30%', isFlipped:true }, 
-    { top: '5%', left: '35%' },            
-  ],
-  5: [
-    { bottom: '80%', left: '48%', },
-    { top: '20%', left: '25%' },                                  
-    { top: '10%', left: '50%', isFlipped: true },  
-    { top: '70%', left: '50%' , isFlipped: true} 
-  ],
-  6: [
-    { bottom: '80%', left: '48%', transform: 'translateX(-50%)' }, 
-    { top: '10%', left: '10%' },                                  
-    { top: '10%', left: '50%', isFlipped: true },
-  ],
-};
+    2: [
+      { top: '10%', right: '5%', isFlipped: true },
+      { top: '1%', left: '45%', isFlipped: true }
+    ],
+
+    3: [
+      { bottom: '80%', left: '28%', isFlipped: true },
+      { top: '10%', left: '45%' },
+    ],
+
+    4: [
+      { top: '10%', left: '30%', isFlipped: true },
+      { top: '5%', left: '35%' },
+    ],
+    5: [
+      { bottom: '80%', left: '48%', },
+      { top: '20%', left: '25%' },
+      { top: '10%', left: '50%', isFlipped: true },
+      { top: '70%', left: '50%', isFlipped: true }
+    ],
+    6: [
+      { bottom: '80%', left: '48%', transform: 'translateX(-50%)' },
+      { top: '10%', left: '10%' },
+      { top: '10%', left: '50%', isFlipped: true },
+    ],
+  };
+
+  const extraBubblesData = [
+    {
+      videoIndex: 1,
+      start: 0,
+      end: 2.5,
+      words: [
+        { text: "Noura", start: 0.0, end: 0.4 },
+        { text: "and", start: 0.4, end: 0.7 },
+        { text: "Ben", start: 0.7, end: 1.2 },
+        { text: "are", start: 1.2, end: 1.5 },
+        { text: "at", start: 1.5, end: 2.0 },
+        { text: "the", start: 2.0, end: 2.2 },
+        { text: "fair.", start: 2.2, end: 2.5 },
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 2.6,
+      end: 4.9,
+      words: [
+        { text: "They", start: 2.9, end: 3.2 },
+        { text: "eat", start: 3.2, end: 3.5 },
+        { text: "chips", start: 3.5, end: 3.8 },
+        { text: "and", start: 3.8, end: 4.1 },
+        { text: "cotton", start: 4.1, end: 4.4 },
+        { text: "candy.", start: 4.4, end: 4.8 },
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 5.0,
+      end: 8.7,
+      words: [
+        { text: "Ben", start: 5.3, end: 5.6 },
+        { text: "finishes", start: 5.6, end: 5.9 },
+        { text: "his", start: 5.9, end: 6.2 },
+        { text: "chips", start: 6.2, end: 6.5 },
+        { text: "and", start: 6.5, end: 6.8 },
+        { text: "throws", start: 6.8, end: 7.1 },
+        { text: "the", start: 7.1, end: 7.4 },
+        { text: "wrapper", start: 7.4, end: 7.7 },
+        { text: "on", start: 7.7, end: 8.0 },
+        { text: "the", start: 8.0, end: 8.3 },
+        { text: "ground.", start: 8.3, end: 8.6 },
+      ]
+    },
+
+
+    {
+      videoIndex: 5,
+      start: 0.0, end: 2.5,
+      words: [
+        { text: "The", start: 0, end: 0.3 },
+        { text: "next", start: 0.3, end: 0.6 },
+        { text: "day,", start: 0.6, end: 0.9 },
+        { text: "Ben", start: 0.9, end: 1.2 },
+        { text: "is", start: 1.2, end: 1.5 },
+        { text: "at", start: 1.5, end: 1.8 },
+        { text: "the", start: 1.8, end: 2.1 },
+        { text: "park.", start: 2.1, end: 2.4 },
+      ]
+    },
+    {
+      videoIndex: 5,
+      start: 3.5, end: 5.8,
+      words: [
+        { text: "He", start: 3.6, end: 3.9 },
+        { text: "is", start: 3.9, end: 4.1 },
+        { text: "thirsty", start: 4.1, end: 4.4 },
+        { text: "and", start: 4.4, end: 4.7 },
+        { text: "drinks", start: 4.7, end: 5.0 },
+        { text: "some", start: 5.0, end: 5.3 },
+        { text: "juice.", start: 5.3, end: 5.6 },
+      ]
+    },
+    {
+      videoIndex: 5,
+      start: 6.0, end: 9.5,
+      words: [
+        { text: "Ben", start: 6.0, end: 6.3 },
+        { text: "wants", start: 6.3, end: 6.6 },
+        { text: "to", start: 6.6, end: 6.9 },
+        { text: "throw", start: 6.9, end: 7.2 },
+        { text: "his", start: 7.2, end: 7.5 },
+        { text: "empty", start: 7.5, end: 7.8 },
+        { text: "juice", start: 7.8, end: 8.1 },
+        { text: "box", start: 8.1, end: 8.4 },
+        { text: "on", start: 8.4, end: 8.7 },
+        { text: "the", start: 8.7, end: 9.0 },
+        { text: "ground,", start: 9.0, end: 9.3 },
+      ]
+    },
+    {
+      videoIndex: 5,
+      start: 10.0, end: 15.0,
+      words: [
+        { text: "but", start: 10.1, end: 10.4 },
+        { text: "then", start: 10.4, end: 10.7 },
+        { text: "he", start: 10.7, end: 10.9 },
+        { text: "remembers", start: 10.9, end: 11.5 },
+        { text: "that", start: 11.5, end: 11.8 },
+        { text: "he", start: 11.8, end: 12.2 },
+        { text: "should", start: 12.2, end: 12.5 },
+        { text: "keep", start: 12.5, end: 12.9 },
+        { text: "public", start: 12.9, end: 13.3 },
+        { text: "places", start: 13.3, end: 13.7 },
+        { text: "clean", start: 13.7, end: 14.1 },
+        { text: "and", start: 14.1, end: 14.4 },
+        { text: "safe.", start: 14.4, end: 14.9 },
+      ]
+    },
+
+    {
+      videoIndex: 6,
+      start: 0.0, end: 3.0,
+      words: [
+        { text: "Ben", start: 0.1, end: 0.4 },
+        { text: "decides", start: 0.4, end: 0.7 },
+        { text: "to", start: 0.7, end: 1.0 },
+        { text: "throw", start: 1.0, end: 1.3 },
+        { text: "his", start: 1.3, end: 1.6 },
+        { text: "rubbish", start: 1.6, end: 1.9 },
+        { text: "in", start: 1.9, end: 2.2 },
+        { text: "the", start: 2.2, end: 2.5 },
+        { text: "bin.", start: 2.5, end: 2.8 },
+      ]
+    },
+  ];
 
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
-  sub => currentTime >= sub.start && currentTime < sub.end
-);
+    sub => currentTime >= sub.start && currentTime < sub.end
+  );
 
 
-const activeSubtitle = activeSubtitleIndex !== -1 
-  ? currentVideoData.subtitles[activeSubtitleIndex] 
-  : null;
+  const activeSubtitle = activeSubtitleIndex !== -1
+    ? currentVideoData.subtitles[activeSubtitleIndex]
+    : null;
 
-const activeCloudPosition = activeSubtitleIndex !== -1
-  ? cloudPositions[currentVideo]?.[activeSubtitleIndex]
-  : null;
+  const activeCloudPosition = activeSubtitleIndex !== -1
+    ? cloudPositions[currentVideo]?.[activeSubtitleIndex]
+    : null;
 
   // Preload next video
   useEffect(() => {
@@ -395,7 +395,18 @@ const activeCloudPosition = activeSubtitleIndex !== -1
     }
   }, [currentVideo, videos]);
 
-  // Video event listeners
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
+
+
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -429,11 +440,11 @@ const activeCloudPosition = activeSubtitleIndex !== -1
       } else {
         const playPromise = videoRef.current.play();
         if (playPromise !== undefined) {
-          playPromise.catch(() => {});
+          playPromise.catch(() => { });
         }
       }
     }
-  }, [currentVideo]); 
+  }, [currentVideo]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -441,14 +452,14 @@ const activeCloudPosition = activeSubtitleIndex !== -1
 
     if (currentVideo === 2 && isPlaying) {
       if (duration > 0 && currentTime >= duration - 0.3) {
-        video.pause(); 
-        video.currentTime = 5.0; 
-        setCurrentTime(5.0); 
+        video.pause();
+        video.currentTime = 5.0;
+        setCurrentTime(5.0);
         setShowBanner(true);
       }
     }
   }, [currentTime, currentVideo, isPlaying, duration]);
-  
+
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -467,7 +478,7 @@ const activeCloudPosition = activeSubtitleIndex !== -1
     }
   }, [currentVideo, isPlaying, playbackSpeed]);
 
-  
+
 
 
   const handlePrevious = () => {
@@ -485,12 +496,12 @@ const activeCloudPosition = activeSubtitleIndex !== -1
       ValidationAlert.storyEnd(() => {
         navigate(`/unit/${unitId}/lesson/${lessonId}/quiz`);
       });
-    } else if (currentVideo !== 2) { 
+    } else if (currentVideo !== 2) {
       setShowBanner(false);
       setCurrentVideo(prev => prev + 1);
     }
   }, [currentVideo, videos.length, navigate]);
-  
+
 
   const toggleWordSelection = (wordText) => {
     const correctWords = ["throws"];
@@ -541,8 +552,8 @@ const activeCloudPosition = activeSubtitleIndex !== -1
     setIsMuted(newVolume === 0);
   };
 
-  
-    const toggleFullscreen = () => {
+
+  const toggleFullscreen = () => {
     const container = fullscreenContainerRef.current;
     if (!container) return;
 
@@ -569,7 +580,7 @@ const activeCloudPosition = activeSubtitleIndex !== -1
             muted={isMuted}
             onEnded={handleEnded}
             preload="auto"
-            src={currentVideoData.url} 
+            src={currentVideoData.url}
           >
             Your browser does not support the video tag.
           </video>
@@ -583,7 +594,7 @@ const activeCloudPosition = activeSubtitleIndex !== -1
           {currentVideo === 2 && showBanner && (
             <div className="instruction-banner show">
               <p style={{ fontSize: '1.8em', textAlign: 'left' }}>
-                Highlight the action we must take to  
+                Highlight the action we must take to
               </p>
               <p style={{ fontSize: '1.8em', textAlign: 'left' }}>
                 keep public places clean.
@@ -592,36 +603,52 @@ const activeCloudPosition = activeSubtitleIndex !== -1
           )}
 
           {activeSubtitle && activeCloudPosition && showBubble && showSubtitles && (
-  <div
-    className="subtitle-container"
-    style={activeCloudPosition} 
-  >
-    <div className={`bubble-cloud animate__animated animate__fadeIn ${activeCloudPosition.isFlipped ? 'flipped' : ''}`}>
-      <p>
-        {activeSubtitle.words.map((word, index) => {
-          const isHighlighted = currentTime >= word.start && currentTime < word.end;
-          return (
-            <span
-              key={index}
-              onClick={() => {
-                if (currentVideo === 2) toggleWordSelection(word.text);
-              }}
-              className={`
+            <div
+              className="subtitle-container"
+              style={activeCloudPosition}
+            >
+              <div className={`bubble-cloud animate__animated animate__fadeIn ${activeCloudPosition.isFlipped ? 'flipped' : ''}`}>
+                <p>
+                  {activeSubtitle.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return (
+                      <span
+                        key={index}
+                        onClick={() => {
+                          if (currentVideo === 2) toggleWordSelection(word.text);
+                        }}
+                        className={`
                 word-span
                 ${isHighlighted ? 'active-word' : ''}
                 ${currentVideo === 2 && selectedWords.includes(word.text) ? 'selected-word' : ''}
                 ${currentVideo === 2 ? 'clickable-word' : ''}
               `}
+                      >
+                        {word.text}{' '}
+                      </span>
+                    );
+                  })}
+                </p>
+                <button className="close" onClick={() => setShowBubble(false)}>×</button>
+              </div>
+            </div>
+          )}
+
+          {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
             >
-              {word.text}{' '}
-            </span>
-          );
-        })}
-      </p>
-      <button className="close" onClick={() => setShowBubble(false)}>×</button>
-    </div>
-  </div>
-)}
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="video-overlay" />
           <div className="controls-container">

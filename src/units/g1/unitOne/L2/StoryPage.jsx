@@ -12,6 +12,7 @@ import video5 from "./assets/2-5.mp4";
 
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -57,65 +58,14 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 0, end: 3.2,
-          words: [
-            { text: "Nessie", start: 0.0, end: 0.5 },
-            { text: "is", start: 0.5, end: 0.69 },
-            { text: "upset", start: 0.69, end: 1.2 },
-            { text: "Her", start: 1.2, end: 1.5 },
-            { text: "friends", start: 1.5, end: 2.0 },
-            { text: "are", start: 2.0, end: 2.2 },
-            { text: "playing", start: 2.2, end: 2.7 },
-            { text: "tag.", start: 2.7, end: 3.1 },
-          ]
-        },
-        {
-          start: 3.4, end: 6.5,
-          words: [
-            { text: "She", start: 3.7, end: 4.0 },
-            { text: "cannot", start: 4.0, end: 4.3 },
-            { text: "run", start: 4.3, end: 4.6 },
-            { text: "as", start: 4.6, end: 4.9 },
-            { text: "fast", start: 4.9, end: 5.2 },
-            { text: "as", start: 5.2, end: 5.5 },
-            { text: "they", start: 5.5, end: 5.9 },
-            { text: "do.", start: 5.9, end: 6.3 },
-          ]
-        },
-        {
-          start: 6.5, end: 8.9,
-          words: [
-            { text: "She", start: 6.6, end: 6.9 },
-            { text: "wants", start: 6.9, end: 7.2 },
-            { text: "to", start: 7.2, end: 7.5 },
-            { text: "shout", start: 7.5, end: 7.8 },
-            { text: "at", start: 7.8, end: 8.1 },
-            { text: "her", start: 8.1, end: 8.4 },
-            { text: "friends.", start: 8.4, end: 8.7 },
-          ]
-        },
+
       ]
     },
     {
       url: video3,
       title: "Section 3",
       subtitles: [
-        {
-          start: 0, end: 4.0,
-          words: [
-            { text: "Nessie", start: 0.1, end: 0.6 },
-            { text: "remembers", start: 0.6, end: 1.2 },
-            { text: "how", start: 1.2, end: 1.5 },
-            { text: "to", start: 1.5, end: 1.8 },
-            { text: "keep", start: 1.8, end: 2.0 },
-            { text: "calm", start: 2.0, end: 2.3 },
-            { text: "when", start: 2.3, end: 2.6 },
-            { text: "she", start: 2.6, end: 2.9 },
-            { text: "feels", start: 2.9, end: 3.2 },
-            { text: "upset.", start: 3.2, end: 3.6 },
-          ]
-        },
+
         {
           start: 4.0, end: 9.0,
           words: [
@@ -136,31 +86,6 @@ export const StoryPage = () => {
       url: video4,
       title: "Section 4",
       subtitles: [
-        {
-          start: 0, end: 4.4,
-          words: [
-            { text: "Nessie", start: 0.2, end: 0.6 },
-            { text: "feels", start: 0.6, end: 1.0 },
-            { text: "calm", start: 1.0, end: 1.4 },
-            { text: "and", start: 1.4, end: 1.7 },
-            { text: "is", start: 1.7, end: 2.0 },
-            { text: "ready", start: 2.0, end: 2.4 },
-            { text: "to", start: 2.4, end: 2.6 },
-            { text: "tell", start: 2.6, end: 3.0 },
-            { text: "her", start: 3.0, end: 3.2 },
-            { text: "friends", start: 3.2, end: 3.6 },
-            { text: "how", start: 3.6, end: 3.8 },
-            { text: "she", start: 3.8, end: 4.0 },
-            { text: "feels.", start: 4.0, end: 4.4 },
-          ]
-        },
-        {
-          start: 4.8, end: 5.5,
-          words: [
-            { text: "She", start: 4.8, end: 5.1 },
-            { text: "says,", start: 5.1, end: 5.5 },
-          ]
-        },
         {
           start: 6.0, end: 8.0,
           words: [
@@ -191,19 +116,13 @@ export const StoryPage = () => {
         },
       ]
     },
-
     {
       url: video5,
       title: "Section 5",
       subtitles: [
         {
-          start: 0, end: 5.0,
+          start: 2.2, end: 5.0,
           words: [
-            { text: "Nessie’s", start: 0.1, end: 0.5 },
-            { text: "friends", start: 0.5, end: 0.9 },
-            { text: "listen", start: 0.9, end: 1.3 },
-            { text: "to", start: 1.3, end: 1.5 },
-            { text: "her.", start: 1.5, end: 1.9 },
             { text: "Thank", start: 2.2, end: 2.6 },
             { text: "you", start: 2.6, end: 2.9 },
             { text: "for", start: 2.9, end: 3.2 },
@@ -215,24 +134,6 @@ export const StoryPage = () => {
           ]
         },
         {
-          start: 5.5, end: 6.0,
-          words: [
-            { text: "they", start: 5.5, end: 5.8 },
-            { text: "say.", start: 5.8, end: 6.0 },
-          ]
-        },
-        {
-          start: 6.5, end: 9.0,
-          words: [
-            { text: "The", start: 6.5, end: 6.8 },
-            { text: "girls", start: 6.8, end: 7.2 },
-            { text: "agree", start: 7.2, end: 7.6 },
-            { text: "to", start: 7.6, end: 7.8 },
-            { text: "play", start: 7.8, end: 8.2 },
-            { text: "hopscotch.", start: 8.2, end: 9.0 },
-          ]
-        },
-        {
           start: 9.5, end: 11.5,
           words: [
             { text: "I", start: 9.5, end: 9.7 },
@@ -241,13 +142,6 @@ export const StoryPage = () => {
             { text: "playing", start: 10.4, end: 10.8 },
             { text: "this", start: 10.8, end: 11.1 },
             { text: "game,", start: 11.1, end: 11.5 },
-          ]
-        },
-        {
-          start: 12.0, end: 12.8,
-          words: [
-            { text: "says", start: 12.0, end: 12.4 },
-            { text: "Nessie.", start: 12.4, end: 12.8 },
           ]
         },
       ]
@@ -263,11 +157,11 @@ export const StoryPage = () => {
     ],
     2: [
       { top: '10%', right: '65%', left: 'auto' },
-      { top: '15%', left: '70%',isFlipped: true }
+      { top: '15%', left: '70%', isFlipped: true }
     ],
     3: [
-      { bottom: '80%', left: '48%', transform: 'translateX(-50%)' },
-      { top: '10%', left: '10%', isFlipped: true },
+      { bottom: '80%', left: '58%', transform: 'translateX(-50%)', isFlipped: true },
+      { top: '10%', left: '50%', isFlipped: true },
       { top: '10%', left: '50%', isFlipped: true },
       { top: '10%', left: '50%', isFlipped: true }
     ],
@@ -279,6 +173,146 @@ export const StoryPage = () => {
       { bottom: '80%', left: '40%' }
     ]
   };
+
+  const extraBubblesData = [
+    {
+      videoIndex: 1,
+      start: 0,
+      end: 3.1,
+      words: [
+        { text: "Nessie", start: 0.0, end: 0.5 },
+        { text: "is", start: 0.5, end: 0.69 },
+        { text: "upset", start: 0.69, end: 1.2 },
+        { text: "Her", start: 1.2, end: 1.5 },
+        { text: "friends", start: 1.5, end: 2.0 },
+        { text: "are", start: 2.0, end: 2.2 },
+        { text: "playing", start: 2.2, end: 2.7 },
+        { text: "tag.", start: 2.7, end: 3.1 },
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 3.6,
+      end: 6.7,
+      words: [
+        { text: "She", start: 3.7, end: 4.0 },
+        { text: "cannot", start: 4.0, end: 4.3 },
+        { text: "run", start: 4.3, end: 4.6 },
+        { text: "as", start: 4.6, end: 4.9 },
+        { text: "fast", start: 4.9, end: 5.2 },
+        { text: "as", start: 5.2, end: 5.5 },
+        { text: "they", start: 5.5, end: 5.9 },
+        { text: "do.", start: 5.9, end: 6.3 },
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 6.5,
+      end: 8.7,
+      words: [
+        { text: "She", start: 6.6, end: 6.9 },
+        { text: "wants", start: 6.9, end: 7.2 },
+        { text: "to", start: 7.2, end: 7.5 },
+        { text: "shout", start: 7.5, end: 7.8 },
+        { text: "at", start: 7.8, end: 8.1 },
+        { text: "her", start: 8.1, end: 8.4 },
+        { text: "friends.", start: 8.4, end: 8.7 },
+      ]
+    },
+
+    {
+      videoIndex: 2,
+      start: 0, end: 4,
+      words: [
+        { text: "Nessie", start: 0.1, end: 0.6 },
+        { text: "remembers", start: 0.6, end: 1.2 },
+        { text: "how", start: 1.2, end: 1.5 },
+        { text: "to", start: 1.5, end: 1.8 },
+        { text: "keep", start: 1.8, end: 2.0 },
+        { text: "calm", start: 2.0, end: 2.3 },
+        { text: "when", start: 2.3, end: 2.6 },
+        { text: "she", start: 2.6, end: 2.9 },
+        { text: "feels", start: 2.9, end: 3.2 },
+        { text: "upset.", start: 3.2, end: 3.6 },
+      ]
+    },
+
+    {
+      videoIndex: 3,
+      start: 0, end: 4.4,
+      words: [
+        { text: "Nessie", start: 0.2, end: 0.6 },
+        { text: "feels", start: 0.6, end: 1.0 },
+        { text: "calm", start: 1.0, end: 1.4 },
+        { text: "and", start: 1.4, end: 1.7 },
+        { text: "is", start: 1.7, end: 2.0 },
+        { text: "ready", start: 2.0, end: 2.4 },
+        { text: "to", start: 2.4, end: 2.6 },
+        { text: "tell", start: 2.6, end: 3.0 },
+        { text: "her", start: 3.0, end: 3.2 },
+        { text: "friends", start: 3.2, end: 3.6 },
+        { text: "how", start: 3.6, end: 3.8 },
+        { text: "she", start: 3.8, end: 4.0 },
+        { text: "feels.", start: 4.0, end: 4.4 },
+      ]
+    },
+    {
+      videoIndex: 3,
+      start: 4.8, end: 5.5,
+      words: [
+        { text: "She", start: 4.8, end: 5.1 },
+        { text: "says,", start: 5.1, end: 5.5 },
+      ]
+    },
+    {
+      videoIndex: 3,
+      start: 4.8, end: 5.5,
+      words: [
+        { text: "She", start: 4.8, end: 5.1 },
+        { text: "says,", start: 5.1, end: 5.5 },
+      ]
+    },
+
+    {
+      videoIndex: 4,
+      start: 0, end: 1.9,
+      words: [
+        { text: "Nessie’s", start: 0.1, end: 0.5 },
+        { text: "friends", start: 0.5, end: 0.9 },
+        { text: "listen", start: 0.9, end: 1.3 },
+        { text: "to", start: 1.3, end: 1.5 },
+        { text: "her.", start: 1.5, end: 1.9 },
+      ]
+    },
+    {
+      videoIndex: 4,
+      start: 5.5, end: 6.0,
+      words: [
+        { text: "they", start: 5.5, end: 5.8 },
+        { text: "say.", start: 5.8, end: 6.0 },
+      ]
+    },
+    {
+      videoIndex: 4,
+      start: 6.5, end: 9.0,
+      words: [
+        { text: "The", start: 6.5, end: 6.8 },
+        { text: "girls", start: 6.8, end: 7.2 },
+        { text: "agree", start: 7.2, end: 7.6 },
+        { text: "to", start: 7.6, end: 7.8 },
+        { text: "play", start: 7.8, end: 8.2 },
+        { text: "hopscotch.", start: 8.2, end: 9.0 },
+      ]
+    },
+    {
+      videoIndex: 4,
+      start: 12.0, end: 12.8,
+      words: [
+        { text: "says", start: 12.0, end: 12.4 },
+        { text: "Nessie.", start: 12.4, end: 12.8 },
+      ]
+    },
+  ];
 
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
@@ -302,6 +336,17 @@ export const StoryPage = () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
+
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
 
   // Preload next video
   useEffect(() => {
@@ -558,6 +603,22 @@ export const StoryPage = () => {
                   })}
                 </p>
                 <button className="close" onClick={() => setShowBubble(false)}>×</button>
+              </div>
+            </div>
+          )}
+
+          {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
               </div>
             </div>
           )}

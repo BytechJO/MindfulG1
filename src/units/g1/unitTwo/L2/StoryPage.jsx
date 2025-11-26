@@ -12,6 +12,7 @@ import video5 from "./assets/5.mp4";
 import img1 from "./assets/nex.png";
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -41,16 +42,6 @@ export const StoryPage = () => {
       title: "Section 1",
       subtitles: [
         {
-          // start: 0, end: 3.5, 
-          // words: [
-          //   { text: "A", start: 0.2, end: 0.7 },
-          //   { text: "Clean", start: 0.7, end: 1.3 },
-          //   { text: "Place", start: 1.3, end: 2.0 },
-          //   { text: "is", start: 2.1, end: 2.3 },
-          //   { text: "a", start: 2.3, end: 2.5 },
-          //   { text: "Safe", start: 2.5, end: 2.9 }, // تعديل طفيف
-          //   { text: "Place.", start: 2.9, end: 3.3 }, // تعديل طفيف
-          // ]
         },
       ]
     },
@@ -58,52 +49,6 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 0, end: 2.3,
-          words: [
-            { text: "Mia", start: 0.1, end: 0.5 },
-            { text: "draws", start: 0.5, end: 0.9 },
-            { text: "a nice", start: 0.9, end: 1.4 },
-            { text: "picture.", start: 1.4, end: 1.8 },
-          ]
-        },
-        {
-          start: 2.3, end: 4.5,
-          words: [
-            { text: "She", start: 2.4, end: 2.8 },
-            { text: "is happy", start: 2.8, end: 3.2 },
-            { text: "with", start: 3.2, end: 3.6 },
-            { text: "her", start: 3.6, end: 4.0 },
-            { text: "work.", start: 4.0, end: 4.4 },
-          ]
-        },
-        {
-          start: 6.0, end: 11.0,
-          words: [
-            { text: "Paul", start: 6.0, end: 6.4 },
-            { text: "is next", start: 6.4, end: 6.8 },
-            { text: "to", start: 6.8, end: 7.0 },
-            { text: "her", start: 7.0, end: 7.3 },
-            { text: "He", start: 8.0, end: 8.3 },
-            { text: "thinks", start: 8.3, end: 8.6 },
-            { text: "drawing", start: 8.6, end: 8.9 },
-            { text: "is", start: 8.9, end: 9.2 },
-            { text: "difficult.", start: 9.2, end: 9.5 },
-          ]
-        },
-        {
-          start: 12.0, end: 13.2,
-          words: [
-            { text: "Mia", start: 12.1, end: 12.3 },
-            { text: "finishes", start: 12.3, end: 12.6 },
-            { text: "her", start: 12.6, end: 12.9 },
-            { text: "picture.", start: 12.9, end: 13.0 },
-            // { text: "She", start: 12.0, end: 12.3 },
-            // { text: "says", start: 12.3, end: 12.6 },
-            // { text: "to", start: 12.6, end: 12.8 },
-            // { text: "Paul,", start: 12.8, end: 13.1 },
-          ]
-        },
         {
           start: 13.0, end: 16.8,
           words: [
@@ -122,32 +67,6 @@ export const StoryPage = () => {
       title: "Section 3",
       subtitles: [
         {
-          start: 0, end: 4.0,
-          words: [
-            { text: "Paul", start: 0.3, end: 0.7 },
-            { text: "feels", start: 1.1, end: 1.5 },
-            { text: "angry", start: 1.5, end: 1.8 },
-            { text: "and", start: 2.1, end: 2.4 },
-            { text: "throws", start: 2.4, end: 2.7 },
-            { text: "Mia’s", start: 2.7, end: 3.0 },
-            { text: "picture", start: 3.0, end: 3.3 },
-            { text: "in the", start: 3.3, end: 3.6 },
-            { text: "bin.", start: 3.6, end: 3.9 },
-          ]
-        },
-        // {
-        //   start: 0, end: 2.0,
-        //   words: [
-        //     { text: "The", start: 0.1, end: 0.6 },
-        //     { text: "teacher", start: 0.6, end: 1.2 },
-        //     { text: "asks", start: 1.2, end: 1.7 },
-        //     { text: "Mia", start: 0.1, end: 0.6 },
-        //     { text: "about", start: 0.6, end: 1.2 },
-        //     { text: "her", start: 1.2, end: 1.7 },
-        //     { text: "picture.", start: 0.1, end: 0.6 },
-        //   ]
-        // },
-        {
           start: 4.0, end: 6.0,
           words: [
             { text: "where", start: 4.1, end: 4.4 },
@@ -163,48 +82,6 @@ export const StoryPage = () => {
       url: video4,
       title: "Section 4",
       subtitles: [
-        {
-          start: 1.5, end: 4.1,
-          words: [
-            { text: "Now", start: 2.5, end: 2.8 },
-            { text: "Paul", start: 2.8, end: 3.2 },
-            { text: "feels", start: 3.2, end: 3.6 },
-            { text: "bad.", start: 3.6, end: 4.0 },
-          ]
-        },
-        {
-          start: 4.2, end: 10.0,
-          words: [
-            { text: "He", start: 4.3, end: 4.6 },
-            { text: "wants", start: 4.6, end: 4.9 },
-            { text: "to tell", start: 4.9, end: 5.2 },
-            { text: "his", start: 5.2, end: 5.5 },
-            { text: "teacher", start: 5.5, end: 5.8 },
-            { text: "the", start: 5.8, end: 6.1 },
-            { text: "truth,", start: 6.1, end: 6.4 },
-            { text: "but", start: 6.4, end: 6.7 },
-            { text: "he", start: 6.7, end: 7.0 },
-            { text: "is", start: 7.0, end: 7.3 },
-            { text: "worried", start: 7.3, end: 7.6 },
-            { text: "the", start: 7.6, end: 7.9 },
-            { text: "teacher", start: 7.9, end: 8.2 },
-            { text: "will", start: 8.2, end: 8.5 },
-            { text: "be", start: 8.5, end: 8.8 },
-            { text: "angry", start: 8.8, end: 9.1 },
-            { text: "with", start: 9.1, end: 9.4 },
-            { text: "him.", start: 9.4, end: 9.7 },
-          ]
-        },
-        {
-          start: 10.0, end: 11.9,
-          words: [
-            { text: "Paul", start: 10, end: 10.4 },
-            { text: "decides", start: 10.4, end: 10.8 },
-            { text: "to tell", start: 10.8, end: 11.2 },
-            { text: "the", start: 11.2, end: 11.6 },
-            { text: "truth.", start: 11.6, end: 11.8 },
-          ]
-        },
         {
           start: 12.0, end: 14.0,
           words: [
@@ -244,19 +121,7 @@ export const StoryPage = () => {
             { text: "problem.", start: 5.1, end: 5.4 },
           ]
         },
-        {
-          start: 6.6, end: 9.2,
-          words: [
-            { text: "The", start: 6.7, end: 7.0 },
-            { text: "teacher", start: 7.0, end: 7.3 },
-            { text: "tells", start: 7.3, end: 7.6 },
-            { text: "them", start: 7.6, end: 7.9 },
-            { text: "both", start: 7.9, end: 8.2 },
-            { text: "to", start: 8.2, end: 8.5 },
-            { text: "say", start: 8.5, end: 8.8 },
-            { text: "sorry.", start: 8.8, end: 9.1 },
-          ]
-        },
+
         {
           start: 9.2, end: 9.8,
           words: [
@@ -272,40 +137,6 @@ export const StoryPage = () => {
       ]
     },
     { url: img1, title: "Section 2 (Image)", subtitles: [] },
-    // {
-    //   url: video6,
-    //   title: "Section 6",
-    //   subtitles: [
-    //     {
-    //       start: 0, end: 0.5,
-    //       words: [
-    //         { text: "Sorry", start: 0, end: 0.3 },
-    //       ]
-    //     },
-    //     {
-    //       start: 0.5, end: 2.0,
-    //       words: [
-    //         { text: "Sorry", start: 0.6, end: 0.9 },
-    //       ]
-    //     },
-    //   ]
-    // },
-    // {
-    //   url: video7,
-    //   title: "Section 7",
-    //   subtitles: [
-    //     {
-    //       start: 0, end: 0.5,
-
-    //     },
-    //     {
-    //       start: 0.5, end: 2.0,
-
-    //     },
-    //   ]
-    // },
-
-
   ];
 
   const cloudPositions = {
@@ -344,6 +175,140 @@ export const StoryPage = () => {
     ],
   };
 
+  const extraBubblesData = [
+    {
+      videoIndex: 1,
+      start: 0,
+      end: 2.3,
+      words: [
+        { text: "Mia", start: 0.1, end: 0.5 },
+        { text: "draws", start: 0.5, end: 0.9 },
+        { text: "a nice", start: 0.9, end: 1.4 },
+        { text: "picture.", start: 1.4, end: 1.8 },
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 2.4,
+      end: 4.4,
+      words: [
+        { text: "She", start: 2.4, end: 2.8 },
+        { text: "is happy", start: 2.8, end: 3.2 },
+        { text: "with", start: 3.2, end: 3.6 },
+        { text: "her", start: 3.6, end: 4.0 },
+        { text: "work.", start: 4.0, end: 4.4 },
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 6.0,
+      end: 11.0,
+      words: [
+        { text: "Paul", start: 6.0, end: 6.4 },
+        { text: "is next", start: 6.4, end: 6.8 },
+        { text: "to", start: 6.8, end: 7.0 },
+        { text: "her", start: 7.0, end: 7.3 },
+        { text: "He", start: 8.0, end: 8.3 },
+        { text: "thinks", start: 8.3, end: 8.6 },
+        { text: "drawing", start: 8.6, end: 8.9 },
+        { text: "is", start: 8.9, end: 9.2 },
+        { text: "difficult.", start: 9.2, end: 9.5 },
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 12.0,
+      end: 13.2,
+      words: [
+        { text: "Mia", start: 12.1, end: 12.3 },
+        { text: "finishes", start: 12.3, end: 12.6 },
+        { text: "her", start: 12.6, end: 12.9 },
+        { text: "picture.", start: 12.9, end: 13.0 },
+      ]
+    },
+
+
+    {
+      videoIndex: 2,
+      start: 0.0, end: 4.0,
+      words: [
+        { text: "Paul", start: 0.3, end: 0.7 },
+        { text: "feels", start: 1.1, end: 1.5 },
+        { text: "angry", start: 1.5, end: 1.8 },
+        { text: "and", start: 2.1, end: 2.4 },
+        { text: "throws", start: 2.4, end: 2.7 },
+        { text: "Mia’s", start: 2.7, end: 3.0 },
+        { text: "picture", start: 3.0, end: 3.3 },
+        { text: "in the", start: 3.3, end: 3.6 },
+        { text: "bin.", start: 3.6, end: 3.9 },
+      ]
+    },
+
+
+
+    {
+      videoIndex: 3,
+      start: 1.5, end: 4.1,
+      words: [
+        { text: "Now", start: 2.5, end: 2.8 },
+        { text: "Paul", start: 2.8, end: 3.2 },
+        { text: "feels", start: 3.2, end: 3.6 },
+        { text: "bad.", start: 3.6, end: 4.0 },
+      ]
+    },
+    {
+      videoIndex: 3,
+      start: 4.2, end: 10.0,
+      words: [
+        { text: "He", start: 4.3, end: 4.6 },
+        { text: "wants", start: 4.6, end: 4.9 },
+        { text: "to tell", start: 4.9, end: 5.2 },
+        { text: "his", start: 5.2, end: 5.5 },
+        { text: "teacher", start: 5.5, end: 5.8 },
+        { text: "the", start: 5.8, end: 6.1 },
+        { text: "truth,", start: 6.1, end: 6.4 },
+        { text: "but", start: 6.4, end: 6.7 },
+        { text: "he", start: 6.7, end: 7.0 },
+        { text: "is", start: 7.0, end: 7.3 },
+        { text: "worried", start: 7.3, end: 7.6 },
+        { text: "the", start: 7.6, end: 7.9 },
+        { text: "teacher", start: 7.9, end: 8.2 },
+        { text: "will", start: 8.2, end: 8.5 },
+        { text: "be", start: 8.5, end: 8.8 },
+        { text: "angry", start: 8.8, end: 9.1 },
+        { text: "with", start: 9.1, end: 9.4 },
+        { text: "him.", start: 9.4, end: 9.7 },
+      ]
+    },
+    {
+      videoIndex: 3,
+      start: 10.0, end: 11.9,
+      words: [
+        { text: "Paul", start: 10, end: 10.4 },
+        { text: "decides", start: 10.4, end: 10.8 },
+        { text: "to tell", start: 10.8, end: 11.2 },
+        { text: "the", start: 11.2, end: 11.6 },
+        { text: "truth.", start: 11.6, end: 11.8 },
+      ]
+    },
+
+    {
+      videoIndex: 4,
+      start: 6.6, end: 2.9,
+      words: [
+        { text: "The", start: 6.7, end: 7.0 },
+        { text: "teacher", start: 7.0, end: 7.3 },
+        { text: "tells", start: 7.3, end: 7.6 },
+        { text: "them", start: 7.6, end: 7.9 },
+        { text: "both", start: 7.9, end: 8.2 },
+        { text: "to", start: 8.2, end: 8.5 },
+        { text: "say", start: 8.5, end: 8.8 },
+        { text: "sorry.", start: 8.8, end: 9.1 },
+      ]
+    },
+  ];
+
+
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
     sub => currentTime >= sub.start && currentTime < sub.end
@@ -358,7 +323,6 @@ export const StoryPage = () => {
     ? cloudPositions[currentVideo]?.[activeSubtitleIndex]
     : null;
 
-  // Preload next video
   useEffect(() => {
     const nextVideoIndex = currentVideo + 1;
     if (nextVideoIndex < videos.length) {
@@ -374,7 +338,18 @@ export const StoryPage = () => {
     }
   }, [currentVideo, videos]);
 
-  // Video event listeners
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
+
+
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -618,6 +593,22 @@ export const StoryPage = () => {
                   })}
                 </p>
                 <button className="close" onClick={() => setShowBubble(false)}>×</button>
+              </div>
+            </div>
+          )}
+
+          {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
               </div>
             </div>
           )}

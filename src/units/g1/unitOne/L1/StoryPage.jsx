@@ -51,18 +51,6 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-
-        {
-          start: 4.6, end: 8,
-          words: [
-            { text: "If", start: 5.0, end: 5.3 },
-            { text: "Kate", start: 5.3, end: 5.7 },
-            { text: "wants", start: 5.7, end: 6.1 },
-            { text: "help,", start: 6.1, end: 6.6 },
-            { text: "Mum", start: 6.6, end: 7.0 },
-            { text: "says.", start: 7.0, end: 7.9 },
-          ]
-        },
       ]
     },
     {
@@ -87,38 +75,7 @@ export const StoryPage = () => {
       url: video4,
       title: "Section 4",
       subtitles: [
-        {
-          start: 0, end: 4,
-          words: [
-            { text: "Kate", start: 0.2, end: 0.5 },
-            { text: "looks", start: 0.5, end: 0.8 },
-            { text: "sad", start: 0.9, end: 1.3 },
-            { text: "Her", start: 1.3, end: 1.6 },
-            { text: "mum", start: 1.6, end: 2.4 },
-            { text: "asks", start: 2.4, end: 3 },
-            { text: "her", start: 3.1, end: 3.4 },
-            { text: "why", start: 3.5, end: 4 },
-          ]
-        },
-        {
-          start: 4, end: 7,
-          words: [
-            { text: "Kate", start: 4.1, end: 4.6 },
-            { text: "tells", start: 4.6, end: 5.0 },
-            { text: "her", start: 5.0, end: 5.4 },
-            { text: "mum", start: 5.4, end: 5.9 },
-            { text: "how", start: 5.9, end: 5.9 },
-            { text: "she", start: 5.9, end: 6.4 },
-            { text: "feels.", start: 6.4, end: 7.0 },
-          ]
-        },
-        {
-          start: 7, end: 8,
-          words: [
-            { text: "she", start: 7.1, end: 7.4 },
-            { text: "says", start: 7.4, end: 8.0 },
-          ]
-        },
+
       ]
     },
     {
@@ -200,17 +157,7 @@ export const StoryPage = () => {
       url: video9,
       title: "Section 9",
       subtitles: [
-        {
-          start: 0, end: 2,
-          words: [
-            { text: "Kate", start: 0, end: 0.3 },
-            { text: "and", start: 0.3, end: 0.5 },
-            { text: "Mum", start: 0.5, end: 0.8 },
-            { text: "bake", start: 0.8, end: 1.2 },
-            { text: "a chocolate", start: 1.2, end: 1.6 },
-            { text: "cake.", start: 1.6, end: 1.9 },
-          ]
-        },
+
         {
           start: 2, end: 6.6,
           words: [
@@ -226,19 +173,6 @@ export const StoryPage = () => {
             { text: "at", start: 5.7, end: 6.0 },
             { text: "different", start: 6.0, end: 6.3 },
             { text: "times,", start: 6.3, end: 6.6 },
-          ]
-        },
-        {
-          start: 9, end: 12,
-          words: [
-            { text: "Kate", start: 9.1, end: 9.4 },
-            { text: "understands", start: 9.4, end: 9.7 },
-            { text: "and", start: 9.7, end: 10.0 },
-            { text: "gives", start: 10.0, end: 10.3 },
-            { text: "her", start: 10.3, end: 10.6 },
-            { text: "mum", start: 10.6, end: 10.9 },
-            { text: "a", start: 10.9, end: 11.0 },
-            { text: "hug.", start: 11.1, end: 11.5 },
           ]
         },
       ]
@@ -260,7 +194,8 @@ export const StoryPage = () => {
   const extraBubblesData = [
     {
       videoIndex: 1,
-      start: 0, end: 4.5,
+      start: 0,
+      end: 4.5,
       words: [
         { text: "Kate", start: 0, end: 0.5 },
         { text: "has", start: 0.6, end: 0.69 },
@@ -273,21 +208,87 @@ export const StoryPage = () => {
         { text: "helps", start: 3.1, end: 3.5 },
         { text: "May", start: 3.5, end: 3.8 },
         { text: "with", start: 3.8, end: 4.0 },
-        { text: "everything.", start: 4.0, end: 4.5 },
+        { text: "everything.", start: 4.0, end: 4.5 }
+      ]
+    },
+    {
+      videoIndex: 1,
+      start: 4.6,
+      end: 8,
+      words: [
+        { text: "If", start: 5.0, end: 5.3 },
+        { text: "Kate", start: 5.3, end: 5.7 },
+        { text: "wants", start: 5.7, end: 6.1 },
+        { text: "help,", start: 6.1, end: 6.6 },
+        { text: "Mum", start: 6.6, end: 7.0 },
+        { text: "says.", start: 7.0, end: 7.9 }
+      ]
+    },
+
+    {
+      videoIndex: 3,
+      start: 0, end: 4,
+      words: [
+        { text: "Kate", start: 0.2, end: 0.5 },
+        { text: "looks", start: 0.5, end: 0.8 },
+        { text: "sad", start: 0.9, end: 1.3 },
+        { text: "Her", start: 1.3, end: 1.6 },
+        { text: "mum", start: 1.6, end: 2.4 },
+        { text: "asks", start: 2.4, end: 3 },
+        { text: "her", start: 3.1, end: 3.4 },
+        { text: "why", start: 3.5, end: 4 },
       ]
     },
     {
       videoIndex: 3,
-      start: 2.0, end: 5.0,
+      start: 4.0, end: 7.0,
       words: [
-        { text: "Notice", start: 2.2, end: 2.7 },
-        { text: "how", start: 2.8, end: 3.1 },
-        { text: "the", start: 3.2, end: 3.4 },
-        { text: "character", start: 3.5, end: 4.2 },
-        { text: "reacts.", start: 4.3, end: 4.8 },
+        { text: "Kate", start: 4.1, end: 4.6 },
+        { text: "tells", start: 4.6, end: 5.0 },
+        { text: "her", start: 5.0, end: 5.4 },
+        { text: "mum", start: 5.4, end: 5.9 },
+        { text: "how", start: 5.9, end: 5.9 },
+        { text: "she", start: 5.9, end: 6.4 },
+        { text: "feels.", start: 6.4, end: 7.0 },
       ]
-    }
+    },
+    {
+      videoIndex: 3,
+      start: 7.0, end: 8.0,
+      words: [
+        { text: "she", start: 7.1, end: 7.4 },
+        { text: "says", start: 7.4, end: 8.0 },
+      ]
+    },
+
+    {
+      videoIndex: 7,
+      start: 0, end: 2,
+      words: [
+        { text: "Kate", start: 0, end: 0.3 },
+        { text: "and", start: 0.3, end: 0.5 },
+        { text: "Mum", start: 0.5, end: 0.8 },
+        { text: "bake", start: 0.8, end: 1.2 },
+        { text: "a chocolate", start: 1.2, end: 1.6 },
+        { text: "cake.", start: 1.6, end: 1.9 },
+      ]
+    },
+    {
+      videoIndex: 7,
+      start: 9.0, end: 12.0,
+      words: [
+        { text: "Kate", start: 9.1, end: 9.4 },
+        { text: "understands", start: 9.4, end: 9.7 },
+        { text: "and", start: 9.7, end: 10.0 },
+        { text: "gives", start: 10.0, end: 10.3 },
+        { text: "her", start: 10.3, end: 10.6 },
+        { text: "mum", start: 10.6, end: 10.9 },
+        { text: "a", start: 10.9, end: 11.0 },
+        { text: "hug.", start: 11.1, end: 11.5 },
+      ]
+    },
   ];
+
 
 
   const currentVideoData = videos[currentVideo];
