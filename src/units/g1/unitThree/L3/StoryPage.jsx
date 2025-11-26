@@ -13,6 +13,7 @@ import video5 from "./assets/5.mp4";
 import questionGif from './assets/question.gif';
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -55,124 +56,28 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 1, end: 4.0,
-          words: [
-            { text: "The", start: 1.55, end: 1.9 },
-            { text: "children", start: 1.9, end: 2.25 },
-            { text: "are", start: 2.25, end: 2.6 },
-            { text: "going", start: 2.6, end: 2.95 },
-            { text: "outside", start: 2.95, end: 3.3 },
-            { text: "to play.", start: 3.3, end: 3.65 },
-          ]
-        },
-        {
-          start: 4.5, end: 7.5,
-          words: [
-            { text: "The", start: 4.7, end: 5.0 },
-            { text: "teacher", start: 5.0, end: 5.3 },
-            { text: "asks", start: 5.3, end: 5.6 },
-            { text: "them", start: 5.6, end: 5.9 },
-            { text: "to", start: 5.9, end: 6.2 },
-            { text: "line", start: 6.2, end: 6.5 },
-            { text: "up.", start: 6.5, end: 7.0 },
-
-
-          ]
-        },
-        {
-          start: 7.5, end: 13.5,
-          words: [
-            { text: "Susan", start: 8.8, end: 9.3 },
-            { text: "stands", start: 9.3, end: 9.8 },
-            { text: "in", start: 9.8, end: 10.0 },
-            { text: "front", start: 10.0, end: 10.3 },
-            { text: "of", start: 10.3, end: 10.5 },
-            { text: "Tom.", start: 10.5, end: 10.8 },
-            { text: "He", start: 11.5, end: 11.8 },
-            { text: "does", start: 11.8, end: 12.1 },
-            { text: "not", start: 12.1, end: 12.4 },
-            { text: "look", start: 12.4, end: 12.7 },
-            { text: "happy.", start: 12.7, end: 13.0 },
-          ]
-        },
+      
+     
+   
       ]
     },
     {
       url: video3,
       title: "Section 3",
       subtitles: [
-        {
-          start: 0, end: 4.1,
-          words: [
-            { text: "Susan", start: 0.5, end: 0.95 },
-            { text: "stands", start: 0.95, end: 1.4 },
-            { text: "too", start: 1.4, end: 1.85 },
-            { text: "close", start: 1.85, end: 2.3 },
-            { text: "to Tom", start: 2.3, end: 3.05 },
-            { text: "in", start: 3.1, end: 3.4 },
-            { text: "the", start: 3.4, end: 3.7 },
-            { text: "line.", start: 3.7, end: 4.0 },
-          ]
-        },
-        {
-          start: 4.1, end: 7.0,
-          words: [
-            { text: "Tom", start: 4.3, end: 4.6 },
-            { text: "doesn’t", start: 4.6, end: 4.9 },
-            { text: "like", start: 4.9, end: 5.2 },
-            { text: "her", start: 5.2, end: 5.5 },
-            { text: "to", start: 5.5, end: 5.8 },
-            { text: "be", start: 5.8, end: 6.1 },
-            { text: "so", start: 6.1, end: 6.4 },
-            { text: "close.", start: 6.4, end: 6.7 },
-          ]
-        },
-        {
-          start: 7.1, end: 11.0,
-          words: [
-            { text: "It", start: 7.2, end: 7.6 },
-            { text: "makes", start: 7.6, end: 8.0 },
-            { text: "him", start: 8.0, end: 8.4 },
-            { text: "feel", start: 8.4, end: 8.8 },
-            { text: "uncomfortable.", start: 8.8, end: 9.2 },
-          ]
-        },
+     
+     
+     
       ]
     },
     {
       url: video4,
       title: "Section 4",
       subtitles: [
-        {
-          start: 0, end: 2.6,
+{
+          start: 6.5, end: 14.0,
           words: [
-            { text: "He", start: 0.1, end: 0.5 },
-            { text: "goes", start: 0.5, end: 0.9 },
-            { text: "to", start: 0.9, end: 1.3 },
-            { text: "tell", start: 1.3, end: 1.7 },
-            { text: "the", start: 1.7, end: 2.1 },
-            { text: "teacher.", start: 2.1, end: 2.5 },
-          ]
-        },
-        {
-          start: 3.0, end: 6.2,
-          words: [
-            { text: "The", start: 3.5, end: 3.8 },
-            { text: "teacher", start: 3.8, end: 4.1 },
-            { text: "calls", start: 4.1, end: 4.4 },
-            { text: "Susan", start: 4.4, end: 4.7 },
-            { text: "and", start: 4.7, end: 5.0 },
-            { text: "Tom", start: 5.0, end: 5.3 },
-            { text: "to", start: 5.3, end: 5.6 },
-            { text: "the", start: 5.6, end: 5.9 },
-            { text: "table.", start: 5.9, end: 6.2 },
-          ]
-        },
-        {
-          start: 6.3, end: 14.0,
-          words: [
-            { text: "Personal", start: 6.4, end: 6.8 },
+                       { text: "Personal", start: 6.4, end: 6.8 },
             { text: "space", start: 6.8, end: 7.2 },
             { text: "is", start: 7.2, end: 7.4 },
             { text: "like", start: 7.4, end: 7.7 },
@@ -193,34 +98,15 @@ export const StoryPage = () => {
             { text: "uncomfortable.", start: 12.8, end: 13.2 },
           ]
         },
+ 
+    
       ]
     },
     {
       url: video5,
       title: "Section 5",
       subtitles: [
-        {
-          start: 0, end: 6.0,
-          words: [
-            { text: "When", start: 0.0, end: 0.4 },
-            { text: "the", start: 0.4, end: 0.7 },
-            { text: "kids", start: 0.7, end: 1.0 },
-            { text: "line", start: 1.0, end: 1.3 },
-            { text: "up", start: 1.3, end: 1.6 },
-            { text: "the", start: 1.6, end: 1.9 },
-            { text: "next", start: 1.9, end: 2.2 },
-            { text: "day,", start: 2.2, end: 2.5 },
-            { text: "Susan", start: 3.0, end: 3.3 },
-            { text: "remembers", start: 3.3, end: 3.7 },
-            { text: "not", start: 3.7, end: 4.0 },
-            { text: "to", start: 4.0, end: 4.2 },
-            { text: "stand", start: 4.2, end: 4.5 },
-            { text: "too", start: 4.5, end: 4.8 },
-            { text: "close", start: 4.8, end: 5.1 },
-            { text: "to", start: 5.1, end: 5.3 },
-            { text: "Tom.", start: 5.3, end: 5.7 },
-          ]
-        },
+       
         {
           start: 6.5, end: 11.0,
           words: [
@@ -288,7 +174,7 @@ export const StoryPage = () => {
     ],
 
     3: [
-      { bottom: '85%', left: '60%', isFlipped: true },
+      { bottom: '55%', left: '20%', isFlipped: true },
       { top: '5%', left: '23%', isFlipped: true },
       { top: '5%', left: '25%', isFlipped: true },
     ],
@@ -311,11 +197,167 @@ export const StoryPage = () => {
     // ],
   };
 
+   const extraBubblesData = [
+    {
+      videoIndex: 1,
+       start: 1, end: 4.0,
+          words: [
+            { text: "The", start: 1.55, end: 1.9 },
+            { text: "children", start: 1.9, end: 2.25 },
+            { text: "are", start: 2.25, end: 2.6 },
+            { text: "going", start: 2.6, end: 2.95 },
+            { text: "outside", start: 2.95, end: 3.3 },
+            { text: "to play.", start: 3.3, end: 3.65 },
+      ]
+    },
+    {
+      videoIndex: 1,
+        start: 4.5, end: 7.5,
+          words: [
+            { text: "The", start: 4.7, end: 5.0 },
+            { text: "teacher", start: 5.0, end: 5.3 },
+            { text: "asks", start: 5.3, end: 5.6 },
+            { text: "them", start: 5.6, end: 5.9 },
+            { text: "to", start: 5.9, end: 6.2 },
+            { text: "line", start: 6.2, end: 6.5 },
+            { text: "up.", start: 6.5, end: 7.0 },
+      ]
+    },{
+      videoIndex: 1,
+        start: 4.5, end: 7.5,
+          words: [
+            { text: "The", start: 4.7, end: 5.0 },
+            { text: "teacher", start: 5.0, end: 5.3 },
+            { text: "asks", start: 5.3, end: 5.6 },
+            { text: "them", start: 5.6, end: 5.9 },
+            { text: "to", start: 5.9, end: 6.2 },
+            { text: "line", start: 6.2, end: 6.5 },
+            { text: "up.", start: 6.5, end: 7.0 },
+      ]
+    },{
+      videoIndex: 1,
+      start: 7.5, end: 13.5,
+          words: [
+            { text: "Susan", start: 8.8, end: 9.3 },
+            { text: "stands", start: 9.3, end: 9.8 },
+            { text: "in", start: 9.8, end: 10.0 },
+            { text: "front", start: 10.0, end: 10.3 },
+            { text: "of", start: 10.3, end: 10.5 },
+            { text: "Tom.", start: 10.5, end: 10.8 },
+            { text: "He", start: 11.5, end: 11.8 },
+            { text: "does", start: 11.8, end: 12.1 },
+            { text: "not", start: 12.1, end: 12.4 },
+            { text: "look", start: 12.4, end: 12.7 },
+            { text: "happy.", start: 12.7, end: 13.0 },
+      ]
+    },
+    {
+      videoIndex: 2,
+           start: 0, end: 4.1,
+          words: [
+            { text: "Susan", start: 0.5, end: 0.95 },
+            { text: "stands", start: 0.95, end: 1.4 },
+            { text: "too", start: 1.4, end: 1.85 },
+            { text: "close", start: 1.85, end: 2.3 },
+            { text: "to Tom", start: 2.3, end: 3.05 },
+            { text: "in", start: 3.1, end: 3.4 },
+            { text: "the", start: 3.4, end: 3.7 },
+            { text: "line.", start: 3.7, end: 4.0 },
+      ]
+    }, {
+      videoIndex: 2,
+       start: 4.1, end: 7.0,
+          words: [
+            { text: "Tom", start: 4.3, end: 4.6 },
+            { text: "doesn’t", start: 4.6, end: 4.9 },
+            { text: "like", start: 4.9, end: 5.2 },
+            { text: "her", start: 5.2, end: 5.5 },
+            { text: "to", start: 5.5, end: 5.8 },
+            { text: "be", start: 5.8, end: 6.1 },
+            { text: "so", start: 6.1, end: 6.4 },
+            { text: "close.", start: 6.4, end: 6.7 },
+      ]
+    },
+    {
+      videoIndex: 2,
+     start: 7.1, end: 11.0,
+          words: [
+            { text: "It", start: 7.2, end: 7.6 },
+            { text: "makes", start: 7.6, end: 8.0 },
+            { text: "him", start: 8.0, end: 8.4 },
+            { text: "feel", start: 8.4, end: 8.8 },
+            { text: "uncomfortable.", start: 8.8, end: 9.2 },
+          ]
+    },
+    {
+      videoIndex: 3,
+      start: 0, end: 2.6,
+          words: [
+            { text: "He", start: 0.1, end: 0.5 },
+            { text: "goes", start: 0.5, end: 0.9 },
+            { text: "to", start: 0.9, end: 1.3 },
+            { text: "tell", start: 1.3, end: 1.7 },
+            { text: "the", start: 1.7, end: 2.1 },
+            { text: "teacher.", start: 2.1, end: 2.5 },
+          ]
+    },
+     {
+      videoIndex: 3,
+     start: 3.0, end: 6.2,
+          words: [
+            { text: "The", start: 3.5, end: 3.8 },
+            { text: "teacher", start: 3.8, end: 4.1 },
+            { text: "calls", start: 4.1, end: 4.4 },
+            { text: "Susan", start: 4.4, end: 4.7 },
+            { text: "and", start: 4.7, end: 5.0 },
+            { text: "Tom", start: 5.0, end: 5.3 },
+            { text: "to", start: 5.3, end: 5.6 },
+            { text: "the", start: 5.6, end: 5.9 },
+            { text: "table.", start: 5.9, end: 6.2 },
+          ]
+    }, {
+      videoIndex: 3,
+         
+    },
+    {
+      videoIndex: 4,
+           start: 0, end: 6.0,
+          words: [
+            { text: "When", start: 0.0, end: 0.4 },
+            { text: "the", start: 0.4, end: 0.7 },
+            { text: "kids", start: 0.7, end: 1.0 },
+            { text: "line", start: 1.0, end: 1.3 },
+            { text: "up", start: 1.3, end: 1.6 },
+            { text: "the", start: 1.6, end: 1.9 },
+            { text: "next", start: 1.9, end: 2.2 },
+            { text: "day,", start: 2.2, end: 2.5 },
+            { text: "Susan", start: 3.0, end: 3.3 },
+            { text: "remembers", start: 3.3, end: 3.7 },
+            { text: "not", start: 3.7, end: 4.0 },
+            { text: "to", start: 4.0, end: 4.2 },
+            { text: "stand", start: 4.2, end: 4.5 },
+            { text: "too", start: 4.5, end: 4.8 },
+            { text: "close", start: 4.8, end: 5.1 },
+            { text: "to", start: 5.1, end: 5.3 },
+            { text: "Tom.", start: 5.3, end: 5.7 },
+          ]
+    }
+  ];
+
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
     sub => currentTime >= sub.start && currentTime < sub.end
   );
+ useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
 
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
 
   const activeSubtitle = activeSubtitleIndex !== -1
     ? currentVideoData.subtitles[activeSubtitleIndex]
@@ -585,6 +627,23 @@ export const StoryPage = () => {
                   })}
                 </p>
                 <button className="close" onClick={() => setShowBubble(false)}>×</button>
+              </div>
+            </div>
+          )}
+           {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              {/* 1️⃣ استخدمنا نفس الكلاس لترث التصميم */}
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
               </div>
             </div>
           )}

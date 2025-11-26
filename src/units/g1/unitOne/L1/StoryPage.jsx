@@ -14,7 +14,9 @@ import video8 from "./assets/1-8.mp4";
 import video9 from "./assets/1-9S.mp4";
 
 export const StoryPage = () => {
+  // 1
   const [extraBubble, setExtraBubble] = useState(null);
+  // e
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -191,6 +193,7 @@ export const StoryPage = () => {
     { bottom: '75%', left: '30%', transform: 'translateX(-50%)' },
   ];
 
+  // 2
   const extraBubblesData = [
     {
       videoIndex: 1,
@@ -296,6 +299,7 @@ export const StoryPage = () => {
     sub => currentTime >= sub.start && currentTime < sub.end
   );
 
+  // 3
   useEffect(() => {
     const bubbleToShow = extraBubblesData.find(bubble =>
       bubble.videoIndex === currentVideo &&
@@ -550,6 +554,7 @@ export const StoryPage = () => {
             </div>
           )}
 
+          {/* 4 */}
           {extraBubble && extraBubble.words && (
             <div
               className="subtitle-container"

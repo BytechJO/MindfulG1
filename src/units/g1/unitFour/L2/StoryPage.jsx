@@ -12,6 +12,7 @@ import video5 from "./assets/5.mp4";
 
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -90,16 +91,7 @@ export const StoryPage = () => {
             { text: "that!", start: 5.5, end: 5.7 }
           ]
         },
-        {
-          start: 6.0, end: 8.8,
-          words: [
-            { text: "Oh", start: 6.0, end: 7.0 },
-            { text: "dear!", start: 7.0, end: 7.8 },
-            { text: "Everyone", start: 7.8, end: 8.1 },
-            { text: "is", start: 8.1, end: 8.3 },
-            { text: "arguing.", start: 8.3, end: 8.7 }
-          ]
-        },
+      
 
       ]
     },
@@ -107,26 +99,7 @@ export const StoryPage = () => {
       url: video3,
       title: "Section 3",
       subtitles: [
-        {
-          start: 0, end: 5.3,
-          words: [
-            { text: "Bella", start: 0.0, end: 0.3 },
-            { text: "and", start: 0.3, end: 0.6 },
-            { text: "Kerry", start: 0.6, end: 0.9 },
-            { text: "want", start: 0.9, end: 1.2 },
-            { text: "to", start: 1.2, end: 1.5 },
-            { text: "play", start: 1.5, end: 1.8 },
-            { text: "different", start: 1.8, end: 2.1 },
-            { text: "games,", start: 2.1, end: 2.4 },
-            { text: "but", start: 3.0, end: 3.3 },
-            { text: "they", start: 3.3, end: 3.6 },
-            { text: "also", start: 3.6, end: 3.9 },
-            { text: "want", start: 3.9, end: 4.2 },
-            { text: "to", start: 4.2, end: 4.5 },
-            { text: "play", start: 4.5, end: 4.8 },
-            { text: "together.", start: 4.8, end: 5.1 }
-          ]
-        },
+    
         {
           start: 5.3, end: 8.0,
           words: [
@@ -180,31 +153,8 @@ export const StoryPage = () => {
       url: video5,
       title: "Section 5",
       subtitles: [
-        {
-          start: 0, end: 3.1,
-          words: [
-            { text: "The", start: 0.0, end: 0.3 },
-            { text: "teacher", start: 0.3, end: 0.6 },
-            { text: "is", start: 0.6, end: 0.9 },
-            { text: "happy", start: 0.9, end: 1.2 },
-            { text: "to", start: 1.2, end: 1.5 },
-            { text: "see", start: 1.5, end: 1.8 },
-            { text: "the", start: 1.8, end: 2.1 },
-            { text: "girls", start: 2.1, end: 2.4 },
-            { text: "playing", start: 2.4, end: 2.7 },
-            { text: "together", start: 2.7, end: 3.0 }
-          ]
-        },
-        {
-          start: 3.4, end: 6.0,
-          words: [
-            { text: "The", start: 3.5, end: 3.8 },
-            { text: "girls", start: 3.8, end: 4.1 },
-            { text: "are", start: 4.1, end: 4.3 },
-            { text: "happy", start: 4.3, end: 4.7 },
-            { text: "too.", start: 4.7, end: 5.0 }
-          ]
-        },
+     
+    
       ]
     },
 
@@ -253,11 +203,81 @@ export const StoryPage = () => {
     // ],
   };
 
+   const extraBubblesData = [
+    {
+      videoIndex: 1,
+        start: 6.0, end: 8.8,
+          words: [
+            { text: "Oh", start: 6.0, end: 7.0 },
+            { text: "dear!", start: 7.0, end: 7.8 },
+            { text: "Everyone", start: 7.8, end: 8.1 },
+            { text: "is", start: 8.1, end: 8.3 },
+            { text: "arguing.", start: 8.3, end: 8.7 }
+      ]
+    },
+    {
+      videoIndex: 2,
+     start: 0, end: 5.3,
+          words: [
+            { text: "Bella", start: 0.0, end: 0.3 },
+            { text: "and", start: 0.3, end: 0.6 },
+            { text: "Kerry", start: 0.6, end: 0.9 },
+            { text: "want", start: 0.9, end: 1.2 },
+            { text: "to", start: 1.2, end: 1.5 },
+            { text: "play", start: 1.5, end: 1.8 },
+            { text: "different", start: 1.8, end: 2.1 },
+            { text: "games,", start: 2.1, end: 2.4 },
+            { text: "but", start: 3.0, end: 3.3 },
+            { text: "they", start: 3.3, end: 3.6 },
+            { text: "also", start: 3.6, end: 3.9 },
+            { text: "want", start: 3.9, end: 4.2 },
+            { text: "to", start: 4.2, end: 4.5 },
+            { text: "play", start: 4.5, end: 4.8 },
+            { text: "together.", start: 4.8, end: 5.1 }
+      ]
+    },{
+      videoIndex: 4,
+     start: 0, end: 3.1,
+          words: [
+            { text: "The", start: 0.0, end: 0.3 },
+            { text: "teacher", start: 0.3, end: 0.6 },
+            { text: "is", start: 0.6, end: 0.9 },
+            { text: "happy", start: 0.9, end: 1.2 },
+            { text: "to", start: 1.2, end: 1.5 },
+            { text: "see", start: 1.5, end: 1.8 },
+            { text: "the", start: 1.8, end: 2.1 },
+            { text: "girls", start: 2.1, end: 2.4 },
+            { text: "playing", start: 2.4, end: 2.7 },
+            { text: "together", start: 2.7, end: 3.0 }
+      ]
+    },
+    {
+      videoIndex: 4,
+      start: 3.4, end: 6.0,
+          words: [
+            { text: "The", start: 3.5, end: 3.8 },
+            { text: "girls", start: 3.8, end: 4.1 },
+            { text: "are", start: 4.1, end: 4.3 },
+            { text: "happy", start: 4.3, end: 4.7 },
+            { text: "too.", start: 4.7, end: 5.0 }
+      ]
+    }
+  ];
+
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
     sub => currentTime >= sub.start && currentTime < sub.end
   );
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
 
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
 
   const activeSubtitle = activeSubtitleIndex !== -1
     ? currentVideoData.subtitles[activeSubtitleIndex]
@@ -530,7 +550,23 @@ export const StoryPage = () => {
               </div>
             </div>
           )}
-
+    {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              {/* 1️⃣ استخدمنا نفس الكلاس لترث التصميم */}
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
           <div className="video-overlay" />
           <div className="controls-container">
             <div className="controlbbtn">

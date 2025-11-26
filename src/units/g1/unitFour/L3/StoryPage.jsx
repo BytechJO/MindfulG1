@@ -12,6 +12,7 @@ import video5 from "./assets/5.mp4";
 
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -54,28 +55,7 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 0, end: 5.0,
-          words: [
-            { text: "Dan", start: 0.0, end: 0.4 },
-            { text: "is", start: 0.4, end: 0.6 },
-            { text: "kicking", start: 0.6, end: 1.0 },
-            { text: "a", start: 1.0, end: 1.1 },
-            { text: "football", start: 1.1, end: 1.5 },
-            { text: "in", start: 1.5, end: 1.7 },
-            { text: "the", start: 1.7, end: 1.9 },
-            { text: "playground", start: 1.9, end: 2.4 },
-            { text: "when", start: 2.4, end: 2.7 },
-            { text: "a", start: 2.7, end: 2.8 },
-            { text: "big", start: 2.8, end: 3.0 },
-            { text: "boy", start: 3.0, end: 3.3 },
-            { text: "takes", start: 3.3, end: 3.6 },
-            { text: "it", start: 3.6, end: 3.8 },
-            { text: "away", start: 3.8, end: 4.1 },
-            { text: "from", start: 4.1, end: 4.3 },
-            { text: "him.", start: 4.3, end: 4.6 }
-          ]
-        },
+    
 
       ]
     },
@@ -83,27 +63,9 @@ export const StoryPage = () => {
       url: video3,
       title: "Section 3",
       subtitles: [
-        {
-          start: 0, end: 1.3,
-          words: [
-            { text: "Noah", start: 0.0, end: 0.3 },
-            { text: "is", start: 0.3, end: 0.6 },
-            { text: "Dan’s", start: 0.6, end: 0.9 },
-            { text: "friend.", start: 0.9, end: 1.2 },
-          ]
-        },
+   
 
-        {
-          start: 1.4, end: 3.6,
-          words: [
-            { text: "He", start: 1.5, end: 1.8 },
-            { text: "sees", start: 1.8, end: 2.2 },
-            { text: "that", start: 2.2, end: 2.5 },
-            { text: "Dan", start: 2.5, end: 2.8 },
-            { text: "is", start: 2.8, end: 3.2 },
-            { text: "upset.", start: 3.2, end: 3.5 }
-          ]
-        },
+    
 
         {
           start: 3.7, end: 4.8,
@@ -114,60 +76,17 @@ export const StoryPage = () => {
           ]
         },
 
-        {
-          start: 4.9, end: 6.7,
-          words: [
-            { text: "Dan", start: 4.9, end: 5.2 },
-            { text: "wants", start: 5.2, end: 5.6 },
-            { text: "his", start: 5.6, end: 5.9 },
-            { text: "football", start: 5.9, end: 6.3 },
-            { text: "back.", start: 6.3, end: 6.6 }
-          ]
-        },
+      
 
-        {
-          start: 6.8, end: 8.0,
-          words: [
-            { text: "Noah", start: 6.8, end: 7.1 },
-            { text: "thinks", start: 7.1, end: 7.5 },
-            { text: "of", start: 7.5, end: 7.7 },
-            { text: "a", start: 7.7, end: 7.8 },
-            { text: "way", start: 7.8, end: 8.1 },
-            { text: "to", start: 8.1, end: 8.3 },
-            { text: "help", start: 8.3, end: 8.7 },
-            { text: "Dan.", start: 8.7, end: 9.0 }
-          ]
-        },
+    
       ]
     },
     {
       url: video4,
       title: "Section 4",
       subtitles: [
-        {
-          start: 0, end: 2.0,
-          words: [
-            { text: "We", start: 0.0, end: 0.2 },
-            { text: "need", start: 0.2, end: 0.5 },
-            { text: "to", start: 0.5, end: 0.8 },
-            { text: "tell", start: 0.8, end: 1.1 },
-            { text: "the", start: 1.1, end: 1.4 },
-            { text: "teacher.", start: 1.4, end: 1.8 }
-          ]
-        },
-        {
-          start: 2.1, end: 7.0,
-          words: [
-            { text: "Sometimes", start: 2.2, end: 2.5 },
-            { text: "we", start: 2.5, end: 2.7 },
-            { text: "need", start: 2.7, end: 3.1 },
-            { text: "to", start: 3.1, end: 3.3 },
-            { text: "ask", start: 3.3, end: 3.7 },
-            { text: "an adult", start: 3.7, end: 4.2 },
-            { text: "for", start: 4.2, end: 4.4 },
-            { text: "help.", start: 4.4, end: 4.6 }
-          ]
-        },
+     
+  
       ]
     },
     {
@@ -185,18 +104,7 @@ export const StoryPage = () => {
             { text: "back,", start: 1.5, end: 1.8 },
           ]
         },
-        {
-          start: 1.9, end: 5.0,
-          words: [
-            { text: "The", start: 2.1, end: 2.3 },
-            { text: "big", start: 2.3, end: 2.6 },
-            { text: "boy", start: 2.6, end: 2.9 },
-            { text: "gives", start: 2.9, end: 3.2 },
-            { text: "Dan", start: 3.2, end: 3.5 },
-            { text: "his", start: 3.5, end: 3.8 },
-            { text: "football.", start: 3.8, end: 4.1 }
-          ]
-        },
+   
       ]
     },
 
@@ -246,12 +154,133 @@ export const StoryPage = () => {
     //   { top: '10%', left: '50%', isFlipped: true },
     // ],
   };
+   const extraBubblesData = [
+    {
+      videoIndex: 1,
+        start: 0, end: 5.0,
+          words: [
+            { text: "Dan", start: 0.0, end: 0.4 },
+            { text: "is", start: 0.4, end: 0.6 },
+            { text: "kicking", start: 0.6, end: 1.0 },
+            { text: "a", start: 1.0, end: 1.1 },
+            { text: "football", start: 1.1, end: 1.5 },
+            { text: "in", start: 1.5, end: 1.7 },
+            { text: "the", start: 1.7, end: 1.9 },
+            { text: "playground", start: 1.9, end: 2.4 },
+            { text: "when", start: 2.4, end: 2.7 },
+            { text: "a", start: 2.7, end: 2.8 },
+            { text: "big", start: 2.8, end: 3.0 },
+            { text: "boy", start: 3.0, end: 3.3 },
+            { text: "takes", start: 3.3, end: 3.6 },
+            { text: "it", start: 3.6, end: 3.8 },
+            { text: "away", start: 3.8, end: 4.1 },
+            { text: "from", start: 4.1, end: 4.3 },
+            { text: "him.", start: 4.3, end: 4.6 }
+      ]
+    },
+    {
+      videoIndex: 2,
+           start: 0, end: 1.3,
+          words: [
+            { text: "Noah", start: 0.0, end: 0.3 },
+            { text: "is", start: 0.3, end: 0.6 },
+            { text: "Dan’s", start: 0.6, end: 0.9 },
+            { text: "friend.", start: 0.9, end: 1.2 },
+      ]
+    }, {
+      videoIndex: 2,
+         start: 1.4, end: 3.6,
+          words: [
+            { text: "He", start: 1.5, end: 1.8 },
+            { text: "sees", start: 1.8, end: 2.2 },
+            { text: "that", start: 2.2, end: 2.5 },
+            { text: "Dan", start: 2.5, end: 2.8 },
+            { text: "is", start: 2.8, end: 3.2 },
+            { text: "upset.", start: 3.2, end: 3.5 }
+      ]
+    },
+    {
+      videoIndex: 2,
+        start: 4.9, end: 6.7,
+          words: [
+            { text: "Dan", start: 4.9, end: 5.2 },
+            { text: "wants", start: 5.2, end: 5.6 },
+            { text: "his", start: 5.6, end: 5.9 },
+            { text: "football", start: 5.9, end: 6.3 },
+            { text: "back.", start: 6.3, end: 6.6 }
+      ]
+    },{
+      videoIndex: 2,
+        start: 6.8, end: 8.0,
+          words: [
+            { text: "Noah", start: 6.8, end: 7.1 },
+            { text: "thinks", start: 7.1, end: 7.5 },
+            { text: "of", start: 7.5, end: 7.7 },
+            { text: "a", start: 7.7, end: 7.8 },
+            { text: "way", start: 7.8, end: 8.1 },
+            { text: "to", start: 8.1, end: 8.3 },
+            { text: "help", start: 8.3, end: 8.7 },
+            { text: "Dan.", start: 8.7, end: 9.0 }
+      ]
+    },{
+      videoIndex: 3,
+          start: 0, end: 2.0,
+          words: [
+            { text: "We", start: 0.0, end: 0.2 },
+            { text: "need", start: 0.2, end: 0.5 },
+            { text: "to", start: 0.5, end: 0.8 },
+            { text: "tell", start: 0.8, end: 1.1 },
+            { text: "the", start: 1.1, end: 1.4 },
+            { text: "teacher.", start: 1.4, end: 1.8 }
+      ]
+    },{
+      videoIndex: 3,
+         start: 2.1, end: 7.0,
+          words: [
+            { text: "Sometimes", start: 2.2, end: 2.5 },
+            { text: "we", start: 2.5, end: 2.7 },
+            { text: "need", start: 2.7, end: 3.1 },
+            { text: "to", start: 3.1, end: 3.3 },
+            { text: "ask", start: 3.3, end: 3.7 },
+            { text: "an adult", start: 3.7, end: 4.2 },
+            { text: "for", start: 4.2, end: 4.4 },
+            { text: "help.", start: 4.4, end: 4.6 }
+      ]
+    },
+    {
+      videoIndex: 4,
+          start: 1.9, end: 5.0,
+          words: [
+            { text: "The", start: 2.1, end: 2.3 },
+            { text: "big", start: 2.3, end: 2.6 },
+            { text: "boy", start: 2.6, end: 2.9 },
+            { text: "gives", start: 2.9, end: 3.2 },
+            { text: "Dan", start: 3.2, end: 3.5 },
+            { text: "his", start: 3.5, end: 3.8 },
+            { text: "football.", start: 3.8, end: 4.1 }
+      ]
+    },
+
+  ];
+
+
+
 
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
     sub => currentTime >= sub.start && currentTime < sub.end
   );
+  
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
 
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
 
   const activeSubtitle = activeSubtitleIndex !== -1
     ? currentVideoData.subtitles[activeSubtitleIndex]
@@ -524,7 +553,23 @@ export const StoryPage = () => {
               </div>
             </div>
           )}
-
+           {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              {/* 1️⃣ استخدمنا نفس الكلاس لترث التصميم */}
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
           <div className="video-overlay" />
           <div className="controls-container">
             <div className="controlbbtn">
