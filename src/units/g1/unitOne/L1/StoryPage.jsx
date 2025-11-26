@@ -14,7 +14,7 @@ import video8 from "./assets/1-8.mp4";
 import video9 from "./assets/1-9S.mp4";
 
 export const StoryPage = () => {
-  // ... (all your existing states remain the same)
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -51,23 +51,7 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        {
-          start: 0, end: 4.5,
-          words: [
-            { text: "Kate", start: 0, end: 0.5 },
-            { text: "has", start: 0.6, end: 0.69 },
-            { text: "a", start: 0.69, end: 0.9 },
-            { text: "little", start: 0.9, end: 1.3 },
-            { text: "sister", start: 1.3, end: 1.8 },
-            { text: "named", start: 1.8, end: 2.2 },
-            { text: "May", start: 2.2, end: 2.6 },
-            { text: "Mum", start: 2.8, end: 3.1 },
-            { text: "helps", start: 3.1, end: 3.5 },
-            { text: "May", start: 3.5, end: 3.8 },
-            { text: "with", start: 3.8, end: 4.0 },
-            { text: "everything.", start: 4.0, end: 4.5 },
-          ]
-        },
+
         {
           start: 4.6, end: 8,
           words: [
@@ -273,10 +257,54 @@ export const StoryPage = () => {
     { bottom: '75%', left: '30%', transform: 'translateX(-50%)' },
   ];
 
+  const extraBubblesData = [
+    {
+      videoIndex: 1,
+      start: 0, end: 4.5,
+      words: [
+        { text: "Kate", start: 0, end: 0.5 },
+        { text: "has", start: 0.6, end: 0.69 },
+        { text: "a", start: 0.69, end: 0.9 },
+        { text: "little", start: 0.9, end: 1.3 },
+        { text: "sister", start: 1.3, end: 1.8 },
+        { text: "named", start: 1.8, end: 2.2 },
+        { text: "May", start: 2.2, end: 2.6 },
+        { text: "Mum", start: 2.8, end: 3.1 },
+        { text: "helps", start: 3.1, end: 3.5 },
+        { text: "May", start: 3.5, end: 3.8 },
+        { text: "with", start: 3.8, end: 4.0 },
+        { text: "everything.", start: 4.0, end: 4.5 },
+      ]
+    },
+    {
+      videoIndex: 3,
+      start: 2.0, end: 5.0,
+      words: [
+        { text: "Notice", start: 2.2, end: 2.7 },
+        { text: "how", start: 2.8, end: 3.1 },
+        { text: "the", start: 3.2, end: 3.4 },
+        { text: "character", start: 3.5, end: 4.2 },
+        { text: "reacts.", start: 4.3, end: 4.8 },
+      ]
+    }
+  ];
+
+
   const currentVideoData = videos[currentVideo];
   const activeSubtitle = currentVideoData.subtitles.find(
     sub => currentTime >= sub.start && currentTime < sub.end
   );
+
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
 
   useEffect(() => {
     const nextVideoIndex = currentVideo + 1;
@@ -307,6 +335,10 @@ export const StoryPage = () => {
       }
     }
   }, [currentTime, currentVideo, isPlaying, duration]);
+
+
+
+
 
   useEffect(() => {
     const video = videoRef.current;
@@ -499,30 +531,14 @@ export const StoryPage = () => {
             </div>
           )}
 
-
-          {activeSubtitle && showBubble && showSubtitles && (
-            <div
-              className="subtitle-container "
-              style={{
-                ...cloudPositions[currentVideo],
-              }}
-            >
-              <div className={`bubble-cloud  animate__animated animate__fadeIn ${cloudPositions[currentVideo].isFlipped ? 'flipped' : ''}`}>
+          {showBubble && showSubtitles && activeSubtitle && activeSubtitle.words && (
+            <div className="subtitle-container" style={cloudPositions[currentVideo]}>
+              <div className={`bubble-cloud animate__animated animate__fadeIn ${cloudPositions[currentVideo]?.isFlipped ? 'flipped' : ''}`}>
                 <p>
                   {activeSubtitle.words.map((word, index) => {
                     const isHighlighted = currentTime >= word.start && currentTime < word.end;
                     return (
-                      <span
-                        key={index}
-                        onClick={() => {
-                          if (currentVideo === 4) toggleWordSelection(word.text);
-                        }}
-                        className={`
-                          word-span
-                          ${isHighlighted ? 'active-word' : ''}
-                          ${currentVideo === 4 && selectedWords.includes(word.text) ? 'selected-word' : ''}
-                        `}
-                      >
+                      <span key={index} onClick={() => { if (currentVideo === 4) toggleWordSelection(word.text); }} className={`word-span ${isHighlighted ? 'active-word' : ''} ${currentVideo === 4 && selectedWords.includes(word.text) ? 'selected-word' : ''}`}>
                         {word.text}{' '}
                       </span>
                     );
@@ -532,6 +548,25 @@ export const StoryPage = () => {
               </div>
             </div>
           )}
+
+          {extraBubble && extraBubble.words && (
+            <div
+              className="subtitle-container"
+              // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
+              style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
+            >
+              {/* 1️⃣ استخدمنا نفس الكلاس لترث التصميم */}
+              <div className="extra-cloud animate__animated animate__fadeIn">
+                <p>
+                  {extraBubble.words.map((word, index) => {
+                    const isHighlighted = currentTime >= word.start && currentTime < word.end;
+                    return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
+
 
           <div className="video-overlay" />
           <div className="controls-container">

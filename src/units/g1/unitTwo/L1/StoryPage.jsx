@@ -12,6 +12,7 @@ import video5 from "./assets/5.mp4";
 
 
 export const StoryPage = () => {
+  const [extraBubble, setExtraBubble] = useState({ show: false, text: '' });
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -19,7 +20,7 @@ export const StoryPage = () => {
   const [duration, setDuration] = useState(0);
   const videoRef = useRef(null);
   const [selectedWords, setSelectedWords] = useState([]);
-  const {unitId, lessonId} = useParams();
+  const { unitId, lessonId } = useParams();
   const navigate = useNavigate();
   const [showFeedback, setShowFeedback] = useState(false);
   const [showBubble, setShowBubble] = useState(true);
@@ -256,7 +257,7 @@ export const StoryPage = () => {
             { text: "other,", start: 16.5, end: 16.8 },
             { text: "and", start: 16.8, end: 17.1 },
             { text: "Helen", start: 17.1, end: 17.4 },
-            { text: "lets", start: 17.4, end: 17.7},
+            { text: "lets", start: 17.4, end: 17.7 },
             { text: "Kim", start: 17.7, end: 18.0 },
             { text: "have", start: 18.0, end: 18.3 },
             { text: "a turn", start: 18.3, end: 18.6 },
@@ -293,7 +294,7 @@ export const StoryPage = () => {
     4: [
       { top: '10%', left: '30%', isFlipped: true },
       { top: '5%', left: '35%' },
-      { top: '5%', left: '55%' , isFlipped: true},
+      { top: '5%', left: '55%', isFlipped: true },
       { top: '15%', left: '20%' },
       { top: '65%', left: '15%' },
     ],
@@ -309,6 +310,16 @@ export const StoryPage = () => {
     //   { top: '10%', left: '50%', isFlipped: true },
     // ],
   };
+
+  // NEW: Data structure for the extra narration/commentary bubbles
+  const extraBubblesData = [
+    { videoIndex: 1, start: 0.8, end: 9, text: "هذا هو النص الأول الذي يظهر في الفيديو الثاني." },
+    { videoIndex: 1, start: 10, end: 12, text: "وهذا نص آخر في نفس الفيديو." },
+    { videoIndex: 3, start: 1, end: 4, text: "ملاحظة تظهر في بداية الفيديو الرابع." },
+    { videoIndex: 4, start: 8, end: 11, text: "وهنا تعليق على الفيديو الأخير." }
+    // يمكنك إضافة المزيد من الكائنات هنا...
+  ];
+
 
   const currentVideoData = videos[currentVideo];
   const activeSubtitleIndex = currentVideoData.subtitles.findIndex(
@@ -397,6 +408,23 @@ export const StoryPage = () => {
       }
     }
   }, [currentVideo]);
+
+  // NEW: useEffect to control the extra bubble based on the data structure
+  useEffect(() => {
+    // Find if there's a bubble to show for the current video and time
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    if (bubbleToShow) {
+      setExtraBubble({ show: true, text: bubbleToShow.text });
+    } else {
+      setExtraBubble({ show: false, text: '' });
+    }
+  }, [currentVideo, currentTime]);
+
 
   useEffect(() => {
     const video = videoRef.current;
@@ -583,6 +611,18 @@ export const StoryPage = () => {
                   })}
                 </p>
                 <button className="close" onClick={() => setShowBubble(false)}>×</button>
+              </div>
+            </div>
+          )}
+
+          {extraBubble.show && (
+            <div
+              className="subtitle-container"
+              style={{ top: '70%', left: '50%', transform: 'translateX(-50%)' }} 
+            >
+              <div className="bubble-cloud animate__animated animate__fadeIn">
+                <p>{extraBubble.text}</p>
+                <button className="close" onClick={() => setExtraBubble({ ...extraBubble, show: false })}>×</button>
               </div>
             </div>
           )}

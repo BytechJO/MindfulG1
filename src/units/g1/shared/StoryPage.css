@@ -40,6 +40,23 @@
   text-align: center;
 }
 
+.extra-cloud {
+  position: relative;
+  display: inline-block;
+  background: transparent ;
+  padding: 1rem 1.25rem;
+  border-radius: 3.5rem;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: #ffffff;
+  box-shadow: 0 0.25rem 0.938rem rgba(0, 0, 0, 2.0);
+  width: 1000px;
+  height: 150px;
+  text-align: center;
+  font-size: 32px;
+}
+
 .bubble-cloud::after,
 .bubble-cloud::before {
   content: "";

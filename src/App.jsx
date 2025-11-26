@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 // import { QuizPage } from './QuizPage.jsx';
 // import { StoryPage } from './StoryPage.jsx';
 // import FeedBack from './feedBack.jsx';
