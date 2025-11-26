@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2, MessageSquareText } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../shared/StoryPage.css';
 import ValidationAlert from '../../shared/ValidationAlert';
@@ -21,6 +21,7 @@ export const StoryPage = () => {
   const [volume, setVolume] = useState(1);
   const [playbackSpeed, setPlaybackSpeed] = useState(1);
   const [showSubtitles, setShowSubtitles] = useState(true);
+  const [showCaption, setShowCaption] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showBubble, setShowBubble] = useState(true);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
@@ -185,7 +186,7 @@ export const StoryPage = () => {
     3: [{ bottom: '80%', left: '28%' }, { top: '30%', left: '35%', isFlipped: true }, { top: '30%', left: '35%', isFlipped: true }],
     4: [{ top: '10%', left: '50%', isFlipped: true }, { top: '5%', left: '30%' }, { top: '5%', left: '30%' }],
     5: {
-      }
+    }
   };
 
 
@@ -226,7 +227,7 @@ export const StoryPage = () => {
         { text: "kitchen.", start: 2.6, end: 2.9 }
       ]
     },
-    
+
     {
       itemIndex: 2, start: 3.1, end: 9.2,
       words: [
@@ -416,13 +417,13 @@ export const StoryPage = () => {
                     return <span key={index} className={`word-span ${isHighlighted ? 'active-word' : ''}`}>{word.text}{' '}</span>;
                   })}
                 </p>
-                <button className="close" onClick={() => setShowBubble(false)}>×</button>
+                {/* <button className="close" onClick={() => setShowBubble(false)}>×</button> */}
               </div>
             </div>
           )}
 
           {/* --- عرض الفقاعة الإضافية --- */}
-          {extraBubble && extraBubble.words && (
+          {showCaption && extraBubble && extraBubble.words && (
             <div className="subtitle-container" style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}>
               <div className="extra-cloud animate__animated animate__fadeIn">
                 <p>
@@ -444,7 +445,14 @@ export const StoryPage = () => {
             <div className="controls-wrapper-new">
               <div className="controls-row">
                 <div className="controls-group-left">
-                  <button onClick={() => setShowSubtitles(!showSubtitles)} className="control-btn" title="Subtitles"><Subtitles className="w-6 h-6" /></button>
+                  <button onClick={() => setShowSubtitles(!showSubtitles)} className="control-btn" title="Subtitles">
+                    <Subtitles className="w-6 h-6" />
+                    <span className="control-label">Subtitle</span>
+                  </button>
+                  <button onClick={() => setShowCaption(!showCaption)} className="control-btn" title="Caption">
+                    <MessageSquareText className="w-6 h-6" />
+                    <span className="control-label">Caption</span>
+                  </button>
                   <div className="volume-control" onMouseEnter={() => setShowVolumeSlider(true)} onMouseLeave={() => setShowVolumeSlider(false)}>
                     <button onClick={toggleMute} className="control-btn" disabled={!isVideo}>
                       {isMuted || volume === 0 ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}

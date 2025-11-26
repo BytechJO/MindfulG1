@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2, MessageSquareText } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../shared/StoryPage.css';
 import ValidationAlert from '../../shared/ValidationAlert';
@@ -29,6 +29,7 @@ export const StoryPage = () => {
   const [volume, setVolume] = useState(1);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [showSubtitles, setShowSubtitles] = useState(true);
+  const [showCaption, setShowCaption] = useState(true);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
   const availableSpeeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -602,12 +603,12 @@ export const StoryPage = () => {
                     );
                   })}
                 </p>
-                <button className="close" onClick={() => setShowBubble(false)}>×</button>
+                {/* <button className="close" onClick={() => setShowBubble(false)}>×</button> */}
               </div>
             </div>
           )}
 
-          {extraBubble && extraBubble.words && (
+          {showCaption && extraBubble && extraBubble.words && (
             <div
               className="subtitle-container"
               style={{ bottom: '0%', left: '50%', transform: 'translateX(-50%)', zIndex: 101 }}
@@ -637,10 +638,17 @@ export const StoryPage = () => {
             <div className="controls-wrapper-new">
               <div className="controls-row">
                 <div className="controls-group-left">
+
                   <button onClick={() => setShowSubtitles(!showSubtitles)} className="control-btn" title="Subtitles">
                     <Subtitles className="w-6 h-6" />
                     <span className="control-label">Subtitle</span>
                   </button>
+
+                  <button onClick={() => setShowCaption(!showCaption)} className="control-btn" title="Caption">
+                    <MessageSquareText className="w-6 h-6" />
+                    <span className="control-label">Caption</span>
+                  </button>
+
                   <div
                     className="volume-control"
                     onMouseEnter={() => setShowVolumeSlider(true)}

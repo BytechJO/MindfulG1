@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2, MessageSquareText } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../shared/StoryPage.css';
 import ValidationAlert from '../../shared/ValidationAlert';
@@ -29,6 +29,7 @@ export const StoryPage = () => {
   const [volume, setVolume] = useState(1);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [showSubtitles, setShowSubtitles] = useState(true);
+  const [showCaption, setShowCaption] = useState(true);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 
   const availableSpeeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
@@ -91,7 +92,7 @@ export const StoryPage = () => {
             { text: "that!", start: 5.5, end: 5.7 }
           ]
         },
-      
+
 
       ]
     },
@@ -99,7 +100,7 @@ export const StoryPage = () => {
       url: video3,
       title: "Section 3",
       subtitles: [
-    
+
         {
           start: 5.3, end: 8.0,
           words: [
@@ -153,8 +154,8 @@ export const StoryPage = () => {
       url: video5,
       title: "Section 5",
       subtitles: [
-     
-    
+
+
       ]
     },
 
@@ -169,7 +170,7 @@ export const StoryPage = () => {
 
     1: [
       { top: '15%', left: '70%', isFlipped: true },
-      { top: '15%', left: '15%'},
+      { top: '15%', left: '15%' },
       { top: '10%', left: '40%', isFlipped: true },
       { top: '10%', left: '40%' },
     ],
@@ -203,63 +204,63 @@ export const StoryPage = () => {
     // ],
   };
 
-   const extraBubblesData = [
+  const extraBubblesData = [
     {
       videoIndex: 1,
-        start: 6.0, end: 8.8,
-          words: [
-            { text: "Oh", start: 6.0, end: 7.0 },
-            { text: "dear!", start: 7.0, end: 7.8 },
-            { text: "Everyone", start: 7.8, end: 8.1 },
-            { text: "is", start: 8.1, end: 8.3 },
-            { text: "arguing.", start: 8.3, end: 8.7 }
+      start: 6.0, end: 8.8,
+      words: [
+        { text: "Oh", start: 6.0, end: 7.0 },
+        { text: "dear!", start: 7.0, end: 7.8 },
+        { text: "Everyone", start: 7.8, end: 8.1 },
+        { text: "is", start: 8.1, end: 8.3 },
+        { text: "arguing.", start: 8.3, end: 8.7 }
       ]
     },
     {
       videoIndex: 2,
-     start: 0, end: 5.3,
-          words: [
-            { text: "Bella", start: 0.0, end: 0.3 },
-            { text: "and", start: 0.3, end: 0.6 },
-            { text: "Kerry", start: 0.6, end: 0.9 },
-            { text: "want", start: 0.9, end: 1.2 },
-            { text: "to", start: 1.2, end: 1.5 },
-            { text: "play", start: 1.5, end: 1.8 },
-            { text: "different", start: 1.8, end: 2.1 },
-            { text: "games,", start: 2.1, end: 2.4 },
-            { text: "but", start: 3.0, end: 3.3 },
-            { text: "they", start: 3.3, end: 3.6 },
-            { text: "also", start: 3.6, end: 3.9 },
-            { text: "want", start: 3.9, end: 4.2 },
-            { text: "to", start: 4.2, end: 4.5 },
-            { text: "play", start: 4.5, end: 4.8 },
-            { text: "together.", start: 4.8, end: 5.1 }
+      start: 0, end: 5.3,
+      words: [
+        { text: "Bella", start: 0.0, end: 0.3 },
+        { text: "and", start: 0.3, end: 0.6 },
+        { text: "Kerry", start: 0.6, end: 0.9 },
+        { text: "want", start: 0.9, end: 1.2 },
+        { text: "to", start: 1.2, end: 1.5 },
+        { text: "play", start: 1.5, end: 1.8 },
+        { text: "different", start: 1.8, end: 2.1 },
+        { text: "games,", start: 2.1, end: 2.4 },
+        { text: "but", start: 3.0, end: 3.3 },
+        { text: "they", start: 3.3, end: 3.6 },
+        { text: "also", start: 3.6, end: 3.9 },
+        { text: "want", start: 3.9, end: 4.2 },
+        { text: "to", start: 4.2, end: 4.5 },
+        { text: "play", start: 4.5, end: 4.8 },
+        { text: "together.", start: 4.8, end: 5.1 }
       ]
-    },{
+    }, {
       videoIndex: 4,
-     start: 0, end: 3.1,
-          words: [
-            { text: "The", start: 0.0, end: 0.3 },
-            { text: "teacher", start: 0.3, end: 0.6 },
-            { text: "is", start: 0.6, end: 0.9 },
-            { text: "happy", start: 0.9, end: 1.2 },
-            { text: "to", start: 1.2, end: 1.5 },
-            { text: "see", start: 1.5, end: 1.8 },
-            { text: "the", start: 1.8, end: 2.1 },
-            { text: "girls", start: 2.1, end: 2.4 },
-            { text: "playing", start: 2.4, end: 2.7 },
-            { text: "together", start: 2.7, end: 3.0 }
+      start: 0, end: 3.1,
+      words: [
+        { text: "The", start: 0.0, end: 0.3 },
+        { text: "teacher", start: 0.3, end: 0.6 },
+        { text: "is", start: 0.6, end: 0.9 },
+        { text: "happy", start: 0.9, end: 1.2 },
+        { text: "to", start: 1.2, end: 1.5 },
+        { text: "see", start: 1.5, end: 1.8 },
+        { text: "the", start: 1.8, end: 2.1 },
+        { text: "girls", start: 2.1, end: 2.4 },
+        { text: "playing", start: 2.4, end: 2.7 },
+        { text: "together", start: 2.7, end: 3.0 }
       ]
     },
     {
       videoIndex: 4,
       start: 3.4, end: 6.0,
-          words: [
-            { text: "The", start: 3.5, end: 3.8 },
-            { text: "girls", start: 3.8, end: 4.1 },
-            { text: "are", start: 4.1, end: 4.3 },
-            { text: "happy", start: 4.3, end: 4.7 },
-            { text: "too.", start: 4.7, end: 5.0 }
+      words: [
+        { text: "The", start: 3.5, end: 3.8 },
+        { text: "girls", start: 3.8, end: 4.1 },
+        { text: "are", start: 4.1, end: 4.3 },
+        { text: "happy", start: 4.3, end: 4.7 },
+        { text: "too.", start: 4.7, end: 5.0 }
       ]
     }
   ];
@@ -546,11 +547,11 @@ export const StoryPage = () => {
                     );
                   })}
                 </p>
-                <button className="close" onClick={() => setShowBubble(false)}>×</button>
+                {/* <button className="close" onClick={() => setShowBubble(false)}>×</button> */}
               </div>
             </div>
           )}
-    {extraBubble && extraBubble.words && (
+          {showCaption && extraBubble && extraBubble.words && (
             <div
               className="subtitle-container"
               // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
@@ -581,10 +582,17 @@ export const StoryPage = () => {
             <div className="controls-wrapper-new">
               <div className="controls-row">
                 <div className="controls-group-left">
+                  
                   <button onClick={() => setShowSubtitles(!showSubtitles)} className="control-btn" title="Subtitles">
                     <Subtitles className="w-6 h-6" />
                     <span className="control-label">Subtitle</span>
                   </button>
+
+                  <button onClick={() => setShowCaption(!showCaption)} className="control-btn" title="Caption">
+                    <MessageSquareText className="w-6 h-6" />
+                    <span className="control-label">Caption</span>
+                  </button>
+
                   <div
                     className="volume-control"
                     onMouseEnter={() => setShowVolumeSlider(true)}

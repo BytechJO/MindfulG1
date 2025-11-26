@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2, MessageSquareText } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../shared/StoryPage.css';
 import ValidationAlert from '../../shared/ValidationAlert';
@@ -30,6 +30,7 @@ export const StoryPage = () => {
   const [volume, setVolume] = useState(1);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [showSubtitles, setShowSubtitles] = useState(true);
+  const [showCaption, setShowCaption] = useState(true);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 
   const availableSpeeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
@@ -43,12 +44,7 @@ export const StoryPage = () => {
       title: "Section 1",
       subtitles: [
         {
-          // start: 0, end: 3.12,
-          // words: [
-          //   { text: "Kate's", start: 0.5, end: 1.2 },
-          //   { text: "Big", start: 1.2, end: 1.7 },
-          //   { text: "Feelings", start: 1.7, end: 2.5 },
-          // ]
+
         },
       ]
     },
@@ -56,21 +52,7 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-        // {
-        //   start: 0, end: 4.5,
-        //   words: [
-        //      { text: "It", start: 0.1, end: 0.4 },
-        //     { text: "is", start: 0.4, end: 0.7 },
-        //     { text: "Joe’s", start: 0.7, end: 1.0 },
-        //     { text: "first", start: 1.0, end: 1.3 },
-        //     { text: "day", start: 1.3, end: 1.6 },
-        //     { text: "at", start: 1.6, end: 1.9 },
-        //     { text: "school.", start: 1.9, end: 2.2 },
-        //     { text: "He", start: 3.0, end: 3.3 },
-        //     { text: "feels", start: 3.3, end: 3.6 },
-        //     { text: "scared.", start: 3.6, end: 3.9 },
-        //   ]
-        // },
+
         {
           start: 4.6, end: 8,
           words: [
@@ -88,48 +70,14 @@ export const StoryPage = () => {
       url: video3,
       title: "Section 3",
       subtitles: [
-        // {
-        //   start: 0, end: 6.5,
-        //   words: [
-        //     { text: "The", start: 0.0, end: 0.3 },
-        //     { text: "children", start: 0.3, end: 0.6 },
-        //     { text: "go", start: 0.6, end: 0.9 },
-        //     { text: "outside", start: 0.9, end: 1.2 },
-        //     { text: "to", start: 1.2, end: 1.5 },
-        //     { text: "play.", start: 1.5, end: 1.8 },
-        //     { text: "They", start: 3.0, end: 3.3 },
-        //     { text: "play", start: 3.3, end: 3.6 },
-        //     { text: "a", start: 3.6, end: 3.9 },
-        //     { text: "racing", start: 3.9, end: 4.2 },
-        //     { text: "game,", start: 4.2, end: 4.5 },
-        //     { text: "but", start: 4.5, end: 4.8 },
-        //     { text: "Joe", start: 4.8, end: 5.1 },
-        //     { text: "isn’t", start: 5.1, end: 5.4 },
-        //     { text: "playing.", start: 5.4, end: 5.7 }
-        //   ]
-        // },
+
       ]
     },
     {
       url: video4,
       title: "Section 4",
       subtitles: [
-        // {
-        //   start: 1, end: 5.6,
-        //   // words: [
-        //   //   { text: "James", start: 1.1, end: 1.5 },
-        //   //   { text: "stops", start: 1.5, end: 1.9 },
-        //   //   { text: "and", start: 1.9, end: 2.3 },
-        //   //   { text: "sees", start: 2.3, end: 2.7 },
-        //   //   { text: "that", start: 2.7, end: 3.1 },
-        //   //   { text: "Joe", start: 3.1, end: 3.5 },
-        //   //   { text: "is", start: 3.5, end: 3.9 },
-        //   //   { text: "alone", start: 3.9, end: 4.3 },
-        //   //   { text: "and", start: 4.3, end: 4.7 },
-        //   //   { text: "looks", start: 4.7, end: 5.1 },
-        //   //   { text: "upset.", start: 5.1, end: 5.5 }
-        //   // ]
-        // },
+
         {
           start: 5.7, end: 6.6,
           words: [
@@ -149,76 +97,12 @@ export const StoryPage = () => {
             { text: "race.", start: 8.4, end: 8.8 },
           ]
         },
-        // {
-        //   start: 9, end: 13,
-        //   words: [
-        //     { text: "James", start: 9.6, end: 10.0 },
-        //     { text: "remembers", start: 10.0, end: 10.4 },
-        //     { text: "his", start: 10.4, end: 10.8 },
-        //     { text: "promise", start: 10.8, end: 11.2 },
-        //     { text: "to", start: 11.2, end: 11.6 },
-        //     { text: "the", start: 11.6, end: 12.0 },
-        //     { text: "teacher.", start: 12.0, end: 12.4 }
-        //   ]
-        // },
-        // {
-        //   start: 13, end: 14,
-        //   words: [
-        //     { text: "What", start: 13.1, end: 13.3 },
-        //     { text: "should", start: 13.3, end: 13.5 },
-        //     { text: "he", start: 13.5, end: 13.7 },
-        //     { text: "do?", start: 13.7, end: 13.9 }
-        //   ]
-        // },
-       
       ]
     },
     {
       url: video5,
       title: "Section 5",
       subtitles: [
-        // {
-        //   start: 0, end: 5,
-        //   words: [
-        //     { text: "James", start: 0, end: 0.4 },
-        //     { text: "and", start: 0.4, end: 0.7 },
-        //     { text: "Joe", start: 0.7, end: 1.0 },
-        //     { text: "play", start: 1.0, end: 1.3 },
-        //     { text: "hide", start: 1.3, end: 1.6 },
-        //     { text: "and", start: 1.6, end: 1.9 },
-        //     { text: "seek.", start: 1.9, end: 2.3 },
-        //     { text: "James", start: 2.3, end: 2.6 },
-        //     { text: "invites", start: 2.6, end: 3.1 },
-        //     { text: "the", start: 3.1, end: 3.3 },
-        //     { text: "other", start: 3.3, end: 3.6 },
-        //     { text: "children", start: 3.6, end: 4.1 },
-        //     { text: "to", start: 4.1, end: 4.3 },
-        //     { text: "play", start: 4.3, end: 4.6 },
-        //     { text: "with", start: 4.6, end: 4.9 },
-        //     { text: "them.", start: 4.9, end: 5.2 }
-        //   ]
-        // },
-        // {
-        //   start: 6, end: 10.1,
-        //   words: [
-        //     { text: "He", start: 6.0, end: 6.4 },
-        //     { text: "starts", start: 6.4, end: 6.8 },
-        //     { text: "counting", start: 6.8, end: 7.3 },
-        //     { text: "and", start: 7.3, end: 7.7 },
-        //     { text: "the", start: 7.7, end: 8.2 },
-        //     { text: "children", start: 8.2, end: 8.8 },
-        //     { text: "hide.", start: 8.8, end: 10.1 }
-        //   ]
-        // },
-        // {
-        //   start: 10.2, end: 12,
-        //   words: [
-        //     { text: "Joe", start: 10.2, end: 10.6 },
-        //     { text: "feels", start: 10.6, end: 11.0 },
-        //     { text: "happy", start: 11.0, end: 11.3 },
-        //     { text: "now.", start: 11.3, end: 11.7 }
-        //   ]
-        // },
       ]
     },
 
@@ -230,7 +114,7 @@ export const StoryPage = () => {
   const cloudPositions = {
 
     0: [
-      // { bottom: '35rem', left: '50%', transform: 'translateX(-50%)', isFlipped: true }
+
     ],
 
     1: [
@@ -257,7 +141,7 @@ export const StoryPage = () => {
     4: [
       { top: '5%', left: '23%' },
       { top: '5%', left: '25%' },
-      { top: '10%', left: '10%' , isFlipped: true}
+      { top: '10%', left: '10%', isFlipped: true }
     ],
     // 5: [
     //   { bottom: '80%', left: '48%', },
@@ -278,123 +162,123 @@ export const StoryPage = () => {
       start: 0, end: 4.5,
       words: [
         { text: "It", start: 0.1, end: 0.4 },
-            { text: "is", start: 0.4, end: 0.7 },
-            { text: "Joe’s", start: 0.7, end: 1.0 },
-            { text: "first", start: 1.0, end: 1.3 },
-            { text: "day", start: 1.3, end: 1.6 },
-            { text: "at", start: 1.6, end: 1.9 },
-            { text: "school.", start: 1.9, end: 2.2 },
-            { text: "He", start: 3.0, end: 3.3 },
-            { text: "feels", start: 3.3, end: 3.6 },
-            { text: "scared.", start: 3.6, end: 3.9 },
+        { text: "is", start: 0.4, end: 0.7 },
+        { text: "Joe’s", start: 0.7, end: 1.0 },
+        { text: "first", start: 1.0, end: 1.3 },
+        { text: "day", start: 1.3, end: 1.6 },
+        { text: "at", start: 1.6, end: 1.9 },
+        { text: "school.", start: 1.9, end: 2.2 },
+        { text: "He", start: 3.0, end: 3.3 },
+        { text: "feels", start: 3.3, end: 3.6 },
+        { text: "scared.", start: 3.6, end: 3.9 },
       ]
     },
     {
-      videoIndex:2 ,
-      start:0, end: 6.0,
+      videoIndex: 2,
+      start: 0, end: 6.0,
       words: [
-      { text: "The", start: 0.0, end: 0.3 },
-            { text: "children", start: 0.3, end: 0.6 },
-            { text: "go", start: 0.6, end: 0.9 },
-            { text: "outside", start: 0.9, end: 1.2 },
-            { text: "to", start: 1.2, end: 1.5 },
-            { text: "play.", start: 1.5, end: 1.8 },
-            { text: "They", start: 3.0, end: 3.3 },
-            { text: "play", start: 3.3, end: 3.6 },
-            { text: "a", start: 3.6, end: 3.9 },
-            { text: "racing", start: 3.9, end: 4.2 },
-            { text: "game,", start: 4.2, end: 4.5 },
-            { text: "but", start: 4.5, end: 4.8 },
-            { text: "Joe", start: 4.8, end: 5.1 },
-            { text: "isn’t", start: 5.1, end: 5.4 },
-            { text: "playing.", start: 5.4, end: 5.7 }
+        { text: "The", start: 0.0, end: 0.3 },
+        { text: "children", start: 0.3, end: 0.6 },
+        { text: "go", start: 0.6, end: 0.9 },
+        { text: "outside", start: 0.9, end: 1.2 },
+        { text: "to", start: 1.2, end: 1.5 },
+        { text: "play.", start: 1.5, end: 1.8 },
+        { text: "They", start: 3.0, end: 3.3 },
+        { text: "play", start: 3.3, end: 3.6 },
+        { text: "a", start: 3.6, end: 3.9 },
+        { text: "racing", start: 3.9, end: 4.2 },
+        { text: "game,", start: 4.2, end: 4.5 },
+        { text: "but", start: 4.5, end: 4.8 },
+        { text: "Joe", start: 4.8, end: 5.1 },
+        { text: "isn’t", start: 5.1, end: 5.4 },
+        { text: "playing.", start: 5.4, end: 5.7 }
       ]
-    },{
-      videoIndex:3 ,
-      start:0, end: 6.0,
+    }, {
+      videoIndex: 3,
+      start: 0, end: 6.0,
       words: [
-             { text: "James", start: 1.1, end: 1.5 },
-            { text: "stops", start: 1.5, end: 1.9 },
-            { text: "and", start: 1.9, end: 2.3 },
-            { text: "sees", start: 2.3, end: 2.7 },
-            { text: "that", start: 2.7, end: 3.1 },
-            { text: "Joe", start: 3.1, end: 3.5 },
-            { text: "is", start: 3.5, end: 3.9 },
-            { text: "alone", start: 3.9, end: 4.3 },
-            { text: "and", start: 4.3, end: 4.7 },
-            { text: "looks", start: 4.7, end: 5.1 },
-            { text: "upset.", start: 5.1, end: 5.5 }
+        { text: "James", start: 1.1, end: 1.5 },
+        { text: "stops", start: 1.5, end: 1.9 },
+        { text: "and", start: 1.9, end: 2.3 },
+        { text: "sees", start: 2.3, end: 2.7 },
+        { text: "that", start: 2.7, end: 3.1 },
+        { text: "Joe", start: 3.1, end: 3.5 },
+        { text: "is", start: 3.5, end: 3.9 },
+        { text: "alone", start: 3.9, end: 4.3 },
+        { text: "and", start: 4.3, end: 4.7 },
+        { text: "looks", start: 4.7, end: 5.1 },
+        { text: "upset.", start: 5.1, end: 5.5 }
       ]
-    },{
-      videoIndex:3 ,
-        start: 9, end: 13,
-          words: [
-                { text: "James", start: 9.6, end: 10.0 },
-            { text: "remembers", start: 10.0, end: 10.4 },
-            { text: "his", start: 10.4, end: 10.8 },
-            { text: "promise", start: 10.8, end: 11.2 },
-            { text: "to", start: 11.2, end: 11.6 },
-            { text: "the", start: 11.6, end: 12.0 },
-            { text: "teacher.", start: 12.0, end: 12.4 }
-      ]
-    },
-    {
-      videoIndex:3 ,
-         start: 13, end: 14,
-          words: [
-            { text: "What", start: 13.1, end: 13.3 },
-            { text: "should", start: 13.3, end: 13.5 },
-            { text: "he", start: 13.5, end: 13.7 },
-            { text: "do?", start: 13.7, end: 13.9 }
+    }, {
+      videoIndex: 3,
+      start: 9, end: 13,
+      words: [
+        { text: "James", start: 9.6, end: 10.0 },
+        { text: "remembers", start: 10.0, end: 10.4 },
+        { text: "his", start: 10.4, end: 10.8 },
+        { text: "promise", start: 10.8, end: 11.2 },
+        { text: "to", start: 11.2, end: 11.6 },
+        { text: "the", start: 11.6, end: 12.0 },
+        { text: "teacher.", start: 12.0, end: 12.4 }
       ]
     },
     {
-      videoIndex:4,
-        start: 0, end: 5,
-          words: [
-            { text: "James", start: 0, end: 0.4 },
-            { text: "and", start: 0.4, end: 0.7 },
-            { text: "Joe", start: 0.7, end: 1.0 },
-            { text: "play", start: 1.0, end: 1.3 },
-            { text: "hide", start: 1.3, end: 1.6 },
-            { text: "and", start: 1.6, end: 1.9 },
-            { text: "seek.", start: 1.9, end: 2.3 },
-            { text: "James", start: 2.3, end: 2.6 },
-            { text: "invites", start: 2.6, end: 3.1 },
-            { text: "the", start: 3.1, end: 3.3 },
-            { text: "other", start: 3.3, end: 3.6 },
-            { text: "children", start: 3.6, end: 4.1 },
-            { text: "to", start: 4.1, end: 4.3 },
-            { text: "play", start: 4.3, end: 4.6 },
-            { text: "with", start: 4.6, end: 4.9 },
-            { text: "them.", start: 4.9, end: 5.2 }
-      ]
-    },
-     {
-      videoIndex:4,
-        start: 6, end: 10.1,
-          words: [
-              { text: "He", start: 6.0, end: 6.4 },
-            { text: "starts", start: 6.4, end: 6.8 },
-            { text: "counting", start: 6.8, end: 7.3 },
-            { text: "and", start: 7.3, end: 7.7 },
-            { text: "the", start: 7.7, end: 8.2 },
-            { text: "children", start: 8.2, end: 8.8 },
-            { text: "hide.", start: 8.8, end: 10.1 }
+      videoIndex: 3,
+      start: 13, end: 14,
+      words: [
+        { text: "What", start: 13.1, end: 13.3 },
+        { text: "should", start: 13.3, end: 13.5 },
+        { text: "he", start: 13.5, end: 13.7 },
+        { text: "do?", start: 13.7, end: 13.9 }
       ]
     },
     {
-      videoIndex:4,
+      videoIndex: 4,
+      start: 0, end: 5,
+      words: [
+        { text: "James", start: 0, end: 0.4 },
+        { text: "and", start: 0.4, end: 0.7 },
+        { text: "Joe", start: 0.7, end: 1.0 },
+        { text: "play", start: 1.0, end: 1.3 },
+        { text: "hide", start: 1.3, end: 1.6 },
+        { text: "and", start: 1.6, end: 1.9 },
+        { text: "seek.", start: 1.9, end: 2.3 },
+        { text: "James", start: 2.3, end: 2.6 },
+        { text: "invites", start: 2.6, end: 3.1 },
+        { text: "the", start: 3.1, end: 3.3 },
+        { text: "other", start: 3.3, end: 3.6 },
+        { text: "children", start: 3.6, end: 4.1 },
+        { text: "to", start: 4.1, end: 4.3 },
+        { text: "play", start: 4.3, end: 4.6 },
+        { text: "with", start: 4.6, end: 4.9 },
+        { text: "them.", start: 4.9, end: 5.2 }
+      ]
+    },
+    {
+      videoIndex: 4,
+      start: 6, end: 10.1,
+      words: [
+        { text: "He", start: 6.0, end: 6.4 },
+        { text: "starts", start: 6.4, end: 6.8 },
+        { text: "counting", start: 6.8, end: 7.3 },
+        { text: "and", start: 7.3, end: 7.7 },
+        { text: "the", start: 7.7, end: 8.2 },
+        { text: "children", start: 8.2, end: 8.8 },
+        { text: "hide.", start: 8.8, end: 10.1 }
+      ]
+    },
+    {
+      videoIndex: 4,
       start: 10.2, end: 12,
-          words: [
-            { text: "Joe", start: 10.2, end: 10.6 },
-            { text: "feels", start: 10.6, end: 11.0 },
-            { text: "happy", start: 11.0, end: 11.3 },
-            { text: "now.", start: 11.3, end: 11.7 }
+      words: [
+        { text: "Joe", start: 10.2, end: 10.6 },
+        { text: "feels", start: 10.6, end: 11.0 },
+        { text: "happy", start: 11.0, end: 11.3 },
+        { text: "now.", start: 11.3, end: 11.7 }
       ]
     }
   ];
-       
+
 
 
   const currentVideoData = videos[currentVideo];
@@ -513,15 +397,15 @@ export const StoryPage = () => {
   }, []);
 
   useEffect(() => {
-      const bubbleToShow = extraBubblesData.find(bubble =>
-        bubble.videoIndex === currentVideo &&
-        currentTime >= bubble.start &&
-        currentTime < bubble.end
-      );
-  
-      setExtraBubble(bubbleToShow || null);
-  
-    }, [currentVideo, currentTime]);
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -647,9 +531,9 @@ export const StoryPage = () => {
               <p style={{ fontSize: '1.8em', textAlign: 'left' }}>
                 Highlight the phrase James says to show
               </p>
-               <p style={{ fontSize: '1.8em', textAlign: 'left' }}>
+              <p style={{ fontSize: '1.8em', textAlign: 'left' }}>
                 he cares about Joe’s feelings.
-              </p> 
+              </p>
             </div>
           )}
 
@@ -680,12 +564,12 @@ export const StoryPage = () => {
                     );
                   })}
                 </p>
-                <button className="close" onClick={() => setShowBubble(false)}>×</button>
+                {/* <button className="close" onClick={() => setShowBubble(false)}>×</button> */}
               </div>
             </div>
           )}
 
-          {extraBubble && extraBubble.words && (
+          {showCaption && extraBubble && extraBubble.words && (
             <div
               className="subtitle-container"
               // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
@@ -718,10 +602,17 @@ export const StoryPage = () => {
             <div className="controls-wrapper-new">
               <div className="controls-row">
                 <div className="controls-group-left">
+
                   <button onClick={() => setShowSubtitles(!showSubtitles)} className="control-btn" title="Subtitles">
                     <Subtitles className="w-6 h-6" />
                     <span className="control-label">Subtitle</span>
                   </button>
+
+                  <button onClick={() => setShowCaption(!showCaption)} className="control-btn" title="Caption">
+                    <MessageSquareText className="w-6 h-6" />
+                    <span className="control-label">Caption</span>
+                  </button>
+
                   <div
                     className="volume-control"
                     onMouseEnter={() => setShowVolumeSlider(true)}

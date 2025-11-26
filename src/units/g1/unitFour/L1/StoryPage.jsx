@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2, MessageSquareText } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../shared/StoryPage.css';
 import ValidationAlert from '../../shared/ValidationAlert';
@@ -29,6 +29,7 @@ export const StoryPage = () => {
   const [volume, setVolume] = useState(1);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [showSubtitles, setShowSubtitles] = useState(true);
+  const [showCaption, setShowCaption] = useState(true);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 
   const availableSpeeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
@@ -55,8 +56,8 @@ export const StoryPage = () => {
       url: video2,
       title: "Section 2",
       subtitles: [
-      
-     
+
+
         {
           start: 5.5, end: 6.4,
           words: [
@@ -76,15 +77,15 @@ export const StoryPage = () => {
             { text: "Mum?", start: 8.3, end: 8.6 }
           ]
         },
-     
+
       ]
     },
     {
       url: video3,
       title: "Section 3",
       subtitles: [
-    
-     
+
+
         {
           start: 4.5, end: 11.0,
           words: [
@@ -103,7 +104,7 @@ export const StoryPage = () => {
       url: video4,
       title: "Section 4",
       subtitles: [
-      
+
         {
           start: 2.2, end: 5.1,
           words: [
@@ -164,8 +165,8 @@ export const StoryPage = () => {
     ],
 
     1: [
-      { top: '20%', left: '40%',isFlipped: true },
-      { top: '15%', left: '40%', isFlipped: true},
+      { top: '20%', left: '40%', isFlipped: true },
+      { top: '15%', left: '40%', isFlipped: true },
       { top: '20%', left: '50%', isFlipped: true },
       { top: '10%', left: '0%' },
       { top: '10%', left: '0%' },
@@ -198,96 +199,96 @@ export const StoryPage = () => {
     //   { top: '10%', left: '50%', isFlipped: true },
     // ],
   };
-const extraBubblesData = [
+  const extraBubblesData = [
     {
       videoIndex: 1,
-  start: 0, end: 2.5,
-          words: [
-            { text: "Mum", start: 0.5, end: 0.8 },
-            { text: "is", start: 0.8, end: 1.0 },
-            { text: "busy", start: 1.0, end: 1.4 },
-            { text: "in", start: 1.4, end: 1.6 },
-            { text: "the", start: 1.6, end: 1.8 },
-            { text: "kitchen.", start: 1.8, end: 2.2 }
+      start: 0, end: 2.5,
+      words: [
+        { text: "Mum", start: 0.5, end: 0.8 },
+        { text: "is", start: 0.8, end: 1.0 },
+        { text: "busy", start: 1.0, end: 1.4 },
+        { text: "in", start: 1.4, end: 1.6 },
+        { text: "the", start: 1.6, end: 1.8 },
+        { text: "kitchen.", start: 1.8, end: 2.2 }
       ]
     },
-     {
+    {
       videoIndex: 1,
-     start: 2.6, end: 5.4,
-          words: [
-            { text: "Amy", start: 2.7, end: 3.0 },
-            { text: "gives", start: 3.0, end: 3.4 },
-            { text: "her", start: 3.4, end: 3.7 },
-            { text: "a", start: 3.7, end: 3.9 },
-            { text: "glass", start: 3.9, end: 4.3 },
-            { text: "of", start: 4.3, end: 4.5 },
-            { text: "cold", start: 4.5, end: 4.8 },
-            { text: "water.", start: 4.8, end: 5.2 }
+      start: 2.6, end: 5.4,
+      words: [
+        { text: "Amy", start: 2.7, end: 3.0 },
+        { text: "gives", start: 3.0, end: 3.4 },
+        { text: "her", start: 3.4, end: 3.7 },
+        { text: "a", start: 3.7, end: 3.9 },
+        { text: "glass", start: 3.9, end: 4.3 },
+        { text: "of", start: 4.3, end: 4.5 },
+        { text: "cold", start: 4.5, end: 4.8 },
+        { text: "water.", start: 4.8, end: 5.2 }
       ]
     },
     {
       videoIndex: 1,
       start: 8.9, end: 15.0,
-          words: [
-            { text: "Mum", start: 9.0, end: 9.3 },
-            { text: "explains", start: 9.3, end: 9.7 },
-            { text: "that", start: 9.7, end: 10.0 },
-            { text: "saying", start: 10.0, end: 10.3 },
-            { text: "‘thank you’", start: 10.3, end: 10.9 },
-            { text: "shows", start: 11.5, end: 11.8 },
-            { text: "that", start: 11.8, end: 12.1 },
-            { text: "you", start: 12.1, end: 12.4 },
-            { text: "care.", start: 12.4, end: 12.7 }
-      ]
-    },
-     {
-      videoIndex: 2,
-        start: 0, end: 2.5,
-          words: [
-            { text: "Thank", start: 0.0, end: 0.4 },
-            { text: "you", start: 0.4, end: 0.8 },
-            { text: "for", start: 0.5, end: 0.75 },
-            { text: "taking", start: 0.75, end: 1.0 },
-            { text: "care", start: 1.0, end: 1.25 },
-            { text: "of", start: 1.25, end: 1.5 },
-            { text: "the", start: 1.5, end: 1.75 },
-            { text: "house,", start: 1.75, end: 2.0 },
-            { text: "Mum,", start: 2.0, end: 2.25 }
+      words: [
+        { text: "Mum", start: 9.0, end: 9.3 },
+        { text: "explains", start: 9.3, end: 9.7 },
+        { text: "that", start: 9.7, end: 10.0 },
+        { text: "saying", start: 10.0, end: 10.3 },
+        { text: "‘thank you’", start: 10.3, end: 10.9 },
+        { text: "shows", start: 11.5, end: 11.8 },
+        { text: "that", start: 11.8, end: 12.1 },
+        { text: "you", start: 12.1, end: 12.4 },
+        { text: "care.", start: 12.4, end: 12.7 }
       ]
     },
     {
       videoIndex: 2,
-          start: 2.6, end: 4.4,
-          words: [
-            { text: "Amy’s", start: 2.7, end: 3.1 },
-            { text: "mum", start: 3.1, end: 3.5 },
-            { text: "hugs", start: 3.5, end: 3.9 },
-            { text: "her", start: 3.9, end: 4.3 }
+      start: 0, end: 2.5,
+      words: [
+        { text: "Thank", start: 0.0, end: 0.4 },
+        { text: "you", start: 0.4, end: 0.8 },
+        { text: "for", start: 0.5, end: 0.75 },
+        { text: "taking", start: 0.75, end: 1.0 },
+        { text: "care", start: 1.0, end: 1.25 },
+        { text: "of", start: 1.25, end: 1.5 },
+        { text: "the", start: 1.5, end: 1.75 },
+        { text: "house,", start: 1.75, end: 2.0 },
+        { text: "Mum,", start: 2.0, end: 2.25 }
       ]
     },
-       {
+    {
+      videoIndex: 2,
+      start: 2.6, end: 4.4,
+      words: [
+        { text: "Amy’s", start: 2.7, end: 3.1 },
+        { text: "mum", start: 3.1, end: 3.5 },
+        { text: "hugs", start: 3.5, end: 3.9 },
+        { text: "her", start: 3.9, end: 4.3 }
+      ]
+    },
+    {
       videoIndex: 3,
-         start: 0, end: 2.1,
-          words: [
-            { text: "Dad", start: 0.0, end: 0.4 },
-            { text: "comes", start: 0.4, end: 0.8 },
-            { text: "home", start: 0.8, end: 1.2 },
-            { text: "from", start: 1.2, end: 1.6 },
-            { text: "work.", start: 1.6, end: 2.0 }
+      start: 0, end: 2.1,
+      words: [
+        { text: "Dad", start: 0.0, end: 0.4 },
+        { text: "comes", start: 0.4, end: 0.8 },
+        { text: "home", start: 0.8, end: 1.2 },
+        { text: "from", start: 1.2, end: 1.6 },
+        { text: "work.", start: 1.6, end: 2.0 }
       ]
     }
   ];
 
-    useEffect(() => {
-      const bubbleToShow = extraBubblesData.find(bubble =>
-        bubble.videoIndex === currentVideo &&
-        currentTime >= bubble.start &&
-        currentTime < bubble.end
-      );
-  
-      setExtraBubble(bubbleToShow || null);
-  
-    }, [currentVideo, currentTime]);
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
 
 
   const currentVideoData = videos[currentVideo];
@@ -563,11 +564,11 @@ const extraBubblesData = [
                     );
                   })}
                 </p>
-                <button className="close" onClick={() => setShowBubble(false)}>×</button>
+                {/* <button className="close" onClick={() => setShowBubble(false)}>×</button> */}
               </div>
             </div>
           )}
- {extraBubble && extraBubble.words && (
+          {showCaption && extraBubble && extraBubble.words && (
             <div
               className="subtitle-container"
               // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
@@ -601,6 +602,11 @@ const extraBubblesData = [
                   <button onClick={() => setShowSubtitles(!showSubtitles)} className="control-btn" title="Subtitles">
                     <Subtitles className="w-6 h-6" />
                     <span className="control-label">Subtitle</span>
+                  </button>
+                  <button onClick={() => setShowCaption(!showCaption)} className="control-btn" title="Caption">
+                    {/* يمكنك تغيير الأيقونة إذا أردت */}
+                    <MessageSquareText className="w-6 h-6" />
+                    <span className="control-label">Caption</span>
                   </button>
                   <div
                     className="volume-control"

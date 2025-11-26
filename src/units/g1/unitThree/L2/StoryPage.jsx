@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Subtitles, Maximize2, Minimize2, MessageSquareText } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../shared/StoryPage.css';
 import ValidationAlert from '../../shared/ValidationAlert';
@@ -13,7 +13,7 @@ import video5 from "./assets/5.mp4";
 import questionGif from './assets/question.gif';
 
 export const StoryPage = () => {
-   const [extraBubble, setExtraBubble] = useState(null);
+  const [extraBubble, setExtraBubble] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -30,6 +30,7 @@ export const StoryPage = () => {
   const [volume, setVolume] = useState(1);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [showSubtitles, setShowSubtitles] = useState(true);
+  const [showCaption, setShowCaption] = useState(true);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 
   const availableSpeeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
@@ -57,8 +58,8 @@ export const StoryPage = () => {
       title: "Section 2",
       subtitles: [
 
-     
-    
+
+
         {
           start: 9.0, end: 10.5,
           words: [
@@ -66,14 +67,14 @@ export const StoryPage = () => {
             { text: "mean", start: 9.7, end: 10.2 },
           ]
         },
-      
+
       ]
     },
     {
       url: video3,
       title: "Section 3",
       subtitles: [
-       
+
         {
           start: 4.0, end: 6.5,
           words: [
@@ -151,8 +152,8 @@ export const StoryPage = () => {
       url: video5,
       title: "Section 5",
       subtitles: [
-      
-      
+
+
         {
           start: 5.2, end: 7.9,
           words: [
@@ -359,101 +360,101 @@ export const StoryPage = () => {
     // ],
   };
 
-    const extraBubblesData = [
+  const extraBubblesData = [
 
 
-      {
+    {
       videoIndex: 1,
       start: 0, end: 2.0,
       words: [
-         { text: "Jane", start: 0.1, end: 0.4 },
-            { text: "and", start: 0.4, end: 0.7 },
-            { text: "Amy", start: 0.7, end: 1.0 },
-            { text: "are", start: 1.0, end: 1.3 },
-            { text: "at", start: 1.3, end: 1.6 },
-            { text: "home.", start: 1.6, end: 1.9 },
+        { text: "Jane", start: 0.1, end: 0.4 },
+        { text: "and", start: 0.4, end: 0.7 },
+        { text: "Amy", start: 0.7, end: 1.0 },
+        { text: "are", start: 1.0, end: 1.3 },
+        { text: "at", start: 1.3, end: 1.6 },
+        { text: "home.", start: 1.6, end: 1.9 },
       ]
     },
     {
       videoIndex: 1,
-       start: 2.5, end: 5.1,
-          words: [
-            { text: "They", start: 2.6, end: 2.9 },
-            { text: "eat", start: 2.9, end: 3.2 },
-            { text: "cookies", start: 3.2, end: 3.5 },
-            { text: "that", start: 3.5, end: 3.8 },
-            { text: "Mum", start: 3.8, end: 4.1 },
-            { text: "made", start: 4.1, end: 4.4 },
-            { text: "for", start: 4.4, end: 4.7 },
-            { text: "them.", start: 4.7, end: 5.0 },
+      start: 2.5, end: 5.1,
+      words: [
+        { text: "They", start: 2.6, end: 2.9 },
+        { text: "eat", start: 2.9, end: 3.2 },
+        { text: "cookies", start: 3.2, end: 3.5 },
+        { text: "that", start: 3.5, end: 3.8 },
+        { text: "Mum", start: 3.8, end: 4.1 },
+        { text: "made", start: 4.1, end: 4.4 },
+        { text: "for", start: 4.4, end: 4.7 },
+        { text: "them.", start: 4.7, end: 5.0 },
 
-          ]
-    },{
+      ]
+    }, {
       videoIndex: 1,
-    start: 5.1, end: 8.6,
-          words: [
-            { text: "The", start: 5.8, end: 6.1 },
-            { text: "girls", start: 6.1, end: 6.4 },
-            { text: "start", start: 6.4, end: 6.7 },
-            { text: "to", start: 6.7, end: 7.0 },
-            { text: "fight", start: 7.0, end: 7.3 },
-            { text: "over", start: 7.3, end: 7.6 },
-            { text: "the", start: 7.6, end: 7.9 },
-            { text: "last", start: 7.9, end: 8.2 },
-            { text: "cookie.", start: 8.2, end: 8.5 },
-          ]
-    },{
+      start: 5.1, end: 8.6,
+      words: [
+        { text: "The", start: 5.8, end: 6.1 },
+        { text: "girls", start: 6.1, end: 6.4 },
+        { text: "start", start: 6.4, end: 6.7 },
+        { text: "to", start: 6.7, end: 7.0 },
+        { text: "fight", start: 7.0, end: 7.3 },
+        { text: "over", start: 7.3, end: 7.6 },
+        { text: "the", start: 7.6, end: 7.9 },
+        { text: "last", start: 7.9, end: 8.2 },
+        { text: "cookie.", start: 8.2, end: 8.5 },
+      ]
+    }, {
       videoIndex: 1,
       start: 10.6, end: 11.8,
-          words: [
-            { text: "Amy", start: 10.7, end: 11.0 },
-            { text: "starts", start: 11.0, end: 11.3 },
-            { text: "crying.", start: 11.3, end: 11.6 }
-          ]
+      words: [
+        { text: "Amy", start: 10.7, end: 11.0 },
+        { text: "starts", start: 11.0, end: 11.3 },
+        { text: "crying.", start: 11.3, end: 11.6 }
+      ]
     },
     {
       videoIndex: 2,
-       start: 0, end: 4.0,
-          words: [
-            { text: "Mum", start: 0.0, end: 0.5 },
-            { text: "hears", start: 0.5, end: 0.8 },
-            { text: "the", start: 0.8, end: 1.1 },
-            { text: "girls", start: 1.1, end: 1.4 },
-            { text: "and", start: 1.4, end: 1.7 },
-            { text: "calls", start: 1.7, end: 2.0 },
-            { text: "them", start: 2.0, end: 2.3 },
-            { text: "into", start: 2.3, end: 2.6 },
-            { text: "the", start: 2.6, end: 2.9 },
-            { text: "kitchen.", start: 2.9, end: 3.2 },
+      start: 0, end: 4.0,
+      words: [
+        { text: "Mum", start: 0.0, end: 0.5 },
+        { text: "hears", start: 0.5, end: 0.8 },
+        { text: "the", start: 0.8, end: 1.1 },
+        { text: "girls", start: 1.1, end: 1.4 },
+        { text: "and", start: 1.4, end: 1.7 },
+        { text: "calls", start: 1.7, end: 2.0 },
+        { text: "them", start: 2.0, end: 2.3 },
+        { text: "into", start: 2.3, end: 2.6 },
+        { text: "the", start: 2.6, end: 2.9 },
+        { text: "kitchen.", start: 2.9, end: 3.2 },
 
-          ]
+      ]
     },
     {
       videoIndex: 4,
-        start: 0, end: 2.4,
-          words: [
-            { text: "The", start: 0, end: 0.4 },
-            { text: "girls", start: 0.4, end: 0.7 },
-            { text: "feel", start: 0.7, end: 1.0 },
-            { text: "bad", start: 1.0, end: 1.3 },
-            { text: "about", start: 1.3, end: 1.6 },
-            { text: "their", start: 1.6, end: 1.9 },
-            { text: "fight.", start: 1.9, end: 2.3 },
+      start: 0, end: 2.4,
+      words: [
+        { text: "The", start: 0, end: 0.4 },
+        { text: "girls", start: 0.4, end: 0.7 },
+        { text: "feel", start: 0.7, end: 1.0 },
+        { text: "bad", start: 1.0, end: 1.3 },
+        { text: "about", start: 1.3, end: 1.6 },
+        { text: "their", start: 1.6, end: 1.9 },
+        { text: "fight.", start: 1.9, end: 2.3 },
 
-          ]
+      ]
     },
     {
       videoIndex: 4,
-         start: 2.7, end: 5.1,
-          words: [
-            { text: "They", start: 2.9, end: 3.2 },
-            { text: "decide", start: 3.2, end: 3.6 },
-            { text: "to", start: 3.6, end: 3.8 },
-            { text: "use", start: 3.8, end: 4.2 },
-            { text: "a good", start: 4.2, end: 4.6 },
-            { text: "language.", start: 4.6, end: 5.0 },
+      start: 2.7, end: 5.1,
+      words: [
+        { text: "They", start: 2.9, end: 3.2 },
+        { text: "decide", start: 3.2, end: 3.6 },
+        { text: "to", start: 3.6, end: 3.8 },
+        { text: "use", start: 3.8, end: 4.2 },
+        { text: "a good", start: 4.2, end: 4.6 },
+        { text: "language.", start: 4.6, end: 5.0 },
 
-          ]
+      ]
     }
   ];
 
@@ -479,7 +480,7 @@ export const StoryPage = () => {
     video.load();
     setCurrentTime(0);
     setShowBubble(true);
-    
+
 
     const handleCanPlay = () => {
       setIsLoading(false);
@@ -491,16 +492,16 @@ export const StoryPage = () => {
     };
   }, [currentVideo]);
 
-    useEffect(() => {
-      const bubbleToShow = extraBubblesData.find(bubble =>
-        bubble.videoIndex === currentVideo &&
-        currentTime >= bubble.start &&
-        currentTime < bubble.end
-      );
-  
-      setExtraBubble(bubbleToShow || null);
-  
-    }, [currentVideo, currentTime]);
+  useEffect(() => {
+    const bubbleToShow = extraBubblesData.find(bubble =>
+      bubble.videoIndex === currentVideo &&
+      currentTime >= bubble.start &&
+      currentTime < bubble.end
+    );
+
+    setExtraBubble(bubbleToShow || null);
+
+  }, [currentVideo, currentTime]);
   // Preload next video
   useEffect(() => {
     const nextVideoIndex = currentVideo + 1;
@@ -741,11 +742,11 @@ export const StoryPage = () => {
                     );
                   })}
                 </p>
-                <button className="close" onClick={() => setShowBubble(false)}>×</button>
+                {/* <button className="close" onClick={() => setShowBubble(false)}>×</button> */}
               </div>
             </div>
           )}
-           {extraBubble && extraBubble.words && (
+          {showCaption && extraBubble && extraBubble.words && (
             <div
               className="subtitle-container"
               // 2️⃣ غيرنا الموضع لتظهر في الأسفل بشكل واضح
@@ -780,6 +781,10 @@ export const StoryPage = () => {
                   <button onClick={() => setShowSubtitles(!showSubtitles)} className="control-btn" title="Subtitles">
                     <Subtitles className="w-6 h-6" />
                     <span className="control-label">Subtitle</span>
+                  </button>
+                  <button onClick={() => setShowCaption(!showCaption)} className="control-btn" title="Caption">
+                    <MessageSquareText className="w-6 h-6" />
+                    <span className="control-label">Caption</span>
                   </button>
                   <div
                     className="volume-control"

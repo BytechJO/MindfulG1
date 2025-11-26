@@ -29,7 +29,7 @@
   position: relative;
   display: inline-block;
   background: #ffffff;
-  padding: 1rem 1.25rem;
+  padding: 10px;
   border-radius: 2.5rem;
   font-family: "Segoe UI", sans-serif;
   font-size: 1.125rem;
@@ -54,10 +54,10 @@
   width: 1000px;
   height: 150px;
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 600;
+  
 }
 
 .bubble-cloud::after,
