@@ -21,7 +21,7 @@ export const QuizPage = () => {
       ValidationAlert.info("Incomplete", "Please answer all questions before submitting!");
       return;
     }
-    const correctAnswers = { q1: "0", q2: "1", q3: "2" };
+    const correctAnswers = { q1: "0", q2: "1", q3: "1" };
     const results = {
       q1: answers.q1 === correctAnswers.q1,
       q2: answers.q2 === correctAnswers.q2,
@@ -58,31 +58,31 @@ export const QuizPage = () => {
           {/* --- بداية التعديل --- */}
           <div className="content">
             <div className="Q1">
-              <span>How did Kate feel in the beginning of the story?</span>
+              <span>Who was John playing with?</span>
               <ul>
-                <li>Sad and angry <input type="radio" name="q1" value="0" onChange={handleChange} /></li>
-                <li>Happy <input type="radio" name="q1" value="1" onChange={handleChange} /></li>
-                <li>Tired <input type="radio" name="q1" value="2" onChange={handleChange} /></li>
+                <li>His sister <input type="radio" name="q1" value="0" onChange={handleChange} /></li>
+                <li>His brother<input type="radio" name="q1" value="1" onChange={handleChange} /></li>
+                <li>His dad<input type="radio" name="q1" value="2" onChange={handleChange} /></li>
               </ul>
             </div>
 
             {/* تم حذف   
  لتنسيق أفضل عبر CSS */}
             <div className="Q2">
-              <span>Why did Kate need less help than May?</span>
+              <span>What did their mum ask them to do?</span>
               <ul>
-                <li>Mum loved May more. <input type="radio" name="q2" value="0" onChange={handleChange} /></li>
-                <li>Kate was a big girl. <input type="radio" name="q2" value="1" onChange={handleChange} /></li>
-                <li>May watched TV. <input type="radio" name="q2" value="2" onChange={handleChange} /></li>
+                <li>Get dressed <input type="radio" name="q2" value="0" onChange={handleChange} /></li>
+                <li>Play in their bedroom <input type="radio" name="q2" value="1" onChange={handleChange} /></li>
+                <li>Make food <input type="radio" name="q2" value="2" onChange={handleChange} /></li>
               </ul>
             </div>
 
             <div className="Q3" >
-              <span>What did Kate ask her mum to help her with?</span>
+              <span>What did John do to show that he was trustworthy?</span>
               <ul>
-                <li>Clean her room <input type="radio" name="q3" value="0" onChange={handleChange} /></li>
-                <li>Feed May <input type="radio" name="q3" value="1" onChange={handleChange} /></li>
-                <li>Bake a cake <input type="radio" name="q3" value="2" onChange={handleChange} /></li>
+                <li>He cried. <input type="radio" name="q3" value="0" onChange={handleChange} /></li>
+                <li>He told his mum the truth.<input type="radio" name="q3" value="1" onChange={handleChange} /></li>
+                <li>He blamed Emma. <input type="radio" name="q3" value="2" onChange={handleChange} /></li>
               </ul>
             </div>
 

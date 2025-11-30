@@ -57,29 +57,29 @@ export const QuizPage = () => {
           
           <div className="content">
             <div className="Q1">
-              <span>Who stood too close to Tom?</span>
+              <span>Amy said thank you to</span>
               <ul>
-                <li>The teacher <input type="radio" name="q1" value="0" onChange={handleChange} /></li>
-                <li>Susan <input type="radio" name="q1" value="1" onChange={handleChange}/></li>
-                <li>Mark<input type="radio" name="q1" value="2" onChange={handleChange}/></li>
+                <li>Her aunt <input type="radio" name="q1" value="0" onChange={handleChange} /></li>
+                <li>Her parents <input type="radio" name="q1" value="1" onChange={handleChange}/></li>
+                <li>Her brother<input type="radio" name="q1" value="2" onChange={handleChange}/></li>
               </ul>
             </div>
             
             <div className="Q2">
-              <span>What is personal space like?</span>
+              <span>What did Amy thank her parents for?</span>
               <ul>
-                <li>A bubble <input type="radio" name="q2" value="0" onChange={handleChange}/></li>
-                <li>A toy <input type="radio" name="q2" value="1" onChange={handleChange}/></li>
-                <li>A book <input type="radio" name="q2" value="2" onChange={handleChange}/></li>
+                <li>Taking care of her <input type="radio" name="q2" value="0" onChange={handleChange}/></li>
+                <li>Going shopping <input type="radio" name="q2" value="1" onChange={handleChange}/></li>
+                <li>Taking her to the park<input type="radio" name="q2" value="2" onChange={handleChange}/></li>
               </ul>
             </div>
             
             <div className="Q3" >
-              <span>What did Susan say to Tom?</span>
+              <span>Who thanked Amy at the end of the story?</span>
               <ul>
-                <li>‘I am angry.’<input type="radio" name="q3" value="0" onChange={handleChange}/></li>
-                <li>‘I will pop your bubble.’<input type="radio" name="q3" value="1" onChange={handleChange}/></li>
-                <li>‘I understand about personal space now.’<input type="radio" name="q3" value="2" onChange={handleChange}/></li>
+                <li>The neighbours<input type="radio" name="q3" value="0" onChange={handleChange}/></li>
+                <li>Her friends<input type="radio" name="q3" value="1" onChange={handleChange}/></li>
+                <li>Her parents<input type="radio" name="q3" value="2" onChange={handleChange}/></li>
               </ul>
             </div>
 

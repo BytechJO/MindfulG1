@@ -707,11 +707,9 @@ export const StoryPage = () => {
           {currentVideo === 3 && showBanner && (
             <div className="instruction-banner show">
               <p style={{ fontSize: '1.8em', textAlign: 'left' }}>
-                Highlight the phrase James says to show
+                Highlight the good language phrases.
               </p>
-              <p style={{ fontSize: '1.8em', textAlign: 'left' }}>
-                he cares about Joe’s feelings.
-              </p>
+             
             </div>
           )}
 

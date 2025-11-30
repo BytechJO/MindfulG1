@@ -68,18 +68,7 @@ export const StoryPage = () => {
       subtitles: [
 
         {
-          start: 4.0, end: 9.0,
-          words: [
-            { text: "She", start: 4.5, end: 4.7 },
-            { text: "takes", start: 4.7, end: 5.0 },
-            { text: "a", start: 5.0, end: 5.3 },
-            { text: "deep", start: 5.3, end: 5.6 },
-            { text: "breath", start: 5.6, end: 5.9 },
-            { text: "and", start: 5.9, end: 6.2 },
-            { text: "counts", start: 6.2, end: 6.6 },
-            { text: "to", start: 6.6, end: 6.9 },
-            { text: "ten.", start: 6.9, end: 7.2 },
-          ]
+        
         },
       ]
     },
@@ -237,6 +226,22 @@ export const StoryPage = () => {
         { text: "upset.", start: 3.2, end: 3.6 },
       ]
     },
+     {
+      videoIndex: 2,
+  start: 4.0, end: 9.0,
+          words: [
+            { text: "She", start: 4.5, end: 4.7 },
+            { text: "takes", start: 4.7, end: 5.0 },
+            { text: "a", start: 5.0, end: 5.3 },
+            { text: "deep", start: 5.3, end: 5.6 },
+            { text: "breath", start: 5.6, end: 5.9 },
+            { text: "and", start: 5.9, end: 6.2 },
+            { text: "counts", start: 6.2, end: 6.6 },
+            { text: "to", start: 6.6, end: 6.9 },
+            { text: "ten.", start: 6.9, end: 7.2 },
+          ]
+    },
+    
 
     {
       videoIndex: 3,

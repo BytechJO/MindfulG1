@@ -69,22 +69,7 @@ export const StoryPage = () => {
           ]
         },
         {
-          start: 2.5, end: 7.0,
-          words: [
-            { text: "She", start: 3.0, end: 3.3 },
-            { text: "runs", start: 3.3, end: 3.6 },
-            { text: "to", start: 3.6, end: 3.9 },
-            { text: "pick", start: 3.9, end: 4.2 },
-            { text: "up", start: 4.2, end: 4.5 },
-            { text: "the", start: 4.5, end: 4.8 },
-            { text: "wrapper", start: 4.8, end: 5.1 },
-            { text: "and", start: 5.1, end: 5.4 },
-            { text: "throws", start: 5.4, end: 5.7 },
-            { text: "it", start: 5.7, end: 6.0 },
-            { text: "in", start: 6.0, end: 6.3 },
-            { text: "the", start: 6.3, end: 6.6 },
-            { text: "bin.", start: 6.6, end: 6.9 },
-          ]
+      
         },
       ]
     },
@@ -179,23 +164,9 @@ export const StoryPage = () => {
       subtitles: [
 
         {
-          start: 3.5, end: 5.0,
-          words: [
-            { text: "Well", start: 3.6, end: 3.9 },
-            { text: "done", start: 3.9, end: 4.2 },
-            { text: "Ben!", start: 4.2, end: 4.8 },
-          ]
+        
         },
-        {
-          start: 5.0, end: 9.0,
-          words: [
-            { text: "You", start: 5.0, end: 5.3 },
-            { text: "did", start: 5.3, end: 5.6 },
-            { text: "the", start: 5.6, end: 5.9 },
-            { text: "right", start: 5.9, end: 6.2 },
-            { text: "thing.", start: 6.2, end: 6.5 },
-          ]
-        },
+       
       ]
     },
   ];
@@ -283,6 +254,25 @@ export const StoryPage = () => {
         { text: "ground.", start: 8.3, end: 8.6 },
       ]
     },
+    {
+      videoIndex: 2,
+         start: 2.5, end: 7.0,
+          words: [
+            { text: "She", start: 3.0, end: 3.3 },
+            { text: "runs", start: 3.3, end: 3.6 },
+            { text: "to", start: 3.6, end: 3.9 },
+            { text: "pick", start: 3.9, end: 4.2 },
+            { text: "up", start: 4.2, end: 4.5 },
+            { text: "the", start: 4.5, end: 4.8 },
+            { text: "wrapper", start: 4.8, end: 5.1 },
+            { text: "and", start: 5.1, end: 5.4 },
+            { text: "throws", start: 5.4, end: 5.7 },
+            { text: "it", start: 5.7, end: 6.0 },
+            { text: "in", start: 6.0, end: 6.3 },
+            { text: "the", start: 6.3, end: 6.6 },
+            { text: "bin.", start: 6.6, end: 6.9 },
+          ]
+    },
 
 
     {
@@ -364,6 +354,27 @@ export const StoryPage = () => {
         { text: "bin.", start: 2.5, end: 2.8 },
       ]
     },
+     {
+      videoIndex: 6,
+       start: 3.5, end: 5.0,
+          words: [
+            { text: "Well", start: 3.6, end: 3.9 },
+            { text: "done", start: 3.9, end: 4.2 },
+            { text: "Ben!", start: 4.2, end: 4.8 },
+          ]
+    },
+     {
+      videoIndex: 6,
+          start: 5.0, end: 9.0,
+          words: [
+            { text: "You", start: 5.0, end: 5.3 },
+            { text: "did", start: 5.3, end: 5.6 },
+            { text: "the", start: 5.6, end: 5.9 },
+            { text: "right", start: 5.9, end: 6.2 },
+            { text: "thing.", start: 6.2, end: 6.5 },
+          ]
+        },
+    
   ];
 
   const currentVideoData = videos[currentVideo];
