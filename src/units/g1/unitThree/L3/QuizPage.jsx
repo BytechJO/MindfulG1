@@ -4,7 +4,7 @@ import '../../shared/Quiz.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../shared/StoryPage.css';
 import ValidationAlert from '../../shared/ValidationAlert';
-import Timg from '../../../../assets/Gif/Approve.Gif';
+import Timg from '../../../../assets/Gif/Approve.gif';
 import Fimg from '../../../../assets/Gif/False.gif';
 
 export const QuizPage = () => {
