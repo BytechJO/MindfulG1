@@ -1,0 +1,400 @@
+body {
+  min-height: 100vh; 
+  /* background: linear-gradient(to bottom right, #4f46e5, #7c3aed, #ec4899); */
+}
+
+#p3 {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 1.563rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+  background-color: #000;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
+  width: 90%;
+  font-family: 'Inter', sans-serif;
+  margin-top: 50px;
+  margin-left: 20px;
+  transform: translate(-50% ,-50%);
+}
+
+
+
+
+
+
+#p3 .content {
+  position: absolute;
+  top:10px;
+  left: 18.5%;
+  width: 100%;
+  height: 100%;
+  margin-top: clamp(80px, 10vw, 160px);
+  font-size: 16px;
+}
+
+
+
+
+
+
+#p3 ul {
+  list-style-type: lower-alpha;
+  position: relative;
+  left: clamp(10%, 15vw, 16%);
+}
+
+#p3 span {
+  color: #4a79bd;
+  position: relative;
+  left: clamp(10%, 12vw, 13%);
+}
+
+#p3 li {
+  position: relative;
+}
+
+#p3 li input[type="radio"] {
+  position: absolute;
+  left: 38%;
+  top: clamp(3px, 0.5vw, 15px);
+  width: clamp(12px, 2vw, 18px);
+  height: clamp(12px, 2vw, 18px);
+  border-radius: 50%;
+  background-color: transparent; 
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#p3 li input[type="radio"]:checked {
+  background-color: black;
+}
+
+#p3 .share,
+#p3 .share1 {
+  color: #4a79bd;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: bold;
+  margin: clamp(30px, 5vw, 62px) 0 clamp(5px, 1vw, 5px) 0;
+}
+
+#submitBtn {
+  background-color: #4a79bd;
+  border: none;
+  border-radius: clamp(20px, 5vw, 40px);
+  width: clamp(100px, 20vw, 150px);
+  height: clamp(30px, 5vw, 40px);
+  color: white;
+  transition: transform 0.3s, background-color 0.3s;
+  position: absolute;
+  left: 25%;
+  top: 58%;
+}
+
+#submitBtn:hover {
+  background-color: #426ca7f2;
+  transform: scale(1.1);
+}
+
+.story-pages-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1025px) {
+  #p3 .content {
+    left: 10%;
+    top: 50PX;
+    margin-top: clamp(60px, 8vw, 120px);
+    font-size: 15px;
+  }
+
+  #p3 ul {
+    left: 10%;
+  }
+
+  #p3 span {
+    left: 10%;
+  }
+
+  #p3 li input[type="radio"] {
+    left: 30%;
+    width: clamp(10px, 3vw, 16px);
+    height: clamp(10px, 3vw, 16px);
+  }
+
+  #submitBtn {
+    left: 20%;
+    top: 60%;
+    width: clamp(80px, 25vw, 130px);
+    height: clamp(30px, 6vw, 35px);
+  }
+}
+/* للشاشات المتوسطة */
+@media (max-width: 850px) {
+  #p3 .content {
+    left: 10%;
+    top: 30PX;
+    margin-top: clamp(60px, 8vw, 120px);
+    font-size: 12px;
+  }
+
+  #p3 ul {
+    left: 10%;
+  }
+
+  #p3 span {
+    left: 10%;
+  }
+
+  #p3 li input[type="radio"] {
+    left: 30%;
+    width: clamp(10px, 3vw, 16px);
+    height: clamp(10px, 3vw, 16px);
+  }
+
+  #submitBtn {
+    left: 20%;
+    top: 60%;
+    width: clamp(80px, 25vw, 130px);
+    height: clamp(30px, 6vw, 35px);
+  }
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 770px) {
+  #p3 .content {
+    left: 20%;
+    margin-top:30PX;
+    font-size: 12px;
+    top: 60PX;
+
+  }
+
+
+  #p3 ul {
+    left: 10%;
+  }
+
+  #p3 span {
+    left: 5%;
+  }
+
+  #p3 li input[type="radio"] {
+    left: 25%;
+    width: clamp(8px, 4vw, 14px);
+    height: clamp(8px, 4vw, 14px);
+  }
+
+  #submitBtn {
+    left: 15%;
+    top: 62%;
+    width: clamp(70px, 30vw, 120px);
+    height: clamp(25px, 6vw, 30px);
+    font-size: 0.9rem;
+  }
+
+  .story-pages-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* للشاشات الصغيرة جدًا */
+@media (max-width: 480px) {
+  #p3 .content {
+    left: 3%;
+    margin-top: clamp(40px, 15vw, 80px);
+    font-size: 12px;
+  }
+
+  #p3 ul {
+    left: 20%;
+  }
+    #p3 {
+    height: 70vh;
+    background-color:white;
+  }
+
+  #p3 span {
+    left: 10%;
+  }
+
+  #p3 li input[type="radio"] {
+    left: 50%;
+    width: clamp(6px, 5vw, 12px);
+    height: clamp(6px, 5vw, 12px);
+  }
+
+  #submitBtn {
+    left: 10%;
+    top: 50%;
+    width: clamp(60px, 35vw, 100px);
+    height: clamp(20px, 5vw, 25px);
+    font-size: 0.8rem;
+  }
+}
+
+.skip-btn {
+  position: absolute; 
+  right: 25%;
+  bottom: 33%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;                       /* مسافة بين الأيقونة والنص */
+  padding: 10px 16px;
+  background: transparent;        /* شفّاف افتراضي حتى يظهر الحدود */
+  border: 2px solid #6b6bff;      /* لون الحافة */
+  color: #2b2b7a;                 /* لون النص */
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 999px;           /* شكل pill */
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  box-shadow: 0 6px 18px rgba(107,107,255,0.12);
+  user-select: none;
+  background: linear-gradient(180deg, rgba(107,107,255,0.06), rgba(107,107,255,0.02));
+}
+
+/* hover */
+.skip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(107,107,255,0.14);
+  background: linear-gradient(180deg, rgba(107,107,255,0.10), rgba(107,107,255,0.02));
+}
+
+/* active (clicked) */
+.skip-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* focus (accessibility) */
+.skip-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107,107,255,0.12);
+}
+
+/* disabled */
+.skip-btn[disabled],
+.skip-btn.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  border-color: #cfcffb;
+  color: #9a9adf;
+  background: transparent;
+}
+
+/* small icon-only variant */
+.skip-btn.icon-only {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  font-size: 0; /* يخفي النص إن كان موجودًا */
+}
+
+/* SVG / icon sizing inside button */
+.skip-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* RTL support: if container has dir="rtl" */
+[dir="rtl"] .skip-btn {
+  direction: rtl;
+}
+
+
+
+
+
+
+
+.try-btn {
+  position: absolute; 
+  left: -10%;
+  bottom: 33%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;                     
+  padding: 10px 16px;
+  background: transparent;       
+  border: 2px solid #6b6bff;      
+  color: #2b2b7a;                
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 999px;           
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  box-shadow: 0 6px 18px rgba(107,107,255,0.12);
+  user-select: none;
+  background: linear-gradient(180deg, rgba(107,107,255,0.06), rgba(107,107,255,0.02));
+}
+
+.try-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(107,107,255,0.14);
+  background: linear-gradient(180deg, rgba(107,107,255,0.10), rgba(107,107,255,0.02));
+}
+
+.try-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.try-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107,107,255,0.12);
+}
+
+.try-btn[disabled],
+.try-btn.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  border-color: #cfcffb;
+  color: #9a9adf;
+  background: transparent;
+}
+
+.try-btn.icon-only {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  font-size: 0;
+}
+
+.try-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+[dir="ltr"] .skip-btn {
+  direction: ltr;
+}
+
+
+
+.answer-gif {
+  width: 30px;               /* حجم صغير لتناسب الدائرة */
+  height: 30px;
+  position: absolute;        /* وضع مطلق داخل الـ li */
+  top: 50%;                  /* مركز عمودي */
+  left: 35%;                 /* مركز أفقي */
+  transform: translate(-50%, -50%); /* لضبط المنتصف تمامًا */
+  pointer-events: none;      /* لمنع التأثير على النقر */
+  z-index: 2;
+}
+
+
+

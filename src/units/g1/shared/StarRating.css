@@ -1,0 +1,29 @@
+.star {
+  cursor: pointer;
+  display: inline-block;
+  
+}
+
+.star img {
+  width: clamp(25px, 3vw, 40px);
+  height: clamp(25px, 3vw, 40px);
+  transition: transform 0.2s ease-in-out;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.star:hover img {
+  transform: scale(1.15);
+}
+
+
+.star-icon {
+  width: clamp(25px, 3vw, 40px);
+  height: clamp(25px, 3vw, 40px);
+  fill: rgb(0, 0, 0); /* اللون اللي بدك إياه */
+  transition: transform 0.2s ease-in-out;
+}
+
+.star:hover .star-icon {
+  transform: scale(1.2);
+}

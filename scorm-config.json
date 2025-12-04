@@ -1,0 +1,14 @@
+{
+  "version": "1.2",
+  "organization": "Bytech",
+  "title": "Mindful G1",
+  "language": "ar-SA",
+  "masteryScore": 80,
+  "startingPage": "index.html",
+  "source": "./dist",
+  "package": {
+    "version": "1.0.0",
+    "zip": true,
+    "outputFolder": "./scorm_packages"
+  }
+}
